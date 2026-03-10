@@ -1,0 +1,188 @@
+/* Home Her Banner */
+#hero-banner {
+  position: relative;
+  width: 100%;
+  height: 95vh;
+  overflow: hidden;
+
+  .banner-swiper {
+    width: 100%;
+    height: 100%;
+
+    .swiper-slide {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+
+      .slide-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+
+        // Optional overlay for better text readability
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.1); // Dark overlay
+          z-index: 2;
+        }
+      }
+
+      .slide-content {
+        position: relative;
+        z-index: 3;
+        max-width: 600px;
+        padding: 0 50px;
+        color: $background;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+
+        @media (min-width: 1200px) {
+          padding-left: 15%;
+        }
+
+        .slide-title {
+          margin: 0;
+          max-width: 350px;
+        }
+
+        .slide-description {
+          margin-bottom: 30px;
+          opacity: 0.9;
+          max-width: 400px;
+
+          @media (min-width: 768px) {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+
+    .banner-pagination {
+      position: absolute;
+      left: 30px;
+      top: 60%;
+      transform: translateY(-55%);
+      z-index: 10;
+      width: auto;
+
+      // Make bullets vertical
+      .swiper-pagination-bullet {
+        display: block;
+        margin: 10px 0 !important;
+        width: 10px;
+        height: 10px;
+        background: rgba(255, 255, 255, 0.5);
+        opacity: 1;
+        transition: all 0.3s ease;
+
+        &-active {
+          background: $accent-main;
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+}
+// Animation for content
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.swiper-slide-active {
+  .slide-content {
+    animation: fadeInUp 1s ease forwards;
+  }
+}
+
+/* Belong Section */
+#belong {
+  padding-bottom: 6em;
+  .content-wrapper {
+    height: fit-content;
+    min-height: 300px;
+    @include flex-center;
+    flex-direction: column;
+    padding: 2em 0;
+    h2 {
+      margin: 0;
+    }
+    p {
+      width: 45%;
+      text-align: center;
+      margin: 1.5em 0;
+    }
+  }
+  .image-wrapper {
+    width: 100%;
+    height: fit-content;
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: fill;
+    }
+  }
+}
+
+/* CTA Section */
+#cta {
+  padding: 6em 0;
+  background: #fff7f7;
+  .container {
+    .cta-card {
+      width: 100%;
+      height: fit-content;
+      background: #fffdfd;
+      border: 1px solid rgba(0, 0, 0, 0.5);
+      border-radius: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-top: 1.5em;
+      padding-bottom: 3em;
+      .title-section {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+        h2 {
+          font-weight: 700;
+        }
+        img {
+          width: 150px;
+          height: auto;
+          object-fit: contain;
+        }
+      }
+      .cta-desc {
+        font-size: 16px;
+        line-height: 32px;
+        text-align: center;
+        width: 50%;
+      }
+    }
+  }
+}

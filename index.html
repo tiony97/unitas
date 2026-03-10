@@ -14,9 +14,6 @@
     <title>Unaitas</title>
   </head>
   <body>
-    <!--Top Bar -->
-    <div id="top-bar"></div>
-
     <!--Header-->
     <header id="site-header">
       <!-- Top Bar -->
@@ -129,7 +126,7 @@
                             <a href="#">
                               <span class="menu-icon-wrapper">
                                 <img
-                                  src="./assets/images/bank.svg"
+                                  src="./assets/images/user-edit.svg"
                                   alt=""
                                   class="menu-icon"
                                 />
@@ -144,7 +141,7 @@
                             <a href="#">
                               <span class="menu-icon-wrapper">
                                 <img
-                                  src="./assets/images/layers.svg"
+                                  src="./assets/images/user-square.svg"
                                   alt=""
                                   class="menu-icon"
                                 />
@@ -160,7 +157,7 @@
                             <a href="#">
                               <span class="menu-icon-wrapper">
                                 <img
-                                  src="./assets/images/diamond.svg"
+                                  src="./assets/images/profile-2user.svg"
                                   alt=""
                                   class="menu-icon"
                                 />
@@ -172,51 +169,12 @@
                             <a href="#">
                               <span class="menu-icon-wrapper">
                                 <img
-                                  src="./assets/images/file-text.svg"
+                                  src="./assets/images/wallet-add.svg"
                                   alt=""
                                   class="menu-icon"
                                 />
                               </span>
                               Accounts Open Upon Join
-                            </a>
-                          </li>
-                          <li class="menu-item" data-submenu="submenu-joint">
-                            <a href="#">
-                              <span class="menu-icon-wrapper">
-                                <img
-                                  src="./assets/images/users.svg"
-                                  alt=""
-                                  class="menu-icon"
-                                />
-                              </span>
-                              Joint Membership
-                            </a>
-                          </li>
-                          <li class="menu-item" data-submenu="submenu-group">
-                            <a href="#">
-                              <span class="menu-icon-wrapper">
-                                <img
-                                  src="./assets/images/users-three.svg"
-                                  alt=""
-                                  class="menu-icon"
-                                />
-                              </span>
-                              Group Membership
-                            </a>
-                          </li>
-                          <li
-                            class="menu-item"
-                            data-submenu="submenu-corporate"
-                          >
-                            <a href="#">
-                              <span class="menu-icon-wrapper">
-                                <img
-                                  src="./assets/images/building.svg"
-                                  alt=""
-                                  class="menu-icon"
-                                />
-                              </span>
-                              Corporate Membership
                             </a>
                           </li>
                         </ul>
@@ -451,11 +409,248 @@
 
     <!--Page Content-->
     <main>
-      <h1>Home Page</h1>
+      <!--Banner (slider)-->
+      <section id="hero-banner">
+        <!-- Swiper -->
+        <div class="swiper banner-swiper">
+          <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <div class="slide-image">
+                <img
+                  src="./assets/images/home-slider-image-1.png"
+                  alt="Banner 1"
+                />
+              </div>
+              <div class="slide-content">
+                <h1 class="slide-title">Moving with you</h1>
+                <p class="slide-description">
+                  Through everyday goals, unexpected moments, and long-term
+                  plans you don’t move alone.
+                </p>
+                <a href="#" class="site-btn-lg">Become a member</a>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+              <div class="slide-image">
+                <img
+                  src="./assets/images/home-slider-image-1.png"
+                  alt="Banner 2"
+                />
+              </div>
+              <div class="slide-content">
+                <h1 class="slide-title">Grow with Unaitas</h1>
+                <p class="slide-description">
+                  Your trusted financial partner for savings, loans, and
+                  investments.
+                </p>
+                <a href="#" class="site-btn-lg">Learn more about us</a>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+              <div class="slide-image">
+                <img
+                  src="./assets/images/home-slider-image-1.png"
+                  alt="Banner 3"
+                />
+              </div>
+              <div class="slide-content">
+                <h1 class="slide-title">Secure your future</h1>
+                <p class="slide-description">
+                  With our diverse range of financial products designed for you.
+                </p>
+                <a href="#" class="site-btn-lg">Explore options</a>
+              </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="swiper-slide">
+              <div class="slide-image">
+                <img
+                  src="./assets/images/home-slider-image-1.png"
+                  alt="Banner 3"
+                />
+              </div>
+              <div class="slide-content">
+                <h1 class="slide-title">Work with the best</h1>
+                <p class="slide-description">
+                  With our diverse range of financial products designed for you.
+                </p>
+                <a href="#" class="site-btn-lg">Explore options</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vertical Pagination -->
+          <div class="swiper-pagination banner-pagination"></div>
+        </div>
+      </section>
+
+      <!--Belong Section-->
+      <section id="belong">
+        <div class="content-wrapper">
+          <h2>Where You belong</h2>
+          <p>
+            Whether you’re building your first savings, raising a family,
+            running a business, or planning for the future this is a community
+            built to support you at every stage of life.
+          </p>
+          <a href="#" class="site-btn-lg">Learn About Unaitas</a>
+        </div>
+        <div class="image-wrapper">
+          <img
+            src="./assets/images/belong-image.png"
+            alt="belong section image"
+          />
+        </div>
+      </section>
+
+      <!--CTA-->
+      <section id="cta">
+        <div class="container">
+          <div class="cta-card">
+            <div class="title-section">
+              <h1>Become</h1>
+              <img
+                src="./assets/images/cta-title-image.png"
+                alt="cta-title-image"
+                class="title-image"
+              />
+              <h1>A Member</h1>
+            </div>
+            <p class="cta-desc">
+              With nearly 1,000,000 members across Kenya, you’ll be joining a
+              Sacco that has focused on the financial wellness of its community
+              for over 80 years.
+            </p>
+            <a href="#" href="#" class="site-btn-lg">Join Unaitas</a>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!--Footer-->
-    <footer id="footer"></footer>
+    <footer id="site-footer">
+      <div class="container">
+        <div class="footer-wrapper">
+          <!-- Company Info with QR -->
+          <div class="footer-company">
+            <a href="/" class="footer-logo"
+              ><img src="./assets/images/footer-logo.png" alt="footer logo"
+            /></a>
+            <p class="footer-description">
+              Unaitas is a deposit taking Savings and Credit Cooperative (SACCO)
+              organization, licensed under the SACCO Societies Act, 2012. The
+              SACCO was initially registered on 14 May 1993 as a cooperative
+              society.
+            </p>
+            <div class="footer-app">
+              <h4>Download the app</h4>
+              <div class="qr-code">
+                <!-- QR code image  -->
+                <img
+                  src="./assets/images/app-qr.png"
+                  alt="Download app QR code"
+                />
+              </div>
+
+              <p class="copyright">
+                © Unaitas Sacco Society Ltd Regulated under the Co-operative
+                Societies Act of Kenya
+              </p>
+            </div>
+          </div>
+
+          <!-- Bordered Sections -->
+          <div class="footer-bordered-sections">
+            <!-- Governance & Policies -->
+            <div class="footer-section bordered">
+              <div class="footer-section-header">
+                <h3 class="footer-title">Governance & Policies</h3>
+              </div>
+
+              <ul class="footer-menu">
+                <li><a href="#">Supervisory Committee</a></li>
+                <li><a href="#">Delegates</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Service Charter</a></li>
+                <li><a href="#">Board Charter</a></li>
+              </ul>
+            </div>
+
+            <!-- Help & Support -->
+            <div class="footer-section bordered">
+              <div class="footer-section-header">
+                <h3 class="footer-title">Help & Support</h3>
+              </div>
+              <ul class="footer-menu">
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Branch & Agent Locator</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Loan Calculator</a></li>
+                <li><a href="#">Forms & Downloads</a></li>
+              </ul>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="footer-section contact-section bordered">
+              <div class="contact-info">
+                <div class="contact-card">
+                  <img
+                    src="./assets/images/location.png"
+                    alt="icon"
+                    class="icon"
+                  />
+                  <div class="details">
+                    <h4 class="title">Nairobi</h4>
+                    <p class="desc">
+                      Cardinal Otunga Plaza, Cardinal Otunga road, Nairobi
+                    </p>
+                  </div>
+                </div>
+                <div class="contact-card">
+                  <img
+                    src="./assets/images/call-calling.png"
+                    alt="icon"
+                    class="icon"
+                  />
+                  <div class="details">
+                    <h4 class="title">Phone</h4>
+                    <p class="desc">+254709 253 000</p>
+                  </div>
+                </div>
+                <div class="contact-card">
+                  <img
+                    src="./assets/images/messages-3.png"
+                    alt="icon"
+                    class="icon"
+                  />
+                  <div class="details">
+                    <h4 class="title">Email</h4>
+                    <p class="desc"> memberservice@unaitas.com</p>
+                  </div>
+                </div>
+              </div>
+              <div class="social-info">
+                <div class="wrapper">
+                  <p>social</p>
+                  <div class="links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <!--Scripts-->
     <script src="./assets/js/all.min.js"></script>

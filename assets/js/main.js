@@ -130,3 +130,50 @@ jQuery(document).ready(function ($) {
     }
   });
 });
+
+// Home Page Swiper Js Banner Slider
+jQuery(document).ready(function ($) {
+  // Initialize Swiper banner
+  const bannerSwiper = new Swiper(".banner-swiper", {
+    // Direction
+    direction: "vertical",
+
+    // Loop mode
+    loop: true,
+
+    // Auto play
+    // autoplay: {
+    //   delay: 5000,
+    //   disableOnInteraction: false,
+    // },
+
+    // Speed of transition
+    speed: 1000,
+
+    // Effect
+    effect: "fade",
+    fadeEffect: {
+      crossFade: true,
+    },
+
+    // Pagination (vertical on left)
+    pagination: {
+      el: ".banner-pagination",
+      clickable: true,
+      type: "bullets",
+      dynamicBullets: false,
+    },
+
+    // Vertical pagination
+    direction: "horizontal",
+
+    // No navigation arrows
+    navigation: false,
+
+    // Touch interaction
+    grabCursor: true,
+
+    // Pause on hover
+    pauseOnMouseEnter: true,
+  });
+});
