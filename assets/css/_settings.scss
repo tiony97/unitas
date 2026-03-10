@@ -1,0 +1,26 @@
+/* COLOR VARIABLES */
+$background: #ffffff;
+$foreground-dark: #000000;
+$foreground-light: #343131;
+$accent-main: #ce2329;
+$accent-secondary: #ee484a;
+
+/* FONT VARIABLES */
+@font-face {
+  font-family: "headerFont";
+  src: url("../fonts/Jano Sans Pro Bold.otf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "bodyFont";
+  src: url("../fonts/Jano Sans Pro Regular.otf");
+  font-weight: 400;
+}
+
+/* LAYOUTS */
+// Centered Layout
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

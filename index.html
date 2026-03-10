@@ -6,15 +6,453 @@
     <link rel="stylesheet" href="./assets/css/all.min.css" />
     <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="shortcut icon" href="./assets/images/" type="image/x-icon" />
-    <title>Unitas</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon-dark.png"
+      type="image/x-icon"
+    />
+    <title>Unaitas</title>
   </head>
   <body>
+    <!--Top Bar -->
+    <div id="top-bar"></div>
+
     <!--Header-->
-    <header id="header"></header>
+    <header id="site-header">
+      <!-- Top Bar -->
+      <div class="top-bar">
+        <div class="container">
+          <div class="top-bar__wrapper">
+            <div class="top-bar__left">
+              <a href="tel:+254709253000" class="top-bar__contact">
+                <span class="top-bar__icon"
+                  ><img src="./assets/images/call-calling.png" alt="call"
+                /></span>
+                +254 709 253 000
+              </a>
+              <a
+                href="mailto:memberservice@unaitas.com"
+                class="top-bar__contact"
+              >
+                <span class="top-bar__icon"
+                  ><img src="./assets/images/messages-3.png" alt="call"
+                /></span>
+                memberservice@unaitas.com
+              </a>
+            </div>
+
+            <div class="top-bar__right">
+              <nav class="top-bar__nav">
+                <ul class="top-bar__menu">
+                  <li class="menu-item">
+                    <a href="/">Home</a>
+                  </li>
+                  <li class="menu-item menu-item-has-children">
+                    <a href="#">About Us</a>
+                    <ul class="sub-menu">
+                      <div class="menu-items">
+                        <li class="menu-item">
+                          <a href="#"
+                            ><span class="menu-icon-wrapper">
+                              <img
+                                src="./assets/images/tag-user.svg"
+                                alt=""
+                                class="menu-icon"
+                              /> </span
+                            >Who We Are</a
+                          >
+                        </li>
+                        <li class="menu-item">
+                          <a href="#"
+                            ><span class="menu-icon-wrapper">
+                              <img
+                                src="./assets/images/bank.svg"
+                                alt=""
+                                class="menu-icon"
+                              /> </span
+                            >Governance</a
+                          >
+                        </li>
+                      </div>
+                      <img
+                        src="./assets/images/menu-promo-image.png"
+                        alt="menu-promo-image"
+                        class="menu-promo"
+                      />
+                    </ul>
+                  </li>
+                  <li class="menu-item">
+                    <a href="#">Strategic Plan</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="#">Standards & Policies</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="#">Publications</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="#">CSI</a>
+                  </li>
+                </ul>
+              </nav>
+              <div class="top-bar__search">
+                <input type="text" placeholder="Search" />
+                <button type="submit">
+                  <img src="./assets/images/search.png" alt="search" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Header -->
+      <div class="main-header">
+        <div class="container">
+          <div class="main-header__wrapper">
+            <div class="main-header__logo">
+              <a href="/">
+                <img src="./assets/images/logo_dark.png" alt="unaitas-logo" />
+              </a>
+            </div>
+
+            <nav class="main-header__nav">
+              <ul class="main-header__menu">
+                <li class="menu-item menu-item-has-children">
+                  <a href="#">Membership</a>
+                  <div class="mega-menu">
+                    <div class="mega-menu__content">
+                      <!-- Main Menu Links Column -->
+                      <div class="mega-menu__links">
+                        <ul class="mega-menu__items">
+                          <li class="menu-item" data-submenu="submenu-become">
+                            <a href="#">
+                              <span class="menu-icon-wrapper">
+                                <img
+                                  src="./assets/images/bank.svg"
+                                  alt=""
+                                  class="menu-icon"
+                                />
+                              </span>
+                              Become a Member
+                            </a>
+                          </li>
+                          <li
+                            class="menu-item menu-item-has-children"
+                            data-submenu="submenu-options"
+                          >
+                            <a href="#">
+                              <span class="menu-icon-wrapper">
+                                <img
+                                  src="./assets/images/layers.svg"
+                                  alt=""
+                                  class="menu-icon"
+                                />
+                              </span>
+                              Membership Options
+                              <i class="fas fa-angle-right"></i>
+                            </a>
+                          </li>
+                          <li
+                            class="menu-item"
+                            data-submenu="submenu-investment"
+                          >
+                            <a href="#">
+                              <span class="menu-icon-wrapper">
+                                <img
+                                  src="./assets/images/diamond.svg"
+                                  alt=""
+                                  class="menu-icon"
+                                />
+                              </span>
+                              Investment Shares
+                            </a>
+                          </li>
+                          <li class="menu-item" data-submenu="submenu-accounts">
+                            <a href="#">
+                              <span class="menu-icon-wrapper">
+                                <img
+                                  src="./assets/images/file-text.svg"
+                                  alt=""
+                                  class="menu-icon"
+                                />
+                              </span>
+                              Accounts Open Upon Join
+                            </a>
+                          </li>
+                          <li class="menu-item" data-submenu="submenu-joint">
+                            <a href="#">
+                              <span class="menu-icon-wrapper">
+                                <img
+                                  src="./assets/images/users.svg"
+                                  alt=""
+                                  class="menu-icon"
+                                />
+                              </span>
+                              Joint Membership
+                            </a>
+                          </li>
+                          <li class="menu-item" data-submenu="submenu-group">
+                            <a href="#">
+                              <span class="menu-icon-wrapper">
+                                <img
+                                  src="./assets/images/users-three.svg"
+                                  alt=""
+                                  class="menu-icon"
+                                />
+                              </span>
+                              Group Membership
+                            </a>
+                          </li>
+                          <li
+                            class="menu-item"
+                            data-submenu="submenu-corporate"
+                          >
+                            <a href="#">
+                              <span class="menu-icon-wrapper">
+                                <img
+                                  src="./assets/images/building.svg"
+                                  alt=""
+                                  class="menu-icon"
+                                />
+                              </span>
+                              Corporate Membership
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <!-- Dynamic Submenu Column (Shows on hover) -->
+                      <div class="mega-menu__submenus">
+                        <div class="submenu-container" id="submenu-become">
+                          <div class="submenu-content">
+                            <!-- Empty or default content for items without children -->
+                          </div>
+                        </div>
+                        <div class="submenu-container" id="submenu-options">
+                          <ul class="submenu-items">
+                            <li class="menu-item"><a href="#">Basic</a></li>
+                            <li class="menu-item"><a href="#">Premium</a></li>
+                            <li class="menu-item"><a href="#">Business</a></li>
+                          </ul>
+                        </div>
+                        <div class="submenu-container" id="submenu-investment">
+                          <div class="submenu-content">
+                            <!-- Empty or default content -->
+                          </div>
+                        </div>
+                        <div class="submenu-container" id="submenu-accounts">
+                          <div class="submenu-content">
+                            <!-- Empty or default content -->
+                          </div>
+                        </div>
+                        <div class="submenu-container" id="submenu-joint">
+                          <div class="submenu-content">
+                            <!-- Empty or default content -->
+                          </div>
+                        </div>
+                        <div class="submenu-container" id="submenu-group">
+                          <div class="submenu-content">
+                            <!-- Empty or default content -->
+                          </div>
+                        </div>
+                        <div class="submenu-container" id="submenu-corporate">
+                          <div class="submenu-content">
+                            <!-- Empty or default content -->
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Promo Image Column -->
+                      <div class="mega-menu__promo">
+                        <img
+                          src="./assets/images/menu-promo-image.png"
+                          alt="Promo"
+                          class="promo-image"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="menu-item menu-item-has-children">
+                  <a href="#">Individuals</a>
+                  <div class="mega-menu">
+                    <div class="mega-menu__content">
+                      <!-- Main Menu Links Column -->
+                      <div class="mega-menu__links">
+                        <ul class="mega-menu__items">
+                          <li class="menu-item" data-submenu="submenu-savings">
+                            <a href="#">
+                              <span class="menu-icon-wrapper">
+                                <img
+                                  src="./assets/images/piggy-bank.svg"
+                                  alt=""
+                                  class="menu-icon"
+                                />
+                              </span>
+                              Savings Accounts
+                            </a>
+                          </li>
+                          <li class="menu-item" data-submenu="submenu-current">
+                            <a href="#">
+                              <span class="menu-icon-wrapper">
+                                <img
+                                  src="./assets/images/credit-card.svg"
+                                  alt=""
+                                  class="menu-icon"
+                                />
+                              </span>
+                              Current Accounts
+                            </a>
+                          </li>
+                          <li
+                            class="menu-item menu-item-has-children"
+                            data-submenu="submenu-loans"
+                          >
+                            <a href="#">
+                              <span class="menu-icon-wrapper">
+                                <img
+                                  src="./assets/images/coins.svg"
+                                  alt=""
+                                  class="menu-icon"
+                                />
+                              </span>
+                              Loans
+                              <i class="fas fa-angle-right"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <!-- Dynamic Submenu Column -->
+                      <div class="mega-menu__submenus">
+                        <div class="submenu-container" id="submenu-savings">
+                          <div class="submenu-content">
+                            <!-- Empty or default content -->
+                          </div>
+                        </div>
+                        <div class="submenu-container" id="submenu-current">
+                          <div class="submenu-content">
+                            <!-- Empty or default content -->
+                          </div>
+                        </div>
+                        <div class="submenu-container" id="submenu-loans">
+                          <ul class="submenu-items">
+                            <li class="menu-item">
+                              <a href="#">Personal Loans</a>
+                            </li>
+                            <li class="menu-item">
+                              <a href="#">Mortgage Loans</a>
+                            </li>
+                            <li class="menu-item">
+                              <a href="#">Education Loans</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <!-- Promo Image Column -->
+                      <div class="mega-menu__promo">
+                        <img
+                          src="./assets/images/menu-promo-image.png"
+                          alt="Promo"
+                          class="promo-image"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="menu-item"><a href="#">Businesses</a></li>
+
+                <li class="menu-item menu-item-has-children">
+                  <a href="#">Groups & Chamas</a>
+                  <div class="mega-menu">
+                    <div class="mega-menu__content">
+                      <!-- Main Menu Links Column -->
+                      <div class="mega-menu__links">
+                        <ul class="mega-menu__items">
+                          <li
+                            class="menu-item"
+                            data-submenu="submenu-group-accounts"
+                          >
+                            <a href="#">
+                              <span class="menu-icon-wrapper">
+                                <img
+                                  src="./assets/images/users-four.svg"
+                                  alt=""
+                                  class="menu-icon"
+                                />
+                              </span>
+                              Group Accounts
+                            </a>
+                          </li>
+                          <li
+                            class="menu-item"
+                            data-submenu="submenu-chama-loans"
+                          >
+                            <a href="#">
+                              <span class="menu-icon-wrapper">
+                                <img
+                                  src="./assets/images/hand-coins.svg"
+                                  alt=""
+                                  class="menu-icon"
+                                />
+                              </span>
+                              Chama Loans
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <!-- Dynamic Submenu Column -->
+                      <div class="mega-menu__submenus">
+                        <div
+                          class="submenu-container"
+                          id="submenu-group-accounts"
+                        >
+                          <div class="submenu-content">
+                            <!-- Empty or default content -->
+                          </div>
+                        </div>
+                        <div class="submenu-container" id="submenu-chama-loans">
+                          <div class="submenu-content">
+                            <!-- Empty or default content -->
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Promo Image Column -->
+                      <div class="mega-menu__promo">
+                        <img
+                          src="./assets/images/menu-promo-image.png"
+                          alt="Promo"
+                          class="promo-image"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="menu-item"><a href="#">Corporates</a></li>
+                <li class="menu-item"><a href="#">Diaspora Members</a></li>
+                <li class="menu-item"><a href="#">Ways to Bank</a></li>
+              </ul>
+            </nav>
+
+            <div class="main-header__actions">
+              <a href="#" class="btn btn--login">Log In</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
 
     <!--Page Content-->
-    <main></main>
+    <main>
+      <h1>Home Page</h1>
+    </main>
 
     <!--Footer-->
     <footer id="footer"></footer>
