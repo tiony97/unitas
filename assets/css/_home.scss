@@ -118,9 +118,139 @@
   }
 }
 
+#reasons-section {
+  position: relative;
+  padding: 4em 0;
+
+  .reasons-vector {
+    position: absolute;
+    top: -4em;
+    right: 0;
+    width: 200px;
+    height: auto;
+    object-fit: cover;
+    z-index: 2;
+  }
+
+  .reasons-intro {
+    text-align: center;
+    margin-bottom: 50px;
+
+    h2 {
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 18px;
+    }
+  }
+
+  /* Tabs */
+  .tab-links {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    background: #f4f4f4;
+    padding: 8px;
+    border-radius: 40px;
+    width: fit-content;
+    margin: 0 auto 50px;
+
+    li {
+      list-style: none;
+      padding: 10px 22px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.3s ease-in-out;
+
+      &.active,
+      &:hover {
+        background: $accent-main;
+        color: #fff;
+      }
+    }
+  }
+
+  /* Cards */
+  .cards {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin: 0 auto;
+  }
+
+  .reason-card {
+    background: white;
+    border-radius: 28px;
+    overflow: hidden;
+    border: 1px solid #00000068;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .card-text {
+      padding: 30px;
+      padding-top: 20px;
+      h3 {
+        font-family: bodyFont !important;
+        font-size: 22px;
+        line-height: 30px;
+        font-weight: 900 !important;
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 20px;
+      }
+    }
+
+    .card-img {
+      width: 100%;
+      img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        display: block;
+      }
+    }
+  }
+
+  /* Button */
+
+  .reasons-btn {
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .site-btn-lg {
+    background: $accent-main;
+    color: white;
+    padding: 16px 40px;
+    border-radius: 40px;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 600;
+  }
+
+  /* Tab Content */
+
+  .tab {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+}
+
 /* Belong Section */
 #belong {
   padding-bottom: 6em;
+  background: #fff7f7;
   .content-wrapper {
     height: fit-content;
     min-height: 300px;

@@ -177,3 +177,15 @@ jQuery(document).ready(function ($) {
     pauseOnMouseEnter: true,
   });
 });
+
+$(document).ready(function () {
+  $(".tab-links li").click(function () {
+    var tabID = $(this).data("tab");
+
+    $(".tab-links li").removeClass("active");
+    $(this).addClass("active");
+
+    $(".tab").removeClass("active");
+    $("#" + tabID).addClass("active");
+  });
+});

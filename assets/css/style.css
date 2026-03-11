@@ -98,7 +98,7 @@ label {
 }
 
 /* COMMON STYLES AND CLASSSES */
-.site-btn-lg, .site-btn-lg-light {
+.site-btn-lg, .site-btn-lg-accent, .site-btn-lg-light {
   width: -moz-fit-content;
   width: fit-content;
   height: -moz-fit-content;
@@ -114,7 +114,7 @@ label {
   border-radius: 30px;
   transition: all 0.3s ease-in-out;
 }
-.site-btn-lg:hover, .site-btn-lg-light:hover {
+.site-btn-lg:hover, .site-btn-lg-accent:hover, .site-btn-lg-light:hover {
   background: transparent;
   color: #ce2329;
   scale: 0.9;
@@ -127,6 +127,16 @@ label {
 .site-btn-lg-light:hover {
   background: #ffffff;
   border-color: #ffffff;
+}
+
+.site-btn-lg-accent {
+  background: transparent !important;
+  color: #ce2329 !important;
+  border-color: #ce2329 !important;
+}
+.site-btn-lg-accent:hover {
+  background: #ce2329 !important;
+  color: #ffffff !important;
 }
 
 header .top-bar {
@@ -901,9 +911,132 @@ footer#site-footer .contact-section .social-info a:hover {
   animation: fadeInUp 1s ease forwards;
 }
 
+#reasons-section {
+  position: relative;
+  padding: 4em 0;
+}
+#reasons-section .reasons-vector {
+  position: absolute;
+  top: -4em;
+  right: 0;
+  width: 200px;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 2;
+}
+#reasons-section .reasons-intro {
+  text-align: center;
+  margin-bottom: 50px;
+}
+#reasons-section .reasons-intro h2 {
+  margin-bottom: 10px;
+}
+#reasons-section .reasons-intro p {
+  font-size: 18px;
+}
+#reasons-section {
+  /* Tabs */
+}
+#reasons-section .tab-links {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  background: #f4f4f4;
+  padding: 8px;
+  border-radius: 40px;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto 50px;
+}
+#reasons-section .tab-links li {
+  list-style: none;
+  padding: 10px 22px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+}
+#reasons-section .tab-links li.active, #reasons-section .tab-links li:hover {
+  background: #ce2329;
+  color: #fff;
+}
+#reasons-section {
+  /* Cards */
+}
+#reasons-section .cards {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin: 0 auto;
+}
+#reasons-section .reason-card {
+  background: white;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.4078431373);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#reasons-section .reason-card .card-text {
+  padding: 30px;
+  padding-top: 20px;
+}
+#reasons-section .reason-card .card-text h3 {
+  font-family: bodyFont !important;
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 900 !important;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+#reasons-section .reason-card .card-text p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+#reasons-section .reason-card .card-img {
+  width: 100%;
+}
+#reasons-section .reason-card .card-img img {
+  width: 100%;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+#reasons-section {
+  /* Button */
+}
+#reasons-section .reasons-btn {
+  text-align: center;
+  margin-top: 50px;
+}
+#reasons-section .site-btn-lg, #reasons-section .site-btn-lg-light, #reasons-section .site-btn-lg-accent {
+  background: #ce2329;
+  color: white;
+  padding: 16px 40px;
+  border-radius: 40px;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 600;
+}
+#reasons-section {
+  /* Tab Content */
+}
+#reasons-section .tab {
+  display: none;
+}
+#reasons-section .tab.active {
+  display: block;
+}
+
 /* Belong Section */
 #belong {
   padding-bottom: 6em;
+  background: #fff7f7;
 }
 #belong .content-wrapper {
   height: -moz-fit-content;

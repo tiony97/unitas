@@ -118,6 +118,16 @@ label {
     border-color: $background;
   }
 }
+.site-btn-lg-accent {
+  @extend .site-btn-lg;
+  background: transparent !important;
+  color: $accent-main !important;
+  border-color: $accent-main !important;
+  &:hover {
+    background: $accent-main !important;
+    color: $background !important;
+  }
+}
 
 header {
   // Top Bar
