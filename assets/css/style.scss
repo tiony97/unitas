@@ -14,6 +14,11 @@ body {
   scroll-snap-type: mandatory;
   font-family: bodyFont;
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 ::-webkit-scrollbar {
   width: 5px;
   background: transparent;
@@ -42,15 +47,15 @@ h1 {
 
 // Secondary Title
 h2 {
-  font-size: 55px;
-  line-height: 60px;
+  font-size: 58px;
+  line-height: 65px;
   font-weight: 700;
 }
 
 // Tertiary Title
 h3 {
-  font-size: 32px;
-  line-height: 40px;
+  font-size: 42px;
+  line-height: 48px;
   font-weight: 700;
 }
 
@@ -62,8 +67,8 @@ h4 {
 
 // Subtitle Font
 h5 {
-  font-size: 18px;
-  line-height: 72px;
+  font-size: 20px;
+  line-height: 24px;
   font-weight: 700;
 }
 
@@ -78,7 +83,7 @@ select,
 textarea,
 label {
   color: $foreground-light;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 24px;
   font-weight: 300;
   font-family: bodyFont;
@@ -91,6 +96,7 @@ label {
 
 /* COMMON STYLES AND CLASSSES */
 .site-btn-lg {
+  position: relative;
   width: fit-content;
   height: fit-content;
   background: $accent-main;
@@ -111,11 +117,13 @@ label {
 }
 .site-btn-lg-light {
   @extend .site-btn-lg;
-  background: transparent;
-  color: $accent-main;
+  background: $background !important;
+  color: $accent-main !important;
+  border-color: $background !important;
   &:hover {
-    background: $background;
-    border-color: $background;
+    background: transparent !important;
+    border-color: $background !important;
+    color: $background !important;
   }
 }
 .site-btn-lg-accent {
