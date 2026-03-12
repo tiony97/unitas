@@ -189,3 +189,64 @@ $(document).ready(function () {
     $("#" + tabID).addClass("active");
   });
 });
+
+//Home Page Testimonials Slider
+jQuery(document).ready(function ($) {
+  // Initialize Testimonial Swiper
+  const testimonialSwiper = new Swiper(".testimonial-swiper", {
+    // Slides configuration
+    //centeredSlides: true,
+    slidesPerView: "auto",
+    spaceBetween: 30,
+    loop: true,
+
+    // Auto scroll
+    autoplay: {
+      delay: 1000,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+    },
+
+    // Speed
+    speed: 1000,
+
+    // Cursor control
+    grabCursor: true,
+
+    // No navigation or pagination
+    navigation: false,
+    pagination: false,
+
+    // Allow touch move
+    simulateTouch: true,
+    touchRatio: 1,
+    touchAngle: 45,
+
+    // Free mode for smooth scrolling
+    //freeMode: true,
+    //freeModeMomentum: true,
+    //freeModeMomentumRatio: 1,
+
+    // Breakpoints for responsive
+    breakpoints: {
+      320: {
+        slidesPerView: "auto",
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: "auto",
+        spaceBetween: 30,
+      },
+    },
+  });
+
+  // Optional: Pause autoplay on hover
+  $(".testimonial-swiper").hover(
+    function () {
+      testimonialSwiper.autoplay.stop();
+    },
+    function () {
+      testimonialSwiper.autoplay.start();
+    },
+  );
+});

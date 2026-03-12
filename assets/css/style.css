@@ -91,7 +91,7 @@ select,
 textarea,
 label {
   color: #343131;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 24px;
   font-weight: 300;
   font-family: bodyFont;
@@ -415,7 +415,7 @@ header .main-header__nav .main-header__menu > .menu-item > a {
   text-decoration: none;
   font-weight: 500;
   padding: 10px 0;
-  font-size: 14px;
+  font-size: 15px;
   position: relative;
   z-index: 2;
 }
@@ -1310,6 +1310,248 @@ footer#site-footer .contact-section .social-info a:hover {
   z-index: 0;
 }
 
+/* Care Figures Section*/
+#figures {
+  background: #fff7f7;
+  padding: 6em 0;
+}
+#figures .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+}
+#figures .container .intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1em;
+  margin-bottom: 2em;
+}
+#figures .container .intro h2 {
+  text-align: center;
+}
+#figures .container .intro p {
+  width: 40%;
+  text-align: center;
+}
+#figures .container .polygon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  position: relative;
+}
+#figures .container .polygon-grid .polygon-card {
+  position: relative;
+  padding: 1em;
+  overflow: hidden;
+}
+#figures .container .polygon-grid .polygon-card .card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+#figures .container .polygon-grid .polygon-card .card-bg .card-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+  -o-object-position: center;
+     object-position: center;
+  transition: opacity 0.3s ease;
+}
+#figures .container .polygon-grid .polygon-card .card-bg .card-bg-light {
+  opacity: 1;
+}
+#figures .container .polygon-grid .polygon-card .card-bg .card-bg-accent {
+  opacity: 0;
+}
+#figures .container .polygon-grid .polygon-card:hover .card-bg .card-bg-light {
+  opacity: 0;
+}
+#figures .container .polygon-grid .polygon-card:hover .card-bg .card-bg-accent {
+  opacity: 1;
+}
+#figures .container .polygon-grid .polygon-card:hover .card-percentage,
+#figures .container .polygon-grid .polygon-card:hover .card-title,
+#figures .container .polygon-grid .polygon-card:hover .card-text {
+  color: #ffffff !important;
+}
+#figures .container .polygon-grid .polygon-card .card-content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+}
+#figures .container .polygon-grid .polygon-card .card-content .icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  margin-bottom: 1em;
+}
+#figures .container .polygon-grid .polygon-card .card-content .icon img {
+  width: 25px;
+  height: 25px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+#figures .container .polygon-grid .polygon-card .card-content .card-percentage {
+  align-self: center;
+  font-size: 68px;
+  font-weight: 800 !important;
+  color: #000000;
+  margin-bottom: 5px;
+  line-height: 1;
+  transition: color 0.3s ease;
+}
+#figures .container .polygon-grid .polygon-card .card-content .card-title {
+  align-self: center;
+  font-family: bodyFont;
+  font-size: 22px;
+  font-weight: 800 !important;
+  color: #000000;
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+}
+#figures .container .polygon-grid .polygon-card .card-content .card-text {
+  align-self: flex-end;
+  text-align: left;
+  width: 60%;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #343131;
+  margin: 0;
+  margin-bottom: 1em;
+  transition: color 0.3s ease;
+}
+
+/* Testimonials Section */
+#testimonials {
+  padding: 6em 0;
+  background: #ffffff;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+#testimonials .test-vect {
+  position: absolute;
+  top: 0em;
+  left: 0;
+  width: 200px;
+  height: auto;
+  z-index: 0;
+}
+#testimonials .intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1em;
+  margin-bottom: 2em;
+}
+#testimonials .intro * {
+  z-index: 2 !important;
+}
+#testimonials .intro h2 {
+  text-align: center;
+}
+#testimonials .intro p {
+  width: 40%;
+  text-align: center;
+}
+#testimonials .testimonial-swiper {
+  margin-top: 4em;
+  margin-bottom: 5em;
+}
+#testimonials .testimonial-swiper * {
+  z-index: 2 !important;
+}
+#testimonials .testimonial-swiper .swiper-wrapper {
+  transition-timing-function: linear;
+}
+#testimonials .testimonial-swiper .swiper-slide {
+  width: 450px;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-right: 30px;
+  transition: all 0.3s ease;
+}
+#testimonials .testimonial-swiper .swiper-slide .testimonial-card {
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  gap: 1em;
+  background: transparent;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+#testimonials .testimonial-swiper .swiper-slide .testimonial-card:hover .testimonial-content {
+  background: #ce2329;
+}
+#testimonials .testimonial-swiper .swiper-slide .testimonial-card:hover .testimonial-quote,
+#testimonials .testimonial-swiper .swiper-slide .testimonial-card:hover .author-name,
+#testimonials .testimonial-swiper .swiper-slide .testimonial-card:hover .author-since {
+  color: #ffffff !important;
+}
+#testimonials .testimonial-swiper .swiper-slide .testimonial-card .testimonial-image {
+  width: 200px;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+#testimonials .testimonial-swiper .swiper-slide .testimonial-card .testimonial-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+#testimonials .testimonial-swiper .swiper-slide .testimonial-card .testimonial-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-height: 310px;
+  padding: 25px;
+  border-radius: 20px;
+  background: #e6e6e6;
+  transition: all 0.3s ease-in-out;
+}
+#testimonials .testimonial-swiper .swiper-slide .testimonial-card .testimonial-content .testimonial-quote {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #000000;
+  font-weight: 600 !important;
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+}
+#testimonials .testimonial-swiper .swiper-slide .testimonial-card .testimonial-content .testimonial-author .author-name {
+  font-size: 15px;
+  line-height: 22px;
+  font-family: bodyFont !important;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 2px;
+  transition: color 0.3s ease;
+}
+#testimonials .testimonial-swiper .swiper-slide .testimonial-card .testimonial-content .testimonial-author .author-since {
+  font-size: 13.5px;
+  color: #343131;
+  transition: color 0.3s ease;
+}
+
 /* CTA Section */
 #cta {
   padding: 6em 0;
@@ -1349,4 +1591,29 @@ footer#site-footer .contact-section .social-info a:hover {
   margin: 1em 0;
   text-align: center;
   width: 50%;
+}
+
+@media (max-width: 768px) {
+  .testimonial-section .testimonial-intro {
+    margin-left: 5%;
+  }
+  .testimonial-section .testimonial-intro .intro-title {
+    font-size: 32px;
+  }
+  .testimonial-section .testimonial-swiper {
+    margin-left: 5%;
+  }
+  .testimonial-section .testimonial-swiper .swiper-slide {
+    width: 350px;
+  }
+  .testimonial-section .testimonial-swiper .swiper-slide .testimonial-card {
+    flex-direction: column;
+  }
+  .testimonial-section .testimonial-swiper .swiper-slide .testimonial-card .testimonial-image {
+    width: 100%;
+    height: 200px;
+  }
+  .testimonial-section .testimonial-footer {
+    margin-left: 5%;
+  }
 }/*# sourceMappingURL=style.css.map */
