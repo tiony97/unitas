@@ -8,13 +8,18 @@ $accent-secondary: #ee484a;
 /* FONT VARIABLES */
 @font-face {
   font-family: "headerFont";
-  src: url("../fonts/BinaryITCStd-Light.otf");
+  src: url("../fonts/BinaryITCStd-Bold.otf");
   font-weight: 900 !important;
 }
 @font-face {
   font-family: "bodyFont";
-  src: url("../fonts/Jano Sans Pro Regular.otf");
+  src: url("../fonts/JANO/fonnts.com-Jano-Sans-Pro-Regular.otf");
   font-weight: 400;
+}
+@font-face {
+  font-family: "bodyFontBold";
+  src: url("../fonts/JANO/fonnts.com-Jano-Sans-Pro-Bold.otf");
+  font-weight: 800;
 }
 
 /* LAYOUTS */
@@ -23,4 +28,11 @@ $accent-secondary: #ee484a;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+//Column Layout
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }

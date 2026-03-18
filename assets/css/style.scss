@@ -36,6 +36,9 @@ h5,
 h6 {
   color: $foreground-dark;
   font-family: headerFont;
+  span {
+    color: $accent-main !important;
+  }
 }
 
 // Main Title

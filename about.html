@@ -1,0 +1,939 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon-dark.png"
+      type="image/x-icon"
+    />
+    <title>Unaitas</title>
+  </head>
+  <body>
+    <!--Header-->
+    <header id="site-header">
+      <!-- Top Bar -->
+      <div class="top-bar">
+        <div class="container">
+          <div class="top-bar__wrapper">
+            <div class="top-bar__left">
+              <a href="tel:+254709253000" class="top-bar__contact">
+                <span class="top-bar__icon"
+                  ><img src="./assets/images/call-calling.png" alt="call"
+                /></span>
+                +254 709 253 000
+              </a>
+              <a
+                href="mailto:memberservice@unaitas.com"
+                class="top-bar__contact"
+              >
+                <span class="top-bar__icon"
+                  ><img src="./assets/images/messages-3.png" alt="call"
+                /></span>
+                memberservice@unaitas.com
+              </a>
+            </div>
+
+            <div class="top-bar__right">
+              <nav class="top-bar__nav">
+                <ul class="top-bar__menu">
+                  <li class="menu-item">
+                    <a href="/">Home</a>
+                  </li>
+                  <li class="menu-item menu-item-has-children">
+                    <a href="#">About Us</a>
+                    <ul class="sub-menu">
+                      <div class="menu-items">
+                        <li class="menu-item">
+                          <a href="#"
+                            ><span class="menu-icon-wrapper">
+                              <img
+                                src="./assets/images/tag-user.svg"
+                                alt=""
+                                class="menu-icon"
+                              /> </span
+                            >Who We Are</a
+                          >
+                        </li>
+                        <li class="menu-item">
+                          <a href="#"
+                            ><span class="menu-icon-wrapper">
+                              <img
+                                src="./assets/images/bank.svg"
+                                alt=""
+                                class="menu-icon"
+                              /> </span
+                            >Governance</a
+                          >
+                        </li>
+                      </div>
+                      <img
+                        src="./assets/images/menu-promo-image.png"
+                        alt="menu-promo-image"
+                        class="menu-promo"
+                      />
+                    </ul>
+                  </li>
+                  <li class="menu-item">
+                    <a href="#">Strategic Plan</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="#">Standards & Policies</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="#">Publications</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="#">CSI</a>
+                  </li>
+                </ul>
+              </nav>
+              <div class="top-bar__search">
+                <input type="text" placeholder="Search" />
+                <button type="submit">
+                  <img src="./assets/images/search.png" alt="search" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Header -->
+      <div class="main-header">
+        <div class="container">
+          <div class="main-header__wrapper">
+            <div class="main-header__logo">
+              <a href="/">
+                <img src="./assets/images/logo_dark.png" alt="unaitas-logo" />
+              </a>
+            </div>
+
+            <nav class="main-header__nav">
+              <ul class="main-header__menu">
+                <li class="menu-item menu-item-has-children">
+                  <a href="#">Membership</a>
+                  <div class="mega-menu">
+                    <div class="mega-menu__content">
+                      <!-- Main Menu Links Column -->
+                      <div class="mega-menu__links">
+                        <ul class="mega-menu__items">
+                          <li class="menu-item" data-submenu="submenu-become">
+                            <a href="#">
+                              <span class="menu-icon-wrapper">
+                                <img
+                                  src="./assets/images/user-edit.svg"
+                                  alt=""
+                                  class="menu-icon"
+                                />
+                              </span>
+                              Become a Member
+                            </a>
+                          </li>
+                          <li
+                            class="menu-item menu-item-has-children"
+                            data-submenu="submenu-options"
+                          >
+                            <a href="#">
+                              <span class="menu-icon-wrapper">
+                                <img
+                                  src="./assets/images/user-square.svg"
+                                  alt=""
+                                  class="menu-icon"
+                                />
+                              </span>
+                              Membership Options
+                              <i class="fas fa-angle-right"></i>
+                            </a>
+                          </li>
+                          <li
+                            class="menu-item"
+                            data-submenu="submenu-investment"
+                          >
+                            <a href="#">
+                              <span class="menu-icon-wrapper">
+                                <img
+                                  src="./assets/images/profile-2user.svg"
+                                  alt=""
+                                  class="menu-icon"
+                                />
+                              </span>
+                              Investment Shares
+                            </a>
+                          </li>
+                          <li class="menu-item" data-submenu="submenu-accounts">
+                            <a href="#">
+                              <span class="menu-icon-wrapper">
+                                <img
+                                  src="./assets/images/wallet-add.svg"
+                                  alt=""
+                                  class="menu-icon"
+                                />
+                              </span>
+                              Accounts Open Upon Join
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <!-- Dynamic Submenu Column (Shows on hover) -->
+                      <div class="mega-menu__submenus">
+                        <div class="submenu-container" id="submenu-become">
+                          <div class="submenu-content">
+                            <!-- Empty or default content for items without children -->
+                          </div>
+                        </div>
+                        <div class="submenu-container" id="submenu-options">
+                          <ul class="submenu-items">
+                            <li class="menu-item"><a href="#">Basic</a></li>
+                            <li class="menu-item"><a href="#">Premium</a></li>
+                            <li class="menu-item"><a href="#">Business</a></li>
+                          </ul>
+                        </div>
+                        <div class="submenu-container" id="submenu-investment">
+                          <div class="submenu-content">
+                            <!-- Empty or default content -->
+                          </div>
+                        </div>
+                        <div class="submenu-container" id="submenu-accounts">
+                          <div class="submenu-content">
+                            <!-- Empty or default content -->
+                          </div>
+                        </div>
+                        <div class="submenu-container" id="submenu-joint">
+                          <div class="submenu-content">
+                            <!-- Empty or default content -->
+                          </div>
+                        </div>
+                        <div class="submenu-container" id="submenu-group">
+                          <div class="submenu-content">
+                            <!-- Empty or default content -->
+                          </div>
+                        </div>
+                        <div class="submenu-container" id="submenu-corporate">
+                          <div class="submenu-content">
+                            <!-- Empty or default content -->
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Promo Image Column -->
+                      <div class="mega-menu__promo">
+                        <img
+                          src="./assets/images/menu-promo-image.png"
+                          alt="Promo"
+                          class="promo-image"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="menu-item menu-item-has-children">
+                  <a href="#">Individuals</a>
+                  <div class="mega-menu">
+                    <div class="mega-menu__content">
+                      <!-- Main Menu Links Column -->
+                      <div class="mega-menu__links">
+                        <ul class="mega-menu__items">
+                          <li class="menu-item" data-submenu="submenu-savings">
+                            <a href="#">
+                              <span class="menu-icon-wrapper">
+                                <img
+                                  src="./assets/images/piggy-bank.svg"
+                                  alt=""
+                                  class="menu-icon"
+                                />
+                              </span>
+                              Savings Accounts
+                            </a>
+                          </li>
+                          <li class="menu-item" data-submenu="submenu-current">
+                            <a href="#">
+                              <span class="menu-icon-wrapper">
+                                <img
+                                  src="./assets/images/credit-card.svg"
+                                  alt=""
+                                  class="menu-icon"
+                                />
+                              </span>
+                              Current Accounts
+                            </a>
+                          </li>
+                          <li
+                            class="menu-item menu-item-has-children"
+                            data-submenu="submenu-loans"
+                          >
+                            <a href="#">
+                              <span class="menu-icon-wrapper">
+                                <img
+                                  src="./assets/images/coins.svg"
+                                  alt=""
+                                  class="menu-icon"
+                                />
+                              </span>
+                              Loans
+                              <i class="fas fa-angle-right"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <!-- Dynamic Submenu Column -->
+                      <div class="mega-menu__submenus">
+                        <div class="submenu-container" id="submenu-savings">
+                          <div class="submenu-content">
+                            <!-- Empty or default content -->
+                          </div>
+                        </div>
+                        <div class="submenu-container" id="submenu-current">
+                          <div class="submenu-content">
+                            <!-- Empty or default content -->
+                          </div>
+                        </div>
+                        <div class="submenu-container" id="submenu-loans">
+                          <ul class="submenu-items">
+                            <li class="menu-item">
+                              <a href="#">Personal Loans</a>
+                            </li>
+                            <li class="menu-item">
+                              <a href="#">Mortgage Loans</a>
+                            </li>
+                            <li class="menu-item">
+                              <a href="#">Education Loans</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <!-- Promo Image Column -->
+                      <div class="mega-menu__promo">
+                        <img
+                          src="./assets/images/menu-promo-image.png"
+                          alt="Promo"
+                          class="promo-image"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="menu-item"><a href="#">Businesses</a></li>
+
+                <li class="menu-item menu-item-has-children">
+                  <a href="#">Groups & Chamas</a>
+                  <div class="mega-menu">
+                    <div class="mega-menu__content">
+                      <!-- Main Menu Links Column -->
+                      <div class="mega-menu__links">
+                        <ul class="mega-menu__items">
+                          <li
+                            class="menu-item"
+                            data-submenu="submenu-group-accounts"
+                          >
+                            <a href="#">
+                              <span class="menu-icon-wrapper">
+                                <img
+                                  src="./assets/images/users-four.svg"
+                                  alt=""
+                                  class="menu-icon"
+                                />
+                              </span>
+                              Group Accounts
+                            </a>
+                          </li>
+                          <li
+                            class="menu-item"
+                            data-submenu="submenu-chama-loans"
+                          >
+                            <a href="#">
+                              <span class="menu-icon-wrapper">
+                                <img
+                                  src="./assets/images/hand-coins.svg"
+                                  alt=""
+                                  class="menu-icon"
+                                />
+                              </span>
+                              Chama Loans
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <!-- Dynamic Submenu Column -->
+                      <div class="mega-menu__submenus">
+                        <div
+                          class="submenu-container"
+                          id="submenu-group-accounts"
+                        >
+                          <div class="submenu-content">
+                            <!-- Empty or default content -->
+                          </div>
+                        </div>
+                        <div class="submenu-container" id="submenu-chama-loans">
+                          <div class="submenu-content">
+                            <!-- Empty or default content -->
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Promo Image Column -->
+                      <div class="mega-menu__promo">
+                        <img
+                          src="./assets/images/menu-promo-image.png"
+                          alt="Promo"
+                          class="promo-image"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="menu-item"><a href="#">Corporates</a></li>
+                <li class="menu-item"><a href="#">Diaspora Members</a></li>
+                <li class="menu-item"><a href="#">Ways to Bank</a></li>
+              </ul>
+            </nav>
+
+            <div class="main-header__actions">
+              <a href="#" class="btn btn--login">Log In</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!--Page Content-->
+    <main>
+      <!--About Banner-->
+      <section id="about-banner">
+        <img
+          src="./assets/images/about-landing-vector.png"
+          alt="landing vector image"
+          class="landing-vector"
+        />
+        <div class="container">
+          <div class="content-wrapper">
+            <h2>
+              A community <br />with <span>Over 30+</span><br />
+              Years of History
+            </h2>
+            <p>
+              Built on trust, stewardship, and community impact, we exist to
+              support sustainable growthand long-term financial well-being for
+              our members.
+            </p>
+          </div>
+          <div class="image-wrapper">
+            <img
+              src="./assets/images/about-landing-image.png"
+              alt="about landing image"
+              class="main-mage"
+            />
+            <img
+              src="./assets/images/fixed-savings.png"
+              alt="fixed savings image"
+              class="savings-image"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!--About Section Links-->
+      <section id="section-links">
+        <div class="container">
+          <div class="links">
+            <a href="#legacy" class="active">Who we are</a>
+            <a href="#history">Our history</a>
+            <a href="#drive">What drives us</a>
+            <a href="#difference">what makes us different</a>
+            <a href="#awards">Awards and recognition</a>
+            <a href="#policies">Standards and policies</a>
+          </div>
+
+          <!--Breadcrumbs-->
+          <div class="breadcrumbs">
+            <img src="./assets/images/cottage.png" alt="breadcrumb image" />
+            <p>/</p>
+            <p>About Us</p>
+            <p>/</p>
+            <p>Our Legacy</p>
+          </div>
+        </div>
+      </section>
+
+      <!--Legacy-->
+      <section id="legacy">
+        <div class="container">
+          <div class="content-wrapper">
+            <h2>A Legacy of Transformation</h2>
+            <p>
+              Unaitas was established in 1993 by a visionary group of tea
+              farmers who believed in creating financial solutions that serve
+              people with shared goals and ambitions. Since then, we have grown
+              into one of Africa’s largest Saccos, serving individuals,
+              businesses, groups and institutions across Kenya.
+            </p>
+            <p>
+              We support members from all walks of life, whether you are saving,
+              investing, running a business or managing an institution. Our
+              focus is to provide the financial tools and trusted guidance you
+              need to grow, achieve stability and pursue long-term success.
+            </p>
+            <p>
+              At Unaitas, we are bringing dreams to life, one member, one
+              solution, one step at a time.
+            </p>
+          </div>
+          <div class="image-wrapper">
+            <img src="./assets/images/legacy-image.png" alt="legacy image" />
+          </div>
+        </div>
+      </section>
+
+      <!--Statements-->
+      <section id="statements">
+        <div class="container">
+          <div class="vision">
+            <h2>Our Vision</h2>
+            <p>To be the preferred financial solutions provider</p>
+          </div>
+          <div class="mission">
+            <h2>Our Mission</h2>
+            <p>
+              Transforming lives through innovative & sustainable socio-economic
+              solutions
+            </p>
+          </div>
+          <div class="values">
+            <div class="accordion">
+              <h2>Our Core Values</h2>
+              <div class="accordion-item">
+                <h5>Boldness</h5>
+                <p>
+                  We build smarter financial solutions that make managing your
+                  money easier and faster.
+                </p>
+              </div>
+              <div class="accordion-item">
+                <h5>Excellence</h5>
+                <p>
+                  We build smarter financial solutions that make managing your
+                  money easier and faster.
+                </p>
+              </div>
+              <div class="accordion-item">
+                <h5>Unity</h5>
+                <p>
+                  We build smarter financial solutions that make managing your
+                  money easier and faster.
+                </p>
+              </div>
+              <div class="accordion-item">
+                <h5>Integrity</h5>
+                <p>
+                  We build smarter financial solutions that make managing your
+                  money easier and faster.
+                </p>
+              </div>
+              <div class="accordion-item">
+                <h5>Sound Governance</h5>
+                <p>
+                  We build smarter financial solutions that make managing your
+                  money easier and faster.
+                </p>
+              </div>
+            </div>
+            <div class="image-wrapper">
+              <img src="./assets/images/values-image.png" alt="values image" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- History Section -->
+      <section id="history">
+        <div class="history-background">
+          <img
+            src="./assets/images/history-image.png"
+            alt="History Background"
+            class="bg-image"
+          />
+        </div>
+        <div class="container">
+          <!--Title section-->
+          <div class="title-section">
+            <div class="left-content">
+              <h2 class="section-title">Our History</h2>
+              <p class="section-description">The Journey</p>
+            </div>
+            <div class="right-content">
+              <span class="phase-title" id="phase-title-display"
+                >Murang'a Tea Growers SACCO is born</span
+              >
+            </div>
+          </div>
+
+          <!--Phase Description-->
+          <div class="phase-description">
+            <p class="content" id="phase-description-display">
+              A visionary group of tea farmers in Murang'a pooled their
+              resources to form a Savings and Credit Cooperative Society
+              creating a financial basket where members could save and access
+              affordable loans. Rooted in community. Built on trust.
+            </p>
+          </div>
+
+          <!--Timeline-->
+          <div class="timeline-wrapper">
+            <!-- Progress Bar (now positioned absolutely behind steps) -->
+            <div class="progress-bar">
+              <div class="progress-fill" id="progress-fill"></div>
+            </div>
+
+            <!-- Timeline Stages -->
+            <div class="timeline-stages" id="timeline-stages">
+              <!-- Stage 1 -->
+              <div class="stage active" data-stage="1">
+                <h3 class="stage-year">1993</h3>
+                <span class="stage-title">Humble Beginnings</span>
+              </div>
+
+              <!-- Stage 2 -->
+              <div class="stage" data-stage="2">
+                <h3 class="stage-year">1997</h3>
+                <span class="stage-title">Expansion</span>
+              </div>
+
+              <!-- Stage 3 -->
+              <div class="stage" data-stage="3">
+                <h3 class="stage-year">2002</h3>
+                <span class="stage-title">Growth</span>
+              </div>
+
+              <!-- Stage 4 -->
+              <div class="stage" data-stage="4">
+                <h3 class="stage-year">2012</h3>
+                <span class="stage-title">Transformation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hidden Phase Data (hardcoded for each phase) -->
+        <div class="phase-data hidden">
+          <!-- Phase 1 Data -->
+          <div class="phase-item" data-phase="1">
+            <div class="phase-title-data">
+              Murang'a Tea Growers SACCO is born
+            </div>
+            <div class="phase-description-data">
+              A visionary group of tea farmers in Murang'a pooled their
+              resources to form a Savings and Credit Cooperative Society
+              creating a financial basket where members could save and access
+              affordable loans. Rooted in community. Built on trust.
+            </div>
+          </div>
+
+          <!-- Phase 2 Data -->
+          <div class="phase-item" data-phase="2">
+            <div class="phase-title-data">Branch Network Expansion Begins</div>
+            <div class="phase-description-data">
+              The SACCO opens its first branch outside Murang'a town, bringing
+              financial services closer to tea farmers in remote areas.
+              Membership grows as more farmers join the cooperative movement,
+              strengthening the community's economic foundation.
+            </div>
+          </div>
+
+          <!-- Phase 3 Data -->
+          <div class="phase-item" data-phase="3">
+            <div class="phase-title-data">
+              Digital Transformation Initiative
+            </div>
+            <div class="phase-description-data">
+              Introduction of mobile banking services revolutionizes how members
+              access their accounts. The SACCO becomes one of the first in the
+              region to offer SMS banking, making transactions faster and more
+              convenient for farmers in rural areas.
+            </div>
+          </div>
+
+          <!-- Phase 4 Data -->
+          <div class="phase-item" data-phase="4">
+            <div class="phase-title-data">Rebranding to Unaitas</div>
+            <div class="phase-description-data">
+              A historic rebranding marks the transformation from a traditional
+              SACCO to a modern financial solutions provider. The new identity,
+              Unaitas, reflects the cooperative's expanded vision and commitment
+              to serving diverse member needs across Kenya.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--Awards Section-->
+      <section id="awards">
+        <div class="container">
+          <h2 class="awards-title">Awards</h2>
+          <img
+            src="./assets/images/awards-image.jpg"
+            alt="awards image"
+            class="awards-image"
+          />
+
+          <div class="trophy-grid">
+            <!--Trophy 1-->
+            <div class="trophy">
+              <div class="image-wrapper">
+                <img
+                  src="./assets/images/trophy-1.png"
+                  alt="trophy image"
+                  class="trophy-image"
+                />
+              </div>
+              <p>Financial Reporting (FiRe) Award- 2022, SACCO Category</p>
+            </div>
+            <!--Trophy 2-->
+            <div class="trophy">
+              <div class="image-wrapper">
+                <img
+                  src="./assets/images/trophy-2.png"
+                  alt="trophy image"
+                  class="trophy-image"
+                />
+              </div>
+              <p>
+                Financial Reporting (FiRe) Award- 2010 & 2011, SACCO Category
+              </p>
+            </div>
+            <!--Trophy 3-->
+            <div class="trophy">
+              <div class="image-wrapper">
+                <img
+                  src="./assets/images/trophy-3.png"
+                  alt="trophy image"
+                  class="trophy-image"
+                />
+              </div>
+              <p>
+                MSK Brand Warrior Award- Best Development On An Existing Brand
+                Category
+              </p>
+            </div>
+            <!--Trophy 4-->
+            <div class="trophy">
+              <div class="image-wrapper">
+                <img
+                  src="./assets/images/trophy-4.png"
+                  alt="trophy image"
+                  class="trophy-image"
+                />
+              </div>
+              <p>Computer Society of Kenya (CSK) award</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--Policies-->
+      <section id="policies">
+        <div class="container">
+          <h2 class="policy-title">Our Standards & Policies</h2>
+
+          <div class="policy-grid">
+            <!--Policy 1-->
+            <div class="policy">
+              <h4 class="title">Board Charter</h4>
+              <a href="#">
+                <p>Download</p>
+                <img
+                  src="./assets/images/document-download.svg"
+                  alt="policy-icon"
+                />
+              </a>
+            </div>
+
+            <!--Policy 2-->
+            <div class="policy">
+              <h4 class="title">Service Charter</h4>
+              <a href="#">
+                <p>Download</p>
+                <img
+                  src="./assets/images/document-download.svg"
+                  alt="policy-icon"
+                />
+              </a>
+            </div>
+
+            <!--Policy 3-->
+            <div class="policy">
+              <h4 class="title">Privacy Policy</h4>
+              <a href="#">
+                <p>View</p>
+                <img src="./assets/images/eye.png" alt="policy-icon" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--CTA-->
+      <section id="cta" style="background: #f6f5eb">
+        <div class="container">
+          <div class="cta-card">
+            <div class="title-section">
+              <h1>Become</h1>
+              <img
+                src="./assets/images/cta-title-image.png"
+                alt="cta-title-image"
+                class="title-image"
+              />
+              <h1>A Member</h1>
+            </div>
+            <p class="cta-desc">
+              With nearly 1,000,000 members across Kenya, you’ll be joining a
+              Sacco that has focused on the financial wellness of its community
+              for over 80 years.
+            </p>
+            <a href="#" class="site-btn-lg">Join Unaitas</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--Footer-->
+    <footer id="site-footer">
+      <div class="container">
+        <div class="footer-wrapper">
+          <!-- Company Info with QR -->
+          <div class="footer-company">
+            <a href="/" class="footer-logo"
+              ><img src="./assets/images/footer-logo.png" alt="footer logo"
+            /></a>
+            <p class="footer-description">
+              Unaitas is a deposit taking Savings and Credit Cooperative (SACCO)
+              organization, licensed under the SACCO Societies Act, 2012. The
+              SACCO was initially registered on 14 May 1993 as a cooperative
+              society.
+            </p>
+            <div class="footer-app">
+              <h4>Download the app</h4>
+              <div class="qr-code">
+                <!-- QR code image  -->
+                <img
+                  src="./assets/images/app-qr.png"
+                  alt="Download app QR code"
+                />
+              </div>
+
+              <p class="copyright">
+                © Unaitas Sacco Society Ltd Regulated under the Co-operative
+                Societies Act of Kenya
+              </p>
+            </div>
+          </div>
+
+          <!-- Bordered Sections -->
+          <div class="footer-bordered-sections">
+            <!-- Governance & Policies -->
+            <div class="footer-section bordered">
+              <div class="footer-section-header">
+                <h3 class="footer-title">Governance & Policies</h3>
+              </div>
+
+              <ul class="footer-menu">
+                <li><a href="#">Supervisory Committee</a></li>
+                <li><a href="#">Delegates</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Service Charter</a></li>
+                <li><a href="#">Board Charter</a></li>
+              </ul>
+            </div>
+
+            <!-- Help & Support -->
+            <div class="footer-section bordered">
+              <div class="footer-section-header">
+                <h3 class="footer-title">Help & Support</h3>
+              </div>
+              <ul class="footer-menu">
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Branch & Agent Locator</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Loan Calculator</a></li>
+                <li><a href="#">Forms & Downloads</a></li>
+              </ul>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="footer-section contact-section bordered">
+              <div class="contact-info">
+                <div class="contact-card">
+                  <img
+                    src="./assets/images/location.png"
+                    alt="icon"
+                    class="icon"
+                  />
+                  <div class="details">
+                    <h4 class="title">Nairobi</h4>
+                    <p class="desc">
+                      Cardinal Otunga Plaza, Cardinal Otunga road, Nairobi
+                    </p>
+                  </div>
+                </div>
+                <div class="contact-card">
+                  <img
+                    src="./assets/images/call-calling.png"
+                    alt="icon"
+                    class="icon"
+                  />
+                  <div class="details">
+                    <h4 class="title">Phone</h4>
+                    <p class="desc">+254709 253 000</p>
+                  </div>
+                </div>
+                <div class="contact-card">
+                  <img
+                    src="./assets/images/messages-3.png"
+                    alt="icon"
+                    class="icon"
+                  />
+                  <div class="details">
+                    <h4 class="title">Email</h4>
+                    <p class="desc"> memberservice@unaitas.com</p>
+                  </div>
+                </div>
+              </div>
+              <div class="social-info">
+                <div class="wrapper">
+                  <p>social</p>
+                  <div class="links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!--Scripts-->
+    <script src="./assets/js/all.min.js"></script>
+    <script src="./assets/js/barba.js"></script>
+    <script src="./assets/js/fontawesome.min.js"></script>
+    <script src="./assets/js/gsap.min.js"></script>
+    <script src="./assets/js/ScrollToPlugin.min.js"></script>
+    <script src="./assets/js/ScrollTrigger.min.js"></script>
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="./assets/js/swiper-bundle.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
