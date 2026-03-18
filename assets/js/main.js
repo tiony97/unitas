@@ -258,12 +258,20 @@ jQuery(document).ready(function ($) {
   const $links = $("#section-links .links a");
   const $sections = $("main section[id]"); // Get all sections with IDs
   const $header = $("#site-header");
+  const $main = $("main"); // Get the main content
 
   // Store original position and dimensions
   let stickyOffset = 0;
   let headerHeight = 0;
   let linksHeight = 0;
   let sectionLinksTop = 0;
+
+  // Create a spacer element to prevent content jump
+  let $spacer = $("#section-links-spacer");
+  if (!$spacer.length) {
+    $spacer = $('<div id="section-links-spacer"></div>');
+    $sectionLinks.after($spacer);
+  }
 
   // Function to recalculate all dimensions
   function recalcDimensions() {
@@ -273,7 +281,10 @@ jQuery(document).ready(function ($) {
 
     // The offset at which links become sticky
     // This should be when the top of the section links hits the top of the viewport
-    stickyOffset = sectionLinksTop - headerHeight;
+    stickyOffset = sectionLinksTop;
+
+    // Set spacer height to match section links
+    $spacer.css("height", linksHeight + "px");
   }
 
   // Function to handle sticky behavior
@@ -283,13 +294,14 @@ jQuery(document).ready(function ($) {
     if (scrollTop >= stickyOffset) {
       if (!$sectionLinks.hasClass("sticky")) {
         $sectionLinks.addClass("sticky");
-        // Add padding to body to prevent content jump, accounting for header
-        $("body").css("padding-top", headerHeight + linksHeight + "px");
+        // Hide spacer when not needed
+        $spacer.show();
       }
     } else {
       if ($sectionLinks.hasClass("sticky")) {
         $sectionLinks.removeClass("sticky");
-        $("body").css("padding-top", headerHeight + "px");
+        // Hide spacer when not sticky
+        $spacer.hide();
       }
     }
   }
@@ -358,20 +370,10 @@ jQuery(document).ready(function ($) {
     if ($targetSection.length) {
       // Get current heights
       const currentHeaderHeight = $header.outerHeight() || 0;
-      const currentLinksHeight = $sectionLinks.outerHeight() || 0;
 
-      // Calculate offset based on whether links are sticky
-      // If links are sticky, we need to account for them in the offset
-      // If not, they'll scroll away so we don't need to account for them
-      let offset = currentHeaderHeight + 30; // Base offset with header
-
-      // If links are sticky OR we're about to make them sticky, add their height
-      if (
-        $sectionLinks.hasClass("sticky") ||
-        $(window).scrollTop() >= stickyOffset
-      ) {
-        offset += currentLinksHeight;
-      }
+      // Calculate offset - always use header height plus a small buffer
+      // Don't include links height in offset when scrolling
+      const offset = currentHeaderHeight + 20;
 
       const targetPosition = $targetSection.offset().top - offset;
 
@@ -386,6 +388,11 @@ jQuery(document).ready(function ($) {
           // After scrolling, update active link
           $links.removeClass("active");
           $(`#section-links .links a[href="${targetId}"]`).addClass("active");
+
+          // Update sticky state after scroll
+          setTimeout(() => {
+            handleStickyLinks();
+          }, 100);
         },
       );
     }
@@ -416,9 +423,6 @@ jQuery(document).ready(function ($) {
 
   // Initial calculations
   recalcDimensions();
-
-  // Set initial body padding to account for header
-  $("body").css("padding-top", headerHeight + "px");
 
   // Initial active link
   setTimeout(() => {
