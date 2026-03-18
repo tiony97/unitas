@@ -257,10 +257,24 @@ jQuery(document).ready(function ($) {
   const $sectionLinks = $("#section-links");
   const $links = $("#section-links .links a");
   const $sections = $("main section[id]"); // Get all sections with IDs
+  const $header = $("#site-header");
 
-  // Store original position of section links
-  let stickyOffset = $sectionLinks.offset().top;
-  let linksHeight = $sectionLinks.outerHeight();
+  // Store original position and dimensions
+  let stickyOffset = 0;
+  let headerHeight = 0;
+  let linksHeight = 0;
+  let sectionLinksTop = 0;
+
+  // Function to recalculate all dimensions
+  function recalcDimensions() {
+    headerHeight = $header.outerHeight() || 0;
+    linksHeight = $sectionLinks.outerHeight() || 0;
+    sectionLinksTop = $sectionLinks.offset().top;
+
+    // The offset at which links become sticky
+    // This should be when the top of the section links hits the top of the viewport
+    stickyOffset = sectionLinksTop - headerHeight;
+  }
 
   // Function to handle sticky behavior
   function handleStickyLinks() {
@@ -269,13 +283,13 @@ jQuery(document).ready(function ($) {
     if (scrollTop >= stickyOffset) {
       if (!$sectionLinks.hasClass("sticky")) {
         $sectionLinks.addClass("sticky");
-        // Add padding to body to prevent content jump
-        $("body").css("padding-top", linksHeight + "px");
+        // Add padding to body to prevent content jump, accounting for header
+        $("body").css("padding-top", headerHeight + linksHeight + "px");
       }
     } else {
       if ($sectionLinks.hasClass("sticky")) {
         $sectionLinks.removeClass("sticky");
-        $("body").css("padding-top", "0");
+        $("body").css("padding-top", headerHeight + "px");
       }
     }
   }
@@ -285,14 +299,17 @@ jQuery(document).ready(function ($) {
     const scrollPosition = $(window).scrollTop();
     const windowHeight = $(window).height();
 
-    // Get the sticky header height if it exists
-    const headerHeight = $("#site-header").outerHeight() || 0;
-    const stickyLinksHeight = $sectionLinks.hasClass("sticky")
+    // Calculate current header height (might be different if sticky)
+    const currentHeaderHeight = $header.outerHeight() || 0;
+    const currentLinksHeight = $sectionLinks.hasClass("sticky")
       ? $sectionLinks.outerHeight()
       : 0;
-    const offset = headerHeight + stickyLinksHeight + 100; // 100px offset for better UX
 
-    let activeSet = false;
+    // Offset for detecting section visibility
+    // We want to activate the link when the section top hits the bottom of the sticky elements
+    const offset = currentHeaderHeight + currentLinksHeight + 50; // 50px extra for better UX
+
+    let activeFound = false;
 
     // Check each section to see if it's in view
     $sections.each(function () {
@@ -302,20 +319,24 @@ jQuery(document).ready(function ($) {
       const sectionBottom = sectionTop + $section.outerHeight();
 
       // Check if we've scrolled past the top of this section (with offset)
-      if (scrollPosition >= sectionTop - offset) {
+      if (
+        scrollPosition >= sectionTop - offset &&
+        scrollPosition < sectionBottom - offset
+      ) {
         // Remove active class from all links
         $links.removeClass("active");
 
         // Add active class to corresponding link
         $(`#section-links .links a[href="#${sectionId}"]`).addClass("active");
-        activeSet = true;
+        activeFound = true;
+        return false; // Break the loop
       }
     });
 
-    // Handle case when at the top of the page - activate first section
-    if (scrollPosition < 100) {
+    // If no active section found, check if we're at the top
+    if (!activeFound && scrollPosition < 100) {
       $links.removeClass("active");
-      $($links[0]).addClass("active"); // Activate first link
+      $($links[0]).addClass("active");
     }
 
     // Handle case when at the bottom of the page
@@ -335,15 +356,22 @@ jQuery(document).ready(function ($) {
     const $targetSection = $(targetId);
 
     if ($targetSection.length) {
-      // Calculate scroll position accounting for sticky elements
-      const headerHeight = $("#site-header").outerHeight() || 0;
-      const linksHeight = $sectionLinks.outerHeight() || 0;
+      // Get current heights
+      const currentHeaderHeight = $header.outerHeight() || 0;
+      const currentLinksHeight = $sectionLinks.outerHeight() || 0;
 
-      // If section links are sticky, they're part of the offset
-      // If not sticky, they'll scroll away so we don't need to account for them
-      const offset = $sectionLinks.hasClass("sticky")
-        ? headerHeight + linksHeight + 20
-        : headerHeight + 20;
+      // Calculate offset based on whether links are sticky
+      // If links are sticky, we need to account for them in the offset
+      // If not, they'll scroll away so we don't need to account for them
+      let offset = currentHeaderHeight + 30; // Base offset with header
+
+      // If links are sticky OR we're about to make them sticky, add their height
+      if (
+        $sectionLinks.hasClass("sticky") ||
+        $(window).scrollTop() >= stickyOffset
+      ) {
+        offset += currentLinksHeight;
+      }
 
       const targetPosition = $targetSection.offset().top - offset;
 
@@ -354,21 +382,14 @@ jQuery(document).ready(function ($) {
         },
         800,
         "swing",
+        function () {
+          // After scrolling, update active link
+          $links.removeClass("active");
+          $(`#section-links .links a[href="${targetId}"]`).addClass("active");
+        },
       );
-
-      // Update active link immediately on click
-      $links.removeClass("active");
-      $(this).addClass("active");
     }
   });
-
-  // Function to recalculate sticky offset on window resize
-  function recalcStickyOffset() {
-    stickyOffset = $sectionLinks.offset().top;
-    linksHeight = $sectionLinks.outerHeight();
-    handleStickyLinks();
-    updateActiveLink();
-  }
 
   // Throttle function to limit scroll event calls
   function throttle(func, limit) {
@@ -384,37 +405,64 @@ jQuery(document).ready(function ($) {
     };
   }
 
-  // Initial calls
+  // Debounce function for resize events
+  function debounce(func, wait) {
+    let timeout;
+    return function () {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func.apply(this, arguments), wait);
+    };
+  }
+
+  // Initial calculations
+  recalcDimensions();
+
+  // Set initial body padding to account for header
+  $("body").css("padding-top", headerHeight + "px");
+
+  // Initial active link
   setTimeout(() => {
-    recalcStickyOffset();
     updateActiveLink();
   }, 100);
 
-  // Listen for scroll events with throttling for better performance
+  // Listen for scroll events with throttling
   $(window).on(
     "scroll",
     throttle(function () {
       handleStickyLinks();
       updateActiveLink();
-    }, 100),
+    }, 50),
   );
 
-  // Listen for resize events
-  $(window).on("resize", function () {
-    recalcStickyOffset();
-  });
+  // Listen for resize events with debouncing
+  $(window).on(
+    "resize",
+    debounce(function () {
+      recalcDimensions();
+      handleStickyLinks();
+      updateActiveLink();
+    }, 150),
+  );
 
   // Handle cases where images might load after page load
   $(window).on("load", function () {
-    recalcStickyOffset();
+    recalcDimensions();
+    handleStickyLinks();
     updateActiveLink();
   });
 
   // Handle dynamic content changes
   setTimeout(function () {
-    recalcStickyOffset();
+    recalcDimensions();
+    handleStickyLinks();
     updateActiveLink();
   }, 500);
+
+  // Also recalc when any images load (they can affect heights)
+  $("img").on("load", function () {
+    recalcDimensions();
+    handleStickyLinks();
+  });
 });
 
 // About Page Statements Accordion Functionality for Statements Section
@@ -617,4 +665,175 @@ jQuery(document).ready(function ($) {
     const progress = calculateProgress(currentActive);
     $progressFill.css("width", progress + "%");
   });
+});
+
+// Difference Section Accordion
+jQuery(document).ready(function ($) {
+  const $accordionItems = $(".difference-accordion .accordion-item");
+
+  // Optional: Set first item as active by default
+  // $accordionItems.first().addClass('active');
+
+  // Handle accordion header click
+  $accordionItems.find(".accordion-header").on("click", function (e) {
+    e.preventDefault();
+
+    const $parentItem = $(this).closest(".accordion-item");
+    const $content = $parentItem.find(".accordion-content");
+
+    // Check if clicked item is already active
+    if ($parentItem.hasClass("active")) {
+      // Close this accordion
+      $parentItem.removeClass("active");
+
+      // Animate content closing
+      $content.css({
+        "max-height": "0",
+        opacity: "0",
+      });
+    } else {
+      // Close any other open accordions first (for single open at a time)
+      $accordionItems.each(function () {
+        if ($(this).hasClass("active")) {
+          $(this).removeClass("active");
+          $(this).find(".accordion-content").css({
+            "max-height": "0",
+            opacity: "0",
+          });
+        }
+      });
+
+      // Open this accordion
+      $parentItem.addClass("active");
+
+      // Get content height for smooth animation
+      const contentHeight = $content.find(".content-wrapper").outerHeight();
+
+      $content.css({
+        "max-height": contentHeight + "px",
+        opacity: "1",
+      });
+    }
+  });
+
+  // Handle window resize - update max-height for open accordions
+  $(window).on("resize", function () {
+    $accordionItems.each(function () {
+      if ($(this).hasClass("active")) {
+        const $content = $(this).find(".accordion-content");
+        const contentHeight = $content.find(".content-wrapper").outerHeight();
+
+        $content.css("max-height", contentHeight + "px");
+      }
+    });
+  });
+
+  // Optional: Add smooth hover effect for icons
+  $accordionItems.find(".accordion-header").hover(
+    function () {
+      $(this).find(".accordion-icon").css("transform", "scale(1.1)");
+    },
+    function () {
+      $(this).find(".accordion-icon").css("transform", "scale(1)");
+    },
+  );
+});
+
+// Drive Section - Swiper Cards Slider
+jQuery(document).ready(function ($) {
+  // Check if Swiper is available and element exists
+  if (typeof Swiper !== "undefined" && $(".drive-swiper").length) {
+    const driveSwiper = new Swiper(".drive-swiper", {
+      // Cards effect
+      effect: "cards",
+
+      // Enable grabbing cursor
+      grabCursor: true,
+
+      // Disable navigation/pagination
+      navigation: false,
+      pagination: false,
+      scrollbar: false,
+
+      // Cards effect configuration
+      cardsEffect: {
+        // Rotate the cards slightly
+        rotate: false,
+        // Stretch between cards
+        stretch: 10,
+        // Depth of the cards effect
+        depth: 100,
+        // Modify the modifier
+        modifier: 1,
+        // Slide shadows
+        slideShadows: false, // Disable default shadows since we have custom box-shadow
+      },
+
+      // Allow touch move
+      simulateTouch: true,
+      touchRatio: 1,
+      touchAngle: 45,
+
+      // Speed of transition
+      speed: 400,
+
+      // Loop mode
+      loop: true,
+
+      // Auto height (adjusts based on content)
+      autoHeight: false,
+
+      // Space between slides
+      spaceBetween: 0,
+
+      // Initial slide
+      initialSlide: 0,
+
+      // Breakpoints for responsive behavior
+      breakpoints: {
+        320: {
+          cardsEffect: {
+            depth: 60,
+          },
+        },
+        768: {
+          cardsEffect: {
+            depth: 80,
+          },
+        },
+        1024: {
+          cardsEffect: {
+            depth: 100,
+          },
+        },
+      },
+
+      // Events
+      on: {
+        init: function () {
+          console.log("Drive swiper initialized");
+        },
+        slideChange: function () {
+          // Optional: Add any custom behavior when slide changes
+        },
+      },
+    });
+
+    // Optional: Pause autoplay on hover (if you enable autoplay later)
+    $(".drive-swiper").hover(
+      function () {
+        // Uncomment if you enable autoplay
+        // driveSwiper.autoplay.stop();
+      },
+      function () {
+        // Uncomment if you enable autoplay
+        // driveSwiper.autoplay.start();
+      },
+    );
+
+    // Handle window resize
+    $(window).on("resize", function () {
+      driveSwiper.update(); // Update swiper on resize
+    });
+  }
 });

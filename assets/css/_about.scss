@@ -333,12 +333,12 @@
       }
 
       .right-content {
-        flex: 0.4;
+        flex: 0.35;
 
         .phase-title {
           width: fit-content;
-          font-size: 25px;
-          line-height: 38px;
+          font-size: 24px;
+          line-height: 34px;
           font-weight: 500 !important;
           color: $background;
           display: inline-block;
@@ -350,7 +350,7 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 30%;
+            width: 35%;
             height: 4px;
             background: $accent-main;
           }
@@ -417,7 +417,7 @@
           height: 150px;
           padding: 1em 1.5em;
           border-radius: 50%;
-          opacity: 0.5;
+          opacity: 0.8;
           transition: all 0.3s ease;
           background: $background;
 
@@ -487,7 +487,7 @@
           &:hover:not(.active) {
             opacity: 1;
             .stage-year {
-              color: lighten($accent-main, 20%);
+              color: $accent-main;
               transform: scale(1.15);
             }
           }
@@ -499,6 +499,304 @@
   // Hidden phase data container
   .phase-data {
     display: none;
+  }
+}
+
+#drive {
+  padding: 5em 0;
+  overflow: hidden;
+
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .intro {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5em;
+      margin-bottom: 4em;
+      max-width: 800px;
+
+      h2 {
+        text-align: center;
+      }
+
+      p {
+        width: 80%;
+        text-align: center;
+        font-size: 18px;
+        line-height: 30px;
+        color: $foreground-light;
+        margin: 0;
+      }
+    }
+
+    // Swiper Container
+    .drive-swiper {
+      width: 100%;
+      max-width: 900px;
+      height: 350px;
+      padding: 20px 0 40px 0;
+
+      .swiper-wrapper {
+        align-items: center;
+      }
+
+      .swiper-slide {
+        background: transparent;
+        width: 100%;
+        max-width: 800px;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        // Card styling
+        .drive-card {
+          background: #fbfbfb;
+          border: 1px solid rgba(0, 0, 0, 0.4);
+          border-radius: 24px;
+          padding: 2em;
+          width: 100%;
+          max-width: 750px;
+          margin: 0 auto;
+          display: flex;
+          gap: 2em;
+          box-shadow:
+            0 20px 40px rgba(0, 0, 0, 0.08),
+            0 6px 12px rgba(0, 0, 0, 0.05);
+          transition: all 0.3s ease;
+
+          // Hover effect only for the active slide
+          &:hover {
+            //transform: translateY(-5px);
+            box-shadow:
+              0 30px 50px rgba(0, 0, 0, 0.12),
+              0 10px 20px rgba(0, 0, 0, 0.08);
+          }
+
+          .card-content {
+            flex: 1.2;
+            display: flex;
+            flex-direction: column;
+
+            .card-number {
+              font-size: 72px;
+              line-height: 76px;
+              font-weight: 800;
+              color: $accent-main;
+              margin: 0 0 0.1em 0;
+            }
+
+            .card-subtitle {
+              font-family: bodyFontBold;
+              font-size: 24px;
+              line-height: 32px;
+              font-weight: 600;
+              color: $foreground-dark;
+              margin-bottom: 0.75em;
+              display: block;
+            }
+
+            .card-description {
+              font-size: 16px;
+              line-height: 26px;
+              color: $foreground-light;
+              margin: 0;
+            }
+          }
+
+          .card-image {
+            flex: 0.8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img {
+              width: 100%;
+              max-width: 180px;
+              height: auto;
+              object-fit: fill;
+            }
+          }
+        }
+      }
+
+      // Custom cards effect styling
+      &.swiper-cards {
+        overflow: visible;
+
+        .swiper-slide {
+          transform-origin: center center;
+          backface-visibility: hidden;
+        }
+      }
+    }
+  }
+}
+
+#difference {
+  padding: 5em 0;
+  background: #f6f5eb;
+
+  .container {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .intro {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      max-width: 800px;
+      margin-bottom: 4em;
+
+      h2 {
+        text-align: center;
+      }
+    }
+
+    .difference-accordion {
+      width: 100%;
+      max-width: 1200px;
+
+      .accordion-item {
+        margin-bottom: 1.5em;
+        background: transparent;
+        border-bottom: 2px solid $accent-main;
+        overflow: hidden;
+        transition: all 0.3s ease;
+
+        .accordion-header {
+          padding: 1.8em 0;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          cursor: pointer;
+          background: transparent;
+          transition: all 0.3s ease;
+          position: relative;
+          z-index: 2;
+
+          .accordion-title {
+            font-family: bodyFontBold;
+            font-size: 22px;
+            font-weight: 800 !important;
+            color: $foreground-dark;
+          }
+
+          .accordion-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: transform 0.3s ease;
+
+            .plus,
+            .minus {
+              font-size: 40px;
+              font-weight: 800 !important;
+              color: $foreground-dark;
+              line-height: 1;
+              position: absolute;
+              transition:
+                opacity 0.3s ease,
+                transform 0.3s ease;
+            }
+
+            .plus {
+              opacity: 1;
+              transform: rotate(0deg);
+            }
+
+            .minus {
+              opacity: 0;
+              transform: rotate(90deg);
+            }
+          }
+        }
+
+        .accordion-content {
+          max-height: 0;
+          opacity: 0;
+          overflow: hidden;
+          transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+          background: transparent;
+          padding: 0 !important;
+          .content-wrapper {
+            padding: 2em 0;
+            padding-top: 0;
+            display: flex;
+            gap: 4em;
+            align-items: flex-start;
+
+            .content-text {
+              flex: 1;
+
+              p {
+                color: $foreground-light;
+                margin: 0;
+              }
+            }
+
+            .content-image {
+              flex: 0.8;
+
+              img {
+                width: 120px;
+                height: auto;
+                object-fit: contain;
+              }
+            }
+          }
+        }
+
+        // Active (open) state
+        &.active {
+          .accordion-header {
+            .accordion-title {
+              color: $accent-main;
+            }
+            .accordion-icon {
+              transform: rotate(180deg);
+              * {
+                color: $accent-main;
+              }
+
+              .plus {
+                opacity: 0;
+                transform: rotate(-90deg);
+              }
+
+              .minus {
+                opacity: 1;
+                transform: rotate(0deg);
+              }
+            }
+          }
+
+          .accordion-content {
+            max-height: 400px; // Adjust based on content
+            opacity: 1;
+          }
+        }
+
+        &:last-of-type {
+          border: none;
+        }
+      }
+    }
   }
 }
 
@@ -630,11 +928,6 @@
   }
 }
 
-// Ensure proper spacing when sticky
-// body {
-//   transition: padding-top 0.3s ease-in-out;
-// }
-
 /* Device Responsiveness */
 @media (max-width: 1024px) {
   #history {
@@ -653,6 +946,30 @@
 
       .phase-description {
         width: 50%;
+      }
+    }
+  }
+  #drive .container {
+    width: 90%;
+
+    .drive-swiper {
+      max-width: 700px;
+
+      .swiper-slide .drive-card {
+        padding: 1.8em;
+        gap: 1.5em;
+
+        .card-content {
+          .card-number {
+            font-size: 54px;
+            line-height: 60px;
+          }
+
+          .card-subtitle {
+            font-size: 22px;
+            line-height: 28px;
+          }
+        }
       }
     }
   }
@@ -705,6 +1022,29 @@
 
       .phase-description {
         width: 80%;
+      }
+    }
+  }
+  #drive .container {
+    .drive-swiper {
+      height: 550px;
+
+      .swiper-slide .drive-card {
+        .card-content {
+          .card-number {
+            font-size: 42px;
+            line-height: 48px;
+          }
+
+          .card-subtitle {
+            font-size: 18px;
+          }
+
+          .card-description {
+            font-size: 15px;
+            line-height: 24px;
+          }
+        }
       }
     }
   }
