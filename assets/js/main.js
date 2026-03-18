@@ -477,7 +477,7 @@ jQuery(document).ready(function ($) {
   function calculateProgress(activeIndex) {
     const totalStages = $stages.length;
     // Progress = (active stage index + 1) / total stages * 100%
-    return ((activeIndex + 1) / totalStages) * 100;
+    return ((activeIndex + 1) / totalStages) * 95;
   }
 
   // Update stage classes and progress bar
