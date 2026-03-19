@@ -65,13 +65,13 @@ h6 span {
 }
 
 h1 {
-  font-size: 78px;
+  font-size: 75px;
   line-height: 85px;
   font-weight: 800;
 }
 
 h2 {
-  font-size: 58px;
+  font-size: 56px;
   line-height: 65px;
   font-weight: 700;
 }
@@ -104,14 +104,14 @@ select,
 textarea,
 label {
   color: #343131;
-  font-size: 16px;
+  font-size: 15px !important;
   line-height: 24px;
   font-weight: 300;
   font-family: bodyFont;
 }
 
 .container {
-  width: 92%;
+  width: 90%;
   max-width: 1300px;
   margin: 0 auto;
 }
@@ -428,7 +428,7 @@ header .main-header__nav .main-header__menu > .menu-item > a {
   text-decoration: none;
   font-weight: 500;
   padding: 10px 0;
-  font-size: 15px;
+  font-size: 15px !important;
   position: relative;
   z-index: 2;
 }
