@@ -50,7 +50,7 @@ h1 {
 
 // Secondary Title
 h2 {
-  font-size: 56px;
+  font-size: 54px;
   line-height: 65px;
   font-weight: 700;
 }
@@ -105,7 +105,7 @@ label {
   background: $accent-main;
   color: $background;
   padding: 15px 30px;
-  font-size: 16px;
+  font-size: 13.5px !important;
   font-weight: 500;
   text-transform: capitalize;
   text-decoration: none;
@@ -442,7 +442,7 @@ header {
             text-decoration: none;
             font-weight: 500;
             padding: 10px 0;
-            font-size: 15px !important;
+            font-size: 13.5px !important;
             position: relative;
             z-index: 2;
 
@@ -521,7 +521,7 @@ header {
                     border-radius: 4px;
                     transition: all 0.3s ease;
                     font-weight: 400;
-                    font-size: 14px;
+                    font-size: 13px !important;
 
                     .menu-icon-wrapper {
                       display: flex;
@@ -615,7 +615,7 @@ header {
                       padding: 8px 15px;
                       border-radius: 4px;
                       transition: all 0.3s ease;
-                      font-size: 14px;
+                      font-size: 13px !important;
 
                       &:hover {
                         background-color: rgba($accent-main, 0.05);
@@ -707,13 +707,13 @@ footer#site-footer {
       color: rgba(255, 255, 255, 0.7);
       line-height: 1.6;
       margin-bottom: 20px;
-      font-size: 14px;
+      font-size: 13px !important;
     }
 
     .footer-app {
       h4 {
         color: $background;
-        font-size: 16px;
+        font-size: 15px !important;
         margin-bottom: 15px;
         font-family: bodyFont;
         font-weight: 600 !important;

@@ -71,7 +71,7 @@ h1 {
 }
 
 h2 {
-  font-size: 56px;
+  font-size: 54px;
   line-height: 65px;
   font-weight: 700;
 }
@@ -126,7 +126,7 @@ label {
   background: #ce2329;
   color: #ffffff;
   padding: 15px 30px;
-  font-size: 16px;
+  font-size: 13.5px !important;
   font-weight: 500;
   text-transform: capitalize;
   text-decoration: none;
@@ -428,7 +428,7 @@ header .main-header__nav .main-header__menu > .menu-item > a {
   text-decoration: none;
   font-weight: 500;
   padding: 10px 0;
-  font-size: 15px !important;
+  font-size: 13.5px !important;
   position: relative;
   z-index: 2;
 }
@@ -499,7 +499,7 @@ header .main-header__nav .main-header__menu > .menu-item .mega-menu__links .mega
   border-radius: 4px;
   transition: all 0.3s ease;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 13px !important;
 }
 header .main-header__nav .main-header__menu > .menu-item .mega-menu__links .mega-menu__items .menu-item > a .menu-icon-wrapper {
   display: flex;
@@ -573,7 +573,7 @@ header .main-header__nav .main-header__menu > .menu-item .mega-menu__submenus .s
   padding: 8px 15px;
   border-radius: 4px;
   transition: all 0.3s ease;
-  font-size: 14px;
+  font-size: 13px !important;
 }
 header .main-header__nav .main-header__menu > .menu-item .mega-menu__submenus .submenu-container .submenu-items .menu-item a:hover {
   background-color: rgba(206, 35, 41, 0.05);
@@ -639,11 +639,11 @@ footer#site-footer .footer-company .footer-description {
   color: rgba(255, 255, 255, 0.7);
   line-height: 1.6;
   margin-bottom: 20px;
-  font-size: 14px;
+  font-size: 13px !important;
 }
 footer#site-footer .footer-company .footer-app h4 {
   color: #ffffff;
-  font-size: 16px;
+  font-size: 15px !important;
   margin-bottom: 15px;
   font-family: bodyFont;
   font-weight: 600 !important;
