@@ -2773,4 +2773,380 @@ footer#site-footer .contact-section .social-info a:hover {
 }
 #unaitas-accordion .container .unaitas-accordion .accordion-item:last-of-type {
   border: none;
+}
+
+#governance-banner {
+  position: relative;
+  background: #e4e8ef;
+}
+#governance-banner .landing-vector {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+  z-index: 0;
+}
+#governance-banner .container {
+  width: 85%;
+  display: flex;
+  align-items: flex-start;
+  gap: 2em;
+  margin: 0;
+  margin-left: auto;
+  z-index: 2 !important;
+}
+#governance-banner .container * {
+  z-index: 2 !important;
+}
+#governance-banner .container .content-wrapper {
+  flex: 1;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding-top: 8em;
+  padding-bottom: 10em;
+}
+#governance-banner .container .content-wrapper h2 {
+  font-size: 64px;
+  line-height: 72px;
+}
+#governance-banner .container .content-wrapper p {
+  font-size: 18px;
+  line-height: 30px;
+  margin-top: 1em;
+}
+#governance-banner .container .image-wrapper {
+  padding-top: 6em;
+  flex: 1;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#governance-banner .container .image-wrapper .main-mage {
+  width: auto;
+  max-width: 100%;
+  height: 430px;
+  -o-object-fit: fill;
+     object-fit: fill;
+  -o-object-position: top center;
+     object-position: top center;
+  z-index: 2 !important;
+  margin-left: 2em;
+}
+#governance-banner .container .image-wrapper .savings-image {
+  position: absolute;
+  bottom: 40%;
+  left: -2em;
+  height: auto;
+  width: 250px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  z-index: 2 !important;
+}
+#governance-banner .container .image-wrapper .image-vector {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 250px;
+  height: auto;
+  -o-object-fit: fill;
+     object-fit: fill;
+  z-index: 0 !important;
+}
+
+#board {
+  position: relative;
+  padding-bottom: 5em;
+  padding-top: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#board .section-vector {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 200px;
+  height: auto;
+  -o-object-fit: fill;
+     object-fit: fill;
+  z-index: 0;
+}
+#board .container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2em;
+  z-index: 2;
+}
+#board .container * {
+  z-index: 2;
+}
+#board .container .members {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2em;
+}
+#board .container .members .member {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1em;
+}
+#board .container .members .member .image-wrapper {
+  width: 100%;
+  height: 240px;
+  border-radius: 30px;
+  background: #e4e8ef;
+  overflow: hidden;
+}
+#board .container .members .member .image-wrapper img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 30px;
+  -o-object-position: center center;
+     object-position: center center;
+}
+#board .container .members .member .member-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.1em;
+}
+#board .container .members .member .member-details span {
+  font-family: bodyFontBold;
+  font-size: 18px;
+  font-weight: 500 !important;
+  color: #000000;
+}
+
+#supervisors {
+  position: relative;
+  padding-bottom: 5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#supervisors .section-vector {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  height: auto;
+  -o-object-fit: fill;
+     object-fit: fill;
+  z-index: 0;
+}
+#supervisors .container {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: flex-start;
+  gap: 2em;
+  z-index: 2;
+  padding-top: 4em;
+  border-top: 1px solid rgba(0, 0, 0, 0.29);
+}
+#supervisors .container * {
+  z-index: 2;
+}
+#supervisors .container h3 {
+  flex: 0.3;
+}
+#supervisors .container .members {
+  flex: 1;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2em;
+}
+#supervisors .container .members .member {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1em;
+}
+#supervisors .container .members .member .image-wrapper {
+  width: 100%;
+  height: 240px;
+  border-radius: 30px;
+  background: #e4e8ef;
+  overflow: hidden;
+}
+#supervisors .container .members .member .image-wrapper img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 30px;
+  -o-object-position: center center;
+     object-position: center center;
+}
+#supervisors .container .members .member .member-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.1em;
+}
+#supervisors .container .members .member .member-details span {
+  font-family: bodyFontBold;
+  font-size: 18px;
+  font-weight: 500 !important;
+  color: #000000;
+}
+
+#delegates {
+  padding: 5em 0;
+  background: #f5f6f9;
+}
+#delegates .container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+#delegates .container .intro {
+  display: flex;
+  justify-content: flex-start;
+  gap: 2em;
+}
+#delegates .container .intro h2 {
+  flex: 0.3;
+}
+#delegates .container .intro p {
+  flex: 0.6;
+}
+#delegates .container .delegate-roles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2em;
+  margin-top: 4em;
+}
+#delegates .container .delegate-roles .content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+}
+#delegates .container .delegate-roles .content-wrapper span {
+  font-family: bodyFontBold;
+  font-size: 18px;
+  font-weight: 600 !important;
+  margin-bottom: 1.5em;
+}
+#delegates .container .delegate-roles .content-wrapper .roles {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  gap: 1em;
+}
+#delegates .container .delegate-roles .content-wrapper .roles .role {
+  display: flex;
+  gap: 1em;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 1em;
+  background: #f1f2f5;
+  border: 1px solid rgba(0, 0, 0, 0.29);
+  border-radius: 15px;
+  transition: all 0.3s ease-in-out;
+}
+#delegates .container .delegate-roles .content-wrapper .roles .role img {
+  width: 25px;
+  height: 25px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+#delegates .container .delegate-roles .content-wrapper .roles .role p {
+  color: #343131;
+}
+#delegates .container .delegate-roles .content-wrapper .roles .role:hover {
+  background: transparent;
+  border-color: #ce2329;
+}
+#delegates .container .delegate-roles .image-wrapper {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+#delegates .container .delegate-roles .image-wrapper img {
+  width: 100%;
+  height: auto;
+  max-height: 600px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 30px;
+}
+
+#senior {
+  position: relative;
+  padding: 5em 0;
+}
+#senior .container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2em;
+  z-index: 2;
+}
+#senior .container * {
+  z-index: 2;
+}
+#senior .container .members {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2em;
+}
+#senior .container .members .member {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1em;
+}
+#senior .container .members .member .image-wrapper {
+  width: 100%;
+  height: 240px;
+  border-radius: 30px;
+  background: #e4e8ef;
+  overflow: hidden;
+}
+#senior .container .members .member .image-wrapper img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 30px;
+  -o-object-position: center center;
+     object-position: center center;
+}
+#senior .container .members .member .member-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.1em;
+}
+#senior .container .members .member .member-details span {
+  font-family: bodyFontBold;
+  font-size: 18px;
+  font-weight: 500 !important;
+  color: #000000;
 }/*# sourceMappingURL=style.css.map */

@@ -251,7 +251,7 @@ jQuery(document).ready(function ($) {
   );
 });
 
-// About Page Sticky Section Links and Active State Functionality
+// Sticky Section Links and Active State Functionality
 jQuery(document).ready(function ($) {
   // Get the section links element
   const $sectionLinks = $("#section-links");
