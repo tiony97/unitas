@@ -683,7 +683,7 @@ footer#site-footer .footer-section .footer-section-header {
   width: 100%;
   height: -moz-fit-content;
   height: fit-content;
-  padding: 6px 0;
+  padding: 1em 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1882352941);
   display: flex;
   align-items: center;
@@ -793,6 +793,7 @@ footer#site-footer .contact-section .social-info {
   max-width: 100%;
   height: -moz-fit-content;
   height: fit-content;
+  padding: 1em 0;
   gap: 1em;
   border-top: 1px solid rgba(255, 255, 255, 0.1882352941);
 }
@@ -2581,4 +2582,195 @@ footer#site-footer .contact-section .social-info a:hover {
     font-size: 15px;
     line-height: 24px;
   }
+}
+#strategy-banner {
+  position: relative;
+  background: #eeeeee;
+}
+#strategy-banner .landing-vector {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+#strategy-banner .container {
+  width: 70%;
+  display: flex;
+  align-items: flex-start;
+  gap: 2em;
+}
+#strategy-banner .container * {
+  z-index: 2;
+}
+#strategy-banner .container .content-wrapper {
+  flex: 1.2;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding-top: 8em;
+  padding-bottom: 12em;
+}
+#strategy-banner .container .content-wrapper h2 {
+  font-size: 64px;
+  line-height: 72px;
+}
+#strategy-banner .container .content-wrapper p {
+  font-size: 18px;
+  line-height: 30px;
+  margin-top: 1em;
+}
+#strategy-banner .container .image-wrapper {
+  flex: 1;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#strategy-banner .container .image-wrapper .main-mage {
+  width: auto;
+  max-width: 100%;
+  height: 450px;
+  -o-object-fit: fill;
+     object-fit: fill;
+  -o-object-position: top center;
+     object-position: top center;
+}
+#strategy-banner .container .image-wrapper .savings-image {
+  position: absolute;
+  bottom: 30%;
+  left: 2em;
+  height: 120px;
+  width: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+#unaitas-accordion {
+  padding: 5em 0;
+}
+#unaitas-accordion .container {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
+}
+#unaitas-accordion .container .unaitas-accordion {
+  width: 100%;
+  max-width: 1200px;
+}
+#unaitas-accordion .container .unaitas-accordion .accordion-item {
+  margin-bottom: 1.5em;
+  background: transparent;
+  border-bottom: 2px solid #ce2329;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+#unaitas-accordion .container .unaitas-accordion .accordion-item .accordion-header {
+  padding: 1.8em 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background: transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+#unaitas-accordion .container .unaitas-accordion .accordion-item .accordion-header .accordion-title {
+  font-family: bodyFontBold;
+  font-size: 22px;
+  font-weight: 800 !important;
+  color: #000000;
+}
+#unaitas-accordion .container .unaitas-accordion .accordion-item .accordion-header .accordion-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+#unaitas-accordion .container .unaitas-accordion .accordion-item .accordion-header .accordion-icon .plus,
+#unaitas-accordion .container .unaitas-accordion .accordion-item .accordion-header .accordion-icon .minus {
+  font-size: 40px;
+  font-weight: 800 !important;
+  color: #000000;
+  line-height: 1;
+  position: absolute;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+#unaitas-accordion .container .unaitas-accordion .accordion-item .accordion-header .accordion-icon .plus {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+#unaitas-accordion .container .unaitas-accordion .accordion-item .accordion-header .accordion-icon .minus {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+#unaitas-accordion .container .unaitas-accordion .accordion-item .accordion-content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  background: transparent;
+  padding: 0 !important;
+}
+#unaitas-accordion .container .unaitas-accordion .accordion-item .accordion-content .content-wrapper {
+  padding: 2em 0;
+  padding-top: 0;
+  display: flex;
+  gap: 4em;
+  align-items: flex-start;
+}
+#unaitas-accordion .container .unaitas-accordion .accordion-item .accordion-content .content-wrapper .content-text {
+  flex: 1;
+}
+#unaitas-accordion .container .unaitas-accordion .accordion-item .accordion-content .content-wrapper .content-text p {
+  color: #343131;
+  margin: 0;
+}
+#unaitas-accordion .container .unaitas-accordion .accordion-item .accordion-content .content-wrapper .content-text p:last-of-type {
+  margin-top: 1em;
+}
+#unaitas-accordion .container .unaitas-accordion .accordion-item .accordion-content .content-wrapper .content-image {
+  flex: 0.8;
+}
+#unaitas-accordion .container .unaitas-accordion .accordion-item .accordion-content .content-wrapper .content-image img {
+  width: 120px;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+#unaitas-accordion .container .unaitas-accordion .accordion-item.active .accordion-header .accordion-title {
+  color: #ce2329;
+}
+#unaitas-accordion .container .unaitas-accordion .accordion-item.active .accordion-header .accordion-icon {
+  transform: rotate(180deg);
+}
+#unaitas-accordion .container .unaitas-accordion .accordion-item.active .accordion-header .accordion-icon * {
+  color: #ce2329;
+}
+#unaitas-accordion .container .unaitas-accordion .accordion-item.active .accordion-header .accordion-icon .plus {
+  opacity: 0;
+  transform: rotate(-90deg);
+}
+#unaitas-accordion .container .unaitas-accordion .accordion-item.active .accordion-header .accordion-icon .minus {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+#unaitas-accordion .container .unaitas-accordion .accordion-item.active .accordion-content {
+  max-height: 400px;
+  opacity: 1;
+}
+#unaitas-accordion .container .unaitas-accordion .accordion-item:last-of-type {
+  border: none;
 }/*# sourceMappingURL=style.css.map */

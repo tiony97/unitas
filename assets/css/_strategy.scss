@@ -1,0 +1,205 @@
+#strategy-banner {
+  position: relative;
+  background: #eeeeee;
+  .landing-vector {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: auto;
+    height: 100%;
+    object-fit: fill;
+  }
+  .container {
+    width: 70%;
+    display: flex;
+    align-items: flex-start;
+    gap: 2em;
+    * {
+      z-index: 2;
+    }
+    .content-wrapper {
+      flex: 1.2;
+      height: fit-content;
+      padding-top: 8em;
+      padding-bottom: 12em;
+      h2 {
+        font-size: 64px;
+        line-height: 72px;
+      }
+      p {
+        font-size: 18px;
+        line-height: 30px;
+        margin-top: 1em;
+      }
+    }
+    .image-wrapper {
+      flex: 1;
+      position: relative;
+      height: 100%;
+      width: 100%;
+      @include flex-center;
+      .main-mage {
+        width: auto;
+        max-width: 100%;
+        height: 450px;
+        object-fit: fill;
+        object-position: top center;
+      }
+      .savings-image {
+        position: absolute;
+        bottom: 30%;
+        left: 2em;
+        height: 120px;
+        width: auto;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+#unaitas-accordion {
+  padding: 5em 0;
+  .container {
+    width: 70%;
+    @include flex-col;
+    align-items: center;
+    justify-content: center;
+    .unaitas-accordion {
+      width: 100%;
+      max-width: 1200px;
+
+      .accordion-item {
+        margin-bottom: 1.5em;
+        background: transparent;
+        border-bottom: 2px solid $accent-main;
+        overflow: hidden;
+        transition: all 0.3s ease;
+
+        .accordion-header {
+          padding: 1.8em 0;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          cursor: pointer;
+          background: transparent;
+          transition: all 0.3s ease;
+          position: relative;
+          z-index: 2;
+
+          .accordion-title {
+            font-family: bodyFontBold;
+            font-size: 22px;
+            font-weight: 800 !important;
+            color: $foreground-dark;
+          }
+
+          .accordion-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: transform 0.3s ease;
+
+            .plus,
+            .minus {
+              font-size: 40px;
+              font-weight: 800 !important;
+              color: $foreground-dark;
+              line-height: 1;
+              position: absolute;
+              transition:
+                opacity 0.3s ease,
+                transform 0.3s ease;
+            }
+
+            .plus {
+              opacity: 1;
+              transform: rotate(0deg);
+            }
+
+            .minus {
+              opacity: 0;
+              transform: rotate(90deg);
+            }
+          }
+        }
+
+        .accordion-content {
+          max-height: 0;
+          opacity: 0;
+          overflow: hidden;
+          transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+          background: transparent;
+          padding: 0 !important;
+          .content-wrapper {
+            padding: 2em 0;
+            padding-top: 0;
+            display: flex;
+            gap: 4em;
+            align-items: flex-start;
+
+            .content-text {
+              flex: 1;
+
+              p {
+                color: $foreground-light;
+                margin: 0;
+                &:last-of-type {
+                  margin-top: 1em;
+                }
+              }
+            }
+
+            .content-image {
+              flex: 0.8;
+
+              img {
+                width: 120px;
+                height: auto;
+                object-fit: contain;
+              }
+            }
+          }
+        }
+
+        // Active (open) state
+        &.active {
+          .accordion-header {
+            .accordion-title {
+              color: $accent-main;
+            }
+            .accordion-icon {
+              transform: rotate(180deg);
+              * {
+                color: $accent-main;
+              }
+
+              .plus {
+                opacity: 0;
+                transform: rotate(-90deg);
+              }
+
+              .minus {
+                opacity: 1;
+                transform: rotate(0deg);
+              }
+            }
+          }
+
+          .accordion-content {
+            max-height: 400px; // Adjust based on content
+            opacity: 1;
+          }
+        }
+
+        &:last-of-type {
+          border: none;
+        }
+      }
+    }
+  }
+}

@@ -841,3 +841,75 @@ jQuery(document).ready(function ($) {
     });
   }
 });
+
+// Accordion for entire site (e.g. strategic plan page)
+jQuery(document).ready(function ($) {
+  const $accordionItems = $(".unaitas-accordion .accordion-item");
+
+  // Set first item as active by default
+  $accordionItems.first().addClass("active");
+
+  // Handle accordion header click
+  $accordionItems.find(".accordion-header").on("click", function (e) {
+    e.preventDefault();
+
+    const $parentItem = $(this).closest(".accordion-item");
+    const $content = $parentItem.find(".accordion-content");
+
+    // Check if clicked item is already active
+    if ($parentItem.hasClass("active")) {
+      // Close this accordion
+      $parentItem.removeClass("active");
+
+      // Animate content closing
+      $content.css({
+        "max-height": "0",
+        opacity: "0",
+      });
+    } else {
+      // Close any other open accordions first (for single open at a time)
+      $accordionItems.each(function () {
+        if ($(this).hasClass("active")) {
+          $(this).removeClass("active");
+          $(this).find(".accordion-content").css({
+            "max-height": "0",
+            opacity: "0",
+          });
+        }
+      });
+
+      // Open this accordion
+      $parentItem.addClass("active");
+
+      // Get content height for smooth animation
+      const contentHeight = $content.find(".content-wrapper").outerHeight();
+
+      $content.css({
+        "max-height": contentHeight + "px",
+        opacity: "1",
+      });
+    }
+  });
+
+  // Handle window resize - update max-height for open accordions
+  $(window).on("resize", function () {
+    $accordionItems.each(function () {
+      if ($(this).hasClass("active")) {
+        const $content = $(this).find(".accordion-content");
+        const contentHeight = $content.find(".content-wrapper").outerHeight();
+
+        $content.css("max-height", contentHeight + "px");
+      }
+    });
+  });
+
+  // Optional: Add smooth hover effect for icons
+  $accordionItems.find(".accordion-header").hover(
+    function () {
+      $(this).find(".accordion-icon").css("transform", "scale(1.1)");
+    },
+    function () {
+      $(this).find(".accordion-icon").css("transform", "scale(1)");
+    },
+  );
+});

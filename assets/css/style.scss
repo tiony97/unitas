@@ -761,7 +761,7 @@ footer#site-footer {
     .footer-section-header {
       width: 100%;
       height: fit-content;
-      padding: 6px 0;
+      padding: 1em 0;
       border-bottom: 1px solid #ffffff30;
       @include flex-center;
       margin-bottom: 1em;
@@ -870,7 +870,7 @@ footer#site-footer {
       width: 100%;
       max-width: 100%;
       height: fit-content;
-
+      padding: 1em 0;
       gap: 1em;
       border-top: 1px solid #ffffff30;
       .wrapper {
@@ -912,3 +912,5 @@ footer#site-footer {
 /* Page Imports */
 @import "./home";
 @import "./about";
+@import "./strategy";
+@import "./governance";
