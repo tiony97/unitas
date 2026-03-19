@@ -162,7 +162,7 @@ header {
     &__contact {
       color: $background;
       text-decoration: none;
-      font-size: 12px;
+      font-size: 12px !important;
       display: flex;
       align-items: center;
       gap: 5px;
@@ -204,7 +204,7 @@ header {
           a {
             color: $background;
             text-decoration: none;
-            font-size: 13px;
+            font-size: 13px !important;
             padding: 0 8px;
             font-weight: 400;
 
