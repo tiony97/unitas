@@ -913,3 +913,82 @@ jQuery(document).ready(function ($) {
     },
   );
 });
+
+// Become Member Accordion
+jQuery(document).ready(function ($) {
+  const $accordionItems = $(".member-accordion .accordion-item");
+
+  // Set first item as active by default
+  $accordionItems.first().addClass("active");
+
+  // Handle accordion header click
+  $accordionItems.find(".accordion-header").on("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const $parentItem = $(this).closest(".accordion-item");
+
+    // If clicked item is already active, close it
+    if ($parentItem.hasClass("active")) {
+      $parentItem.removeClass("active");
+    } else {
+      // Close other open accordions (for single open at a time)
+      $accordionItems.removeClass("active");
+
+      // Open this accordion
+      $parentItem.addClass("active");
+
+      // Optional: Smooth scroll to the opened accordion
+      setTimeout(function () {
+        const offset = $parentItem.offset().top;
+        const headerHeight = $("header").outerHeight() || 0;
+
+        if ($(window).scrollTop() > offset - 100) {
+          $("html, body").animate(
+            {
+              scrollTop: offset - headerHeight - 20,
+            },
+            300,
+          );
+        }
+      }, 100);
+    }
+  });
+
+  // Handle requirement item hover for better UX
+  $(".requirement-item").hover(
+    function () {
+      $(this).css("transform", "translateX(5px)");
+    },
+    function () {
+      $(this).css("transform", "translateX(0)");
+    },
+  );
+
+  // Optional: Add keyboard accessibility
+  $accordionItems
+    .find(".accordion-header")
+    .on("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        $(this).trigger("click");
+      }
+    })
+    .attr("tabindex", "0")
+    .attr("role", "button")
+    .attr("aria-expanded", function () {
+      return $(this).closest(".accordion-item").hasClass("active");
+    });
+
+  // Update ARIA attributes when accordion state changes
+  $accordionItems.on("accordionToggle", function () {
+    const $header = $(this).find(".accordion-header");
+    const isActive = $(this).hasClass("active");
+    $header.attr("aria-expanded", isActive);
+  });
+
+  // Trigger ARIA update on initial load
+  $accordionItems.each(function () {
+    $(this).trigger("accordionToggle");
+  });
+});
