@@ -240,18 +240,24 @@
                       <!-- Main Menu Links Column -->
                       <div class="mega-menu__links">
                         <ul class="mega-menu__items">
-                          <li class="menu-item" data-submenu="submenu-savings">
+                          <!--Savings Accounts-->
+                          <li
+                            class="menu-item menu-item-has-children"
+                            data-submenu="submenu-savings"
+                          >
                             <a href="#">
                               <span class="menu-icon-wrapper">
                                 <img
-                                  src="./assets/images/piggy-bank.svg"
+                                  src="./assets/images/coins.svg"
                                   alt=""
                                   class="menu-icon"
                                 />
                               </span>
                               Savings Accounts
+                              <i class="fas fa-angle-right"></i>
                             </a>
                           </li>
+
                           <li class="menu-item" data-submenu="submenu-current">
                             <a href="#">
                               <span class="menu-icon-wrapper">
@@ -286,9 +292,26 @@
                       <!-- Dynamic Submenu Column -->
                       <div class="mega-menu__submenus">
                         <div class="submenu-container" id="submenu-savings">
-                          <div class="submenu-content">
-                            <!-- Empty or default content -->
-                          </div>
+                          <ul class="submenu-items">
+                            <li class="menu-item">
+                              <a href="./savings.html">Accounts</a>
+                            </li>
+                            <li class="menu-item">
+                              <a href="./savings-timiza.html"
+                                >Timiza Transactional Account
+                              </a>
+                            </li>
+                            <li class="menu-item">
+                              <a href="./savings-jipange.html"
+                                >Jipange Account</a
+                              >
+                            </li>
+                            <li class="menu-item">
+                              <a href="./savings-jolly-junior.html"
+                                >Jolly Junior Account</a
+                              >
+                            </li>
+                          </ul>
                         </div>
                         <div class="submenu-container" id="submenu-current">
                           <div class="submenu-content">

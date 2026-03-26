@@ -1567,11 +1567,11 @@ footer#site-footer .contact-section .social-info a:hover {
 }
 
 /* CTA Section */
-#cta {
+#cta, #savings-cta {
   padding: 6em 0;
   background: #fff7f7;
 }
-#cta .container .cta-card {
+#cta .container .cta-card, #savings-cta .container .cta-card {
   width: 100%;
   height: -moz-fit-content;
   height: fit-content;
@@ -1585,21 +1585,21 @@ footer#site-footer .contact-section .social-info a:hover {
   padding-top: 3em;
   padding-bottom: 3em;
 }
-#cta .container .cta-card .title-section {
+#cta .container .cta-card .title-section, #savings-cta .container .cta-card .title-section {
   display: flex;
   align-items: center;
   gap: 1em;
 }
-#cta .container .cta-card .title-section h2 {
+#cta .container .cta-card .title-section h2, #savings-cta .container .cta-card .title-section h2 {
   font-weight: 700;
 }
-#cta .container .cta-card .title-section img {
+#cta .container .cta-card .title-section img, #savings-cta .container .cta-card .title-section img {
   width: 150px;
   height: auto;
   -o-object-fit: contain;
      object-fit: contain;
 }
-#cta .container .cta-card .cta-desc {
+#cta .container .cta-card .cta-desc, #savings-cta .container .cta-card .cta-desc {
   font-size: 16px;
   line-height: 28px;
   margin: 1em 0;
@@ -3603,4 +3603,492 @@ footer#site-footer .contact-section .social-info a:hover {
     font-size: 28px;
     line-height: 34px;
   }
+}
+#savings-banner {
+  position: relative;
+  background: #f6f5eb;
+}
+#savings-banner .landing-vector {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+  z-index: 0;
+}
+#savings-banner .container {
+  width: 85%;
+  display: flex;
+  align-items: flex-start;
+  gap: 2em;
+  margin: 0;
+  margin-left: auto;
+  z-index: 2 !important;
+}
+#savings-banner .container * {
+  z-index: 2 !important;
+}
+#savings-banner .container .content-wrapper {
+  flex: 1;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding-top: 8em;
+  padding-bottom: 10em;
+}
+#savings-banner .container .content-wrapper h2 {
+  font-size: 64px;
+  line-height: 72px;
+}
+#savings-banner .container .content-wrapper p {
+  width: 80%;
+  font-size: 18px;
+  line-height: 30px;
+  margin-top: 1em;
+}
+#savings-banner .container .image-wrapper {
+  flex: 1;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: flex-end;
+  padding-top: 5em;
+}
+#savings-banner .container .image-wrapper .main-mage {
+  width: auto;
+  max-width: 100%;
+  height: 500px;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+#savings-banner .container .image-wrapper .savings-image {
+  position: absolute;
+  bottom: 35%;
+  left: 2em;
+  height: auto;
+  width: 250px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.savings-card-section .container {
+  width: 80%;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 5em 0;
+}
+.savings-card-section .container .intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  margin-bottom: 3em;
+}
+.savings-card-section .container .intro h2 {
+  color: #000000;
+  text-align: center;
+}
+.savings-card-section .container .intro p {
+  width: 50%;
+  text-align: center;
+}
+.savings-card-section .container .savings-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+.savings-card-section .container .savings-cards .card {
+  flex: 1;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: #fefefe;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 30px;
+  overflow: hidden;
+}
+.savings-card-section .container .savings-cards .card .content-wrapper {
+  height: -moz-fit-content;
+  height: fit-content;
+  min-height: 220px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1.5em;
+}
+.savings-card-section .container .savings-cards .card .content-wrapper h5 {
+  font-family: bodyFontBold;
+}
+.savings-card-section .container .savings-cards .card .content-wrapper h5 span {
+  font-family: bodyFont !important;
+  font-weight: 600 !important;
+}
+.savings-card-section .container .savings-cards .card .content-wrapper p {
+  font-size: 13px !important;
+  line-height: 19px !important;
+}
+.savings-card-section .container .savings-cards .card .content-wrapper a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100% !important;
+  padding: 0.6em !important;
+  border: 2px solid #ce2329 !important;
+  font-weight: 600 !important;
+}
+.savings-card-section .container .savings-cards .card .content-wrapper a:hover {
+  background: #ce2329 !important;
+}
+.savings-card-section .container .savings-cards .card .image-wrapper {
+  height: 210px;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 1em;
+}
+.savings-card-section .container .savings-cards .card .image-wrapper img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.savings-card-section .container .savings-cards.centered {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 1.5rem !important;
+}
+.savings-card-section .container .savings-cards.centered .card {
+  max-width: 280px !important;
+  flex: 0 0 auto !important;
+}
+
+#features-requirements {
+  padding: 5em 0;
+}
+#features-requirements .container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
+}
+#features-requirements .container .intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
+}
+#features-requirements .container .intro h2 {
+  text-align: center;
+}
+#features-requirements .container .intro p {
+  text-align: center;
+  width: 60%;
+  margin-top: 1em;
+}
+#features-requirements .container .features,
+#features-requirements .container .requirements {
+  position: relative;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 30px;
+  display: flex;
+  overflow: hidden;
+  margin-top: 3em;
+}
+#features-requirements .container .features .image-wrapper,
+#features-requirements .container .requirements .image-wrapper {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  margin: 0;
+  padding: 0;
+}
+#features-requirements .container .features .image-wrapper img,
+#features-requirements .container .requirements .image-wrapper img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#features-requirements .container .features .content-wrapper,
+#features-requirements .container .requirements .content-wrapper {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  flex: 1.4;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2em 3em;
+}
+#features-requirements .container .features .content-wrapper h4,
+#features-requirements .container .requirements .content-wrapper h4 {
+  font-family: bodyFontBold;
+  margin-bottom: 1em;
+}
+#features-requirements .container .features .content-wrapper .items,
+#features-requirements .container .requirements .content-wrapper .items {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6em;
+}
+#features-requirements .container .features .content-wrapper .items .item,
+#features-requirements .container .requirements .content-wrapper .items .item {
+  width: 100%;
+  background: #fafaf8;
+  border: 1px solid #dddddd;
+  border-radius: 15px;
+  display: flex;
+  gap: 0.6em;
+  padding: 1em 1.2em;
+}
+#features-requirements .container .features .content-wrapper .items .item img,
+#features-requirements .container .requirements .content-wrapper .items .item img {
+  width: 25px;
+  height: 25px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+#features-requirements .container .requirements {
+  height: -moz-fit-content !important;
+  height: fit-content !important;
+}
+#features-requirements .container .requirements .content-wrapper {
+  height: -moz-fit-content !important;
+  height: fit-content !important;
+  padding: 2em 3em;
+}
+#features-requirements .container .requirements .image-wrapper {
+  min-height: 100% !important;
+  height: 400px !important;
+}
+
+#savings-steps .container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
+  padding: 5em 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+}
+#savings-steps .container .intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
+}
+#savings-steps .container .intro h2 {
+  text-align: center;
+}
+#savings-steps .container .intro p {
+  text-align: center;
+  width: 60%;
+  margin-top: 1em;
+}
+#savings-steps .container .steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin-top: 3em;
+}
+#savings-steps .container .steps .step {
+  flex: 1;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 30px;
+  padding: 1.5em;
+}
+#savings-steps .container .steps .step .tag {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 0.6em 1em;
+  background: #fff5f5;
+  border-radius: 30px;
+  color: #ce2329;
+  font-family: bodyFontBold;
+  font-size: 18px;
+  line-height: 22px;
+}
+#savings-steps .container .steps .step .content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5em;
+}
+#savings-steps .container .steps .step .content h4 {
+  font-family: bodyFontBold;
+}
+#savings-steps .container .account-action-btn {
+  margin: 0 auto;
+  margin-top: 4em;
+}
+
+#savings-faq {
+  padding: 5em 0;
+  background: #f6f5eb;
+}
+#savings-faq .container {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#savings-faq .container .intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 800px;
+  margin-bottom: 4em;
+}
+#savings-faq .container .intro h2 {
+  text-align: center;
+}
+#savings-faq .container .savings-accordion {
+  width: 100%;
+  max-width: 1200px;
+}
+#savings-faq .container .savings-accordion .accordion-item {
+  margin-bottom: 1.5em;
+  background: transparent;
+  border-bottom: 2px solid #ce2329;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+#savings-faq .container .savings-accordion .accordion-item .accordion-header {
+  padding: 1.8em 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background: transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+#savings-faq .container .savings-accordion .accordion-item .accordion-header .accordion-title {
+  font-family: bodyFontBold;
+  font-size: 22px;
+  font-weight: 800 !important;
+  color: #000000;
+}
+#savings-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+#savings-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .plus,
+#savings-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .minus {
+  font-size: 40px;
+  font-weight: 800 !important;
+  color: #000000;
+  line-height: 1;
+  position: absolute;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+#savings-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .plus {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+#savings-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .minus {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+#savings-faq .container .savings-accordion .accordion-item .accordion-content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  background: transparent;
+  padding: 0 !important;
+}
+#savings-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper {
+  padding: 2em 0;
+  padding-top: 0;
+}
+#savings-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper p {
+  color: #343131;
+  margin-bottom: 1em;
+}
+#savings-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper p:last-of-type {
+  margin: 0;
+}
+#savings-faq .container .savings-accordion .accordion-item.active .accordion-header .accordion-title {
+  color: #ce2329;
+}
+#savings-faq .container .savings-accordion .accordion-item.active .accordion-header .accordion-icon {
+  transform: rotate(180deg);
+}
+#savings-faq .container .savings-accordion .accordion-item.active .accordion-header .accordion-icon * {
+  color: #ce2329;
+}
+#savings-faq .container .savings-accordion .accordion-item.active .accordion-header .accordion-icon .plus {
+  opacity: 0;
+  transform: rotate(-90deg);
+}
+#savings-faq .container .savings-accordion .accordion-item.active .accordion-header .accordion-icon .minus {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+#savings-faq .container .savings-accordion .accordion-item.active .accordion-content {
+  max-height: 400px;
+  opacity: 1;
+}
+#savings-faq .container .savings-accordion .accordion-item:last-of-type {
+  border: none;
+}
+
+#savings-cta {
+  background: #f6f5eb;
+}
+#savings-cta .container .cta-card {
+  padding: 5em 0;
+}
+#savings-cta .container .cta-card .cta-desc {
+  margin: 2em 0;
+}
+#savings-cta .container .cta-card .cta-btns {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  gap: 1em;
 }/*# sourceMappingURL=style.css.map */

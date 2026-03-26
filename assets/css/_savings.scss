@@ -1,0 +1,473 @@
+#savings-banner {
+  position: relative;
+  background: #f6f5eb;
+  .landing-vector {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: auto;
+    height: 100%;
+    object-fit: fill;
+    z-index: 0;
+  }
+  .container {
+    width: 85%;
+    display: flex;
+    align-items: flex-start;
+    gap: 2em;
+    margin: 0;
+    margin-left: auto;
+    z-index: 2 !important;
+    * {
+      z-index: 2 !important;
+    }
+    .content-wrapper {
+      flex: 1;
+      height: fit-content;
+      padding-top: 8em;
+      padding-bottom: 10em;
+      h2 {
+        font-size: 64px;
+        line-height: 72px;
+      }
+      p {
+        width: 80%;
+        font-size: 18px;
+        line-height: 30px;
+        margin-top: 1em;
+      }
+    }
+    .image-wrapper {
+      flex: 1;
+      position: relative;
+      height: 100%;
+      width: 100%;
+      @include flex-center;
+      justify-content: flex-end;
+      padding-top: 5em;
+      .main-mage {
+        width: auto;
+        max-width: 100%;
+        height: 500px;
+        object-fit: fill;
+      }
+      .savings-image {
+        position: absolute;
+        bottom: 35%;
+        left: 2em;
+        height: auto;
+        width: 250px;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+.savings-card-section {
+  .container {
+    width: 80%;
+    border-top: 1px solid rgb(0, 0, 0, 0.3);
+    padding: 5em 0;
+    // Intro Section
+    .intro {
+      @include flex-col;
+      align-items: center;
+      justify-content: center;
+      gap: 1em;
+      margin-bottom: 3em;
+      h2 {
+        color: $foreground-dark;
+        text-align: center;
+      }
+
+      p {
+        width: 50%;
+        text-align: center;
+      }
+    }
+
+    // Savings cards
+    .savings-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      .card {
+        flex: 1;
+        width: 100%;
+        height: fit-content;
+        @include flex-col;
+        background: #fefefe;
+        border: 1px solid rgb(0, 0, 0, 0.5);
+        border-radius: 30px;
+        overflow: hidden;
+        .content-wrapper {
+          height: fit-content;
+          min-height: 220px;
+          width: 100%;
+          @include flex-col;
+          justify-content: space-between;
+          padding: 1.5em;
+          h5 {
+            font-family: bodyFontBold;
+            span {
+              font-family: bodyFont !important;
+              font-weight: 600 !important;
+            }
+          }
+          p {
+            font-size: 13px !important;
+            line-height: 19px !important;
+          }
+          a {
+            @include flex-center;
+            width: 100% !important;
+            padding: 0.6em !important;
+            border: 2px solid $accent-main !important;
+            font-weight: 600 !important;
+            &:hover {
+              background: $accent-main !important;
+            }
+          }
+        }
+        .image-wrapper {
+          height: 210px;
+          width: 100%;
+          overflow: hidden;
+          margin-top: 1em;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+      &.centered {
+        display: flex !important;
+        justify-content: center !important;
+        gap: 1.5rem !important;
+
+        .card {
+          max-width: 280px !important;
+          flex: 0 0 auto !important;
+        }
+      }
+    }
+  }
+}
+
+#features-requirements {
+  padding: 5em 0;
+  .container {
+    width: 80%;
+    @include flex-col;
+    align-items: center;
+    justify-content: center;
+    .intro {
+      @include flex-col;
+      align-items: center;
+      justify-content: center;
+      h2 {
+        text-align: center;
+      }
+      p {
+        text-align: center;
+        width: 60%;
+        margin-top: 1em;
+      }
+    }
+    .features,
+    .requirements {
+      position: relative;
+      width: 100%;
+      height: fit-content;
+      border: 1px solid rgb(0, 0, 0, 0.8);
+      border-radius: 30px;
+      display: flex;
+      overflow: hidden;
+      margin-top: 3em;
+      .image-wrapper {
+        flex: 1;
+        width: 100%;
+        height: 100%;
+        min-height: 200px;
+        margin: 0;
+        padding: 0;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .content-wrapper {
+        width: 100%;
+        height: fit-content;
+        flex: 1.4;
+        @include flex-col;
+        padding: 2em 3em;
+        h4 {
+          font-family: bodyFontBold;
+          margin-bottom: 1em;
+        }
+        .items {
+          width: 100%;
+          @include flex-col;
+          gap: 0.6em;
+          .item {
+            width: 100%;
+            background: #fafaf8;
+            border: 1px solid #dddddd;
+            border-radius: 15px;
+            display: flex;
+            gap: 0.6em;
+            padding: 1em 1.2em;
+            img {
+              width: 25px;
+              height: 25px;
+              object-fit: contain;
+            }
+          }
+        }
+      }
+    }
+    .requirements {
+      height: fit-content !important;
+      .content-wrapper {
+        height: fit-content !important;
+        padding: 2em 3em;
+      }
+      .image-wrapper {
+        min-height: 100% !important;
+        height: 400px !important;
+      }
+    }
+  }
+}
+
+#savings-steps {
+  .container {
+    width: 80%;
+    @include flex-col;
+    align-items: center;
+    justify-content: center;
+    padding: 5em 0;
+    border-top: 1px solid rgb(0, 0, 0, 0.3);
+    .intro {
+      @include flex-col;
+      align-items: center;
+      justify-content: center;
+      h2 {
+        text-align: center;
+      }
+      p {
+        text-align: center;
+        width: 60%;
+        margin-top: 1em;
+      }
+    }
+    .steps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+      margin-top: 3em;
+      .step {
+        flex: 1;
+        width: 100%;
+        height: 300px;
+        @include flex-col;
+        justify-content: space-between;
+        border: 1px solid rgb(0, 0, 0, 0.3);
+        border-radius: 30px;
+        padding: 1.5em;
+        .tag {
+          width: fit-content;
+          height: fit-content;
+          padding: 0.6em 1em;
+          background: #fff5f5;
+          border-radius: 30px;
+          color: $accent-main;
+          font-family: bodyFontBold;
+          font-size: 18px;
+          line-height: 22px;
+        }
+        .content {
+          @include flex-col;
+          gap: 0.5em;
+          h4 {
+            font-family: bodyFontBold;
+          }
+        }
+      }
+    }
+    .account-action-btn {
+      margin: 0 auto;
+      margin-top: 4em;
+    }
+  }
+}
+
+#savings-faq {
+  padding: 5em 0;
+  background: #f6f5eb;
+
+  .container {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .intro {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      max-width: 800px;
+      margin-bottom: 4em;
+
+      h2 {
+        text-align: center;
+      }
+    }
+
+    .savings-accordion {
+      width: 100%;
+      max-width: 1200px;
+
+      .accordion-item {
+        margin-bottom: 1.5em;
+        background: transparent;
+        border-bottom: 2px solid $accent-main;
+        overflow: hidden;
+        transition: all 0.3s ease;
+
+        .accordion-header {
+          padding: 1.8em 0;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          cursor: pointer;
+          background: transparent;
+          transition: all 0.3s ease;
+          position: relative;
+          z-index: 2;
+
+          .accordion-title {
+            font-family: bodyFontBold;
+            font-size: 22px;
+            font-weight: 800 !important;
+            color: $foreground-dark;
+          }
+
+          .accordion-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: transform 0.3s ease;
+
+            .plus,
+            .minus {
+              font-size: 40px;
+              font-weight: 800 !important;
+              color: $foreground-dark;
+              line-height: 1;
+              position: absolute;
+              transition:
+                opacity 0.3s ease,
+                transform 0.3s ease;
+            }
+
+            .plus {
+              opacity: 1;
+              transform: rotate(0deg);
+            }
+
+            .minus {
+              opacity: 0;
+              transform: rotate(90deg);
+            }
+          }
+        }
+
+        .accordion-content {
+          max-height: 0;
+          opacity: 0;
+          overflow: hidden;
+          transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+          background: transparent;
+          padding: 0 !important;
+          .content-wrapper {
+            padding: 2em 0;
+            padding-top: 0;
+
+            p {
+              color: $foreground-light;
+              margin-bottom: 1em;
+              &:last-of-type {
+                margin: 0;
+              }
+            }
+          }
+        }
+
+        // Active (open) state
+        &.active {
+          .accordion-header {
+            .accordion-title {
+              color: $accent-main;
+            }
+            .accordion-icon {
+              transform: rotate(180deg);
+              * {
+                color: $accent-main;
+              }
+
+              .plus {
+                opacity: 0;
+                transform: rotate(-90deg);
+              }
+
+              .minus {
+                opacity: 1;
+                transform: rotate(0deg);
+              }
+            }
+          }
+
+          .accordion-content {
+            max-height: 400px;
+            opacity: 1;
+          }
+        }
+
+        &:last-of-type {
+          border: none;
+        }
+      }
+    }
+  }
+}
+
+#savings-cta {
+  @extend #cta;
+  background: #f6f5eb;
+  .container {
+    .cta-card {
+      padding: 5em 0;
+      .cta-desc {
+        margin: 2em 0;
+      }
+      .cta-btns {
+        position: relative;
+        @include flex-center;
+        width: fit-content;
+        height: fit-content;
+        gap: 1em;
+      }
+    }
+  }
+}
