@@ -1567,11 +1567,11 @@ footer#site-footer .contact-section .social-info a:hover {
 }
 
 /* CTA Section */
-#cta, #savings-cta {
+#cta, #savings-cta, #borrow-cta {
   padding: 6em 0;
   background: #fff7f7;
 }
-#cta .container .cta-card, #savings-cta .container .cta-card {
+#cta .container .cta-card, #savings-cta .container .cta-card, #borrow-cta .container .cta-card {
   width: 100%;
   height: -moz-fit-content;
   height: fit-content;
@@ -1585,21 +1585,21 @@ footer#site-footer .contact-section .social-info a:hover {
   padding-top: 3em;
   padding-bottom: 3em;
 }
-#cta .container .cta-card .title-section, #savings-cta .container .cta-card .title-section {
+#cta .container .cta-card .title-section, #savings-cta .container .cta-card .title-section, #borrow-cta .container .cta-card .title-section {
   display: flex;
   align-items: center;
   gap: 1em;
 }
-#cta .container .cta-card .title-section h2, #savings-cta .container .cta-card .title-section h2 {
+#cta .container .cta-card .title-section h2, #savings-cta .container .cta-card .title-section h2, #borrow-cta .container .cta-card .title-section h2 {
   font-weight: 700;
 }
-#cta .container .cta-card .title-section img, #savings-cta .container .cta-card .title-section img {
+#cta .container .cta-card .title-section img, #savings-cta .container .cta-card .title-section img, #borrow-cta .container .cta-card .title-section img {
   width: 150px;
   height: auto;
   -o-object-fit: contain;
      object-fit: contain;
 }
-#cta .container .cta-card .cta-desc, #savings-cta .container .cta-card .cta-desc {
+#cta .container .cta-card .cta-desc, #savings-cta .container .cta-card .cta-desc, #borrow-cta .container .cta-card .cta-desc {
   font-size: 16px;
   line-height: 28px;
   margin: 1em 0;
@@ -3604,11 +3604,11 @@ footer#site-footer .contact-section .social-info a:hover {
     line-height: 34px;
   }
 }
-#savings-banner {
+#savings-banner, #borrow-banner {
   position: relative;
   background: #f6f5eb;
 }
-#savings-banner .landing-vector {
+#savings-banner .landing-vector, #borrow-banner .landing-vector {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -3618,7 +3618,7 @@ footer#site-footer .contact-section .social-info a:hover {
      object-fit: fill;
   z-index: 0;
 }
-#savings-banner .container {
+#savings-banner .container, #borrow-banner .container {
   width: 85%;
   display: flex;
   align-items: flex-start;
@@ -3627,27 +3627,27 @@ footer#site-footer .contact-section .social-info a:hover {
   margin-left: auto;
   z-index: 2 !important;
 }
-#savings-banner .container * {
+#savings-banner .container *, #borrow-banner .container * {
   z-index: 2 !important;
 }
-#savings-banner .container .content-wrapper {
+#savings-banner .container .content-wrapper, #borrow-banner .container .content-wrapper {
   flex: 1;
   height: -moz-fit-content;
   height: fit-content;
   padding-top: 8em;
   padding-bottom: 10em;
 }
-#savings-banner .container .content-wrapper h2 {
+#savings-banner .container .content-wrapper h2, #borrow-banner .container .content-wrapper h2 {
   font-size: 64px;
   line-height: 72px;
 }
-#savings-banner .container .content-wrapper p {
+#savings-banner .container .content-wrapper p, #borrow-banner .container .content-wrapper p {
   width: 80%;
   font-size: 18px;
   line-height: 30px;
   margin-top: 1em;
 }
-#savings-banner .container .image-wrapper {
+#savings-banner .container .image-wrapper, #borrow-banner .container .image-wrapper {
   flex: 1;
   position: relative;
   height: 100%;
@@ -3658,14 +3658,14 @@ footer#site-footer .contact-section .social-info a:hover {
   justify-content: flex-end;
   padding-top: 5em;
 }
-#savings-banner .container .image-wrapper .main-mage {
+#savings-banner .container .image-wrapper .main-mage, #borrow-banner .container .image-wrapper .main-mage {
   width: auto;
   max-width: 100%;
   height: 500px;
   -o-object-fit: fill;
      object-fit: fill;
 }
-#savings-banner .container .image-wrapper .savings-image {
+#savings-banner .container .image-wrapper .savings-image, #borrow-banner .container .image-wrapper .savings-image {
   position: absolute;
   bottom: 35%;
   left: 2em;
@@ -3675,12 +3675,12 @@ footer#site-footer .contact-section .social-info a:hover {
      object-fit: contain;
 }
 
-.savings-card-section .container {
+.savings-card-section .container, .borrow-card-section .container {
   width: 80%;
   border-top: 1px solid rgba(0, 0, 0, 0.3);
   padding: 5em 0;
 }
-.savings-card-section .container .intro {
+.savings-card-section .container .intro, .borrow-card-section .container .intro {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -3689,20 +3689,20 @@ footer#site-footer .contact-section .social-info a:hover {
   gap: 1em;
   margin-bottom: 3em;
 }
-.savings-card-section .container .intro h2 {
+.savings-card-section .container .intro h2, .borrow-card-section .container .intro h2 {
   color: #000000;
   text-align: center;
 }
-.savings-card-section .container .intro p {
+.savings-card-section .container .intro p, .borrow-card-section .container .intro p {
   width: 50%;
   text-align: center;
 }
-.savings-card-section .container .savings-cards {
+.savings-card-section .container .savings-cards, .savings-card-section .container .borrow-card-section .borrow-cards, .borrow-card-section .container .savings-cards, .borrow-card-section .container .borrow-cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
 }
-.savings-card-section .container .savings-cards .card {
+.savings-card-section .container .savings-cards .card, .savings-card-section .container .borrow-card-section .borrow-cards .card, .borrow-card-section .container .savings-cards .card, .borrow-card-section .container .borrow-cards .card {
   flex: 1;
   width: 100%;
   height: -moz-fit-content;
@@ -3715,10 +3715,10 @@ footer#site-footer .contact-section .social-info a:hover {
   border-radius: 30px;
   overflow: hidden;
 }
-.savings-card-section .container .savings-cards .card .content-wrapper {
+.savings-card-section .container .savings-cards .card .content-wrapper, .savings-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper, .borrow-card-section .container .savings-cards .card .content-wrapper, .borrow-card-section .container .borrow-cards .card .content-wrapper {
   height: -moz-fit-content;
   height: fit-content;
-  min-height: 220px;
+  min-height: 240px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -3726,18 +3726,18 @@ footer#site-footer .contact-section .social-info a:hover {
   justify-content: space-between;
   padding: 1.5em;
 }
-.savings-card-section .container .savings-cards .card .content-wrapper h5 {
+.savings-card-section .container .savings-cards .card .content-wrapper h5, .savings-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper h5, .borrow-card-section .container .savings-cards .card .content-wrapper h5, .borrow-card-section .container .borrow-cards .card .content-wrapper h5 {
   font-family: bodyFontBold;
 }
-.savings-card-section .container .savings-cards .card .content-wrapper h5 span {
+.savings-card-section .container .savings-cards .card .content-wrapper h5 span, .savings-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper h5 span, .borrow-card-section .container .savings-cards .card .content-wrapper h5 span, .borrow-card-section .container .borrow-cards .card .content-wrapper h5 span {
   font-family: bodyFont !important;
   font-weight: 600 !important;
 }
-.savings-card-section .container .savings-cards .card .content-wrapper p {
+.savings-card-section .container .savings-cards .card .content-wrapper p, .savings-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper p, .borrow-card-section .container .savings-cards .card .content-wrapper p, .borrow-card-section .container .borrow-cards .card .content-wrapper p {
   font-size: 13px !important;
   line-height: 19px !important;
 }
-.savings-card-section .container .savings-cards .card .content-wrapper a {
+.savings-card-section .container .savings-cards .card .content-wrapper a, .savings-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper a, .borrow-card-section .container .savings-cards .card .content-wrapper a, .borrow-card-section .container .borrow-cards .card .content-wrapper a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3746,27 +3746,30 @@ footer#site-footer .contact-section .social-info a:hover {
   border: 2px solid #ce2329 !important;
   font-weight: 600 !important;
 }
-.savings-card-section .container .savings-cards .card .content-wrapper a:hover {
+.savings-card-section .container .savings-cards .card .content-wrapper a:hover, .savings-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper a:hover, .borrow-card-section .container .savings-cards .card .content-wrapper a:hover, .borrow-card-section .container .borrow-cards .card .content-wrapper a:hover {
   background: #ce2329 !important;
 }
-.savings-card-section .container .savings-cards .card .image-wrapper {
+.savings-card-section .container .savings-cards .card .image-wrapper, .savings-card-section .container .borrow-card-section .borrow-cards .card .image-wrapper, .borrow-card-section .container .savings-cards .card .image-wrapper, .borrow-card-section .container .borrow-cards .card .image-wrapper {
   height: 210px;
   width: 100%;
   overflow: hidden;
   margin-top: 1em;
 }
-.savings-card-section .container .savings-cards .card .image-wrapper img {
+.savings-card-section .container .savings-cards .card .image-wrapper img, .savings-card-section .container .borrow-card-section .borrow-cards .card .image-wrapper img, .borrow-card-section .container .savings-cards .card .image-wrapper img, .borrow-card-section .container .borrow-cards .card .image-wrapper img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.savings-card-section .container .savings-cards.centered {
+.savings-card-section .container .savings-cards.centered, .savings-card-section .container .borrow-card-section .centered.borrow-cards, .borrow-card-section .container .savings-cards.centered, .borrow-card-section .container .centered.borrow-cards {
   display: flex !important;
+  flex-wrap: wrap !important;
   justify-content: center !important;
   gap: 1.5rem !important;
+  max-width: 100%;
+  width: 100%;
 }
-.savings-card-section .container .savings-cards.centered .card {
+.savings-card-section .container .savings-cards.centered .card, .savings-card-section .container .borrow-card-section .centered.borrow-cards .card, .borrow-card-section .container .savings-cards.centered .card, .borrow-card-section .container .centered.borrow-cards .card {
   max-width: 280px !important;
   flex: 0 0 auto !important;
 }
@@ -3844,6 +3847,8 @@ footer#site-footer .contact-section .social-info a:hover {
 #features-requirements .container .features .content-wrapper .items,
 #features-requirements .container .requirements .content-wrapper .items {
   width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -3866,6 +3871,10 @@ footer#site-footer .contact-section .social-info a:hover {
   -o-object-fit: contain;
      object-fit: contain;
 }
+#features-requirements .container .features.inverse,
+#features-requirements .container .requirements.inverse {
+  flex-direction: row-reverse;
+}
 #features-requirements .container .requirements {
   height: -moz-fit-content !important;
   height: fit-content !important;
@@ -3873,14 +3882,24 @@ footer#site-footer .contact-section .social-info a:hover {
 #features-requirements .container .requirements .content-wrapper {
   height: -moz-fit-content !important;
   height: fit-content !important;
+  max-height: -moz-fit-content !important;
+  max-height: fit-content !important;
   padding: 2em 3em;
 }
 #features-requirements .container .requirements .image-wrapper {
-  min-height: 100% !important;
-  height: 400px !important;
+  min-height: 200px !important;
+  height: 100% !important;
+  width: 100% !important;
+}
+#features-requirements .container .requirements .image-wrapper img {
+  height: 100% !important;
+  max-height: 100% !important;
+  width: 100% !important;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
-#savings-steps .container {
+#savings-steps .container, #borrow-steps .container {
   width: 80%;
   display: flex;
   flex-direction: column;
@@ -3890,28 +3909,28 @@ footer#site-footer .contact-section .social-info a:hover {
   padding: 5em 0;
   border-top: 1px solid rgba(0, 0, 0, 0.3);
 }
-#savings-steps .container .intro {
+#savings-steps .container .intro, #borrow-steps .container .intro {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   align-items: center;
   justify-content: center;
 }
-#savings-steps .container .intro h2 {
+#savings-steps .container .intro h2, #borrow-steps .container .intro h2 {
   text-align: center;
 }
-#savings-steps .container .intro p {
+#savings-steps .container .intro p, #borrow-steps .container .intro p {
   text-align: center;
   width: 60%;
   margin-top: 1em;
 }
-#savings-steps .container .steps {
+#savings-steps .container .steps, #borrow-steps .container .steps {
   display: flex;
   flex-wrap: wrap;
   gap: 1em;
   margin-top: 3em;
 }
-#savings-steps .container .steps .step {
+#savings-steps .container .steps .step, #borrow-steps .container .steps .step {
   flex: 1;
   width: 100%;
   height: 300px;
@@ -3923,7 +3942,7 @@ footer#site-footer .contact-section .social-info a:hover {
   border-radius: 30px;
   padding: 1.5em;
 }
-#savings-steps .container .steps .step .tag {
+#savings-steps .container .steps .step .tag, #borrow-steps .container .steps .step .tag {
   width: -moz-fit-content;
   width: fit-content;
   height: -moz-fit-content;
@@ -3936,32 +3955,32 @@ footer#site-footer .contact-section .social-info a:hover {
   font-size: 18px;
   line-height: 22px;
 }
-#savings-steps .container .steps .step .content {
+#savings-steps .container .steps .step .content, #borrow-steps .container .steps .step .content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 0.5em;
 }
-#savings-steps .container .steps .step .content h4 {
+#savings-steps .container .steps .step .content h4, #borrow-steps .container .steps .step .content h4 {
   font-family: bodyFontBold;
 }
-#savings-steps .container .account-action-btn {
+#savings-steps .container .account-action-btn, #borrow-steps .container .account-action-btn {
   margin: 0 auto;
   margin-top: 4em;
 }
 
-#savings-faq {
+#savings-faq, #borrow-faq {
   padding: 5em 0;
   background: #f6f5eb;
 }
-#savings-faq .container {
+#savings-faq .container, #borrow-faq .container {
   width: 70%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-#savings-faq .container .intro {
+#savings-faq .container .intro, #borrow-faq .container .intro {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -3969,21 +3988,21 @@ footer#site-footer .contact-section .social-info a:hover {
   max-width: 800px;
   margin-bottom: 4em;
 }
-#savings-faq .container .intro h2 {
+#savings-faq .container .intro h2, #borrow-faq .container .intro h2 {
   text-align: center;
 }
-#savings-faq .container .savings-accordion {
+#savings-faq .container .savings-accordion, #borrow-faq .container .savings-accordion {
   width: 100%;
   max-width: 1200px;
 }
-#savings-faq .container .savings-accordion .accordion-item {
+#savings-faq .container .savings-accordion .accordion-item, #borrow-faq .container .savings-accordion .accordion-item {
   margin-bottom: 1.5em;
   background: transparent;
   border-bottom: 2px solid #ce2329;
   overflow: hidden;
   transition: all 0.3s ease;
 }
-#savings-faq .container .savings-accordion .accordion-item .accordion-header {
+#savings-faq .container .savings-accordion .accordion-item .accordion-header, #borrow-faq .container .savings-accordion .accordion-item .accordion-header {
   padding: 1.8em 0;
   display: flex;
   justify-content: space-between;
@@ -3994,13 +4013,13 @@ footer#site-footer .contact-section .social-info a:hover {
   position: relative;
   z-index: 2;
 }
-#savings-faq .container .savings-accordion .accordion-item .accordion-header .accordion-title {
+#savings-faq .container .savings-accordion .accordion-item .accordion-header .accordion-title, #borrow-faq .container .savings-accordion .accordion-item .accordion-header .accordion-title {
   font-family: bodyFontBold;
   font-size: 22px;
   font-weight: 800 !important;
   color: #000000;
 }
-#savings-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon {
+#savings-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon, #borrow-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -4011,8 +4030,9 @@ footer#site-footer .contact-section .social-info a:hover {
   position: relative;
   transition: transform 0.3s ease;
 }
-#savings-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .plus,
-#savings-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .minus {
+#savings-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .plus, #borrow-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .plus,
+#savings-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .minus,
+#borrow-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .minus {
   font-size: 40px;
   font-weight: 800 !important;
   color: #000000;
@@ -4020,15 +4040,15 @@ footer#site-footer .contact-section .social-info a:hover {
   position: absolute;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
-#savings-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .plus {
+#savings-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .plus, #borrow-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .plus {
   opacity: 1;
   transform: rotate(0deg);
 }
-#savings-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .minus {
+#savings-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .minus, #borrow-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .minus {
   opacity: 0;
   transform: rotate(90deg);
 }
-#savings-faq .container .savings-accordion .accordion-item .accordion-content {
+#savings-faq .container .savings-accordion .accordion-item .accordion-content, #borrow-faq .container .savings-accordion .accordion-item .accordion-content {
   max-height: 0;
   opacity: 0;
   overflow: hidden;
@@ -4036,52 +4056,52 @@ footer#site-footer .contact-section .social-info a:hover {
   background: transparent;
   padding: 0 !important;
 }
-#savings-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper {
+#savings-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper, #borrow-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper {
   padding: 2em 0;
   padding-top: 0;
 }
-#savings-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper p {
+#savings-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper p, #borrow-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper p {
   color: #343131;
   margin-bottom: 1em;
 }
-#savings-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper p:last-of-type {
+#savings-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper p:last-of-type, #borrow-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper p:last-of-type {
   margin: 0;
 }
-#savings-faq .container .savings-accordion .accordion-item.active .accordion-header .accordion-title {
+#savings-faq .container .savings-accordion .accordion-item.active .accordion-header .accordion-title, #borrow-faq .container .savings-accordion .accordion-item.active .accordion-header .accordion-title {
   color: #ce2329;
 }
-#savings-faq .container .savings-accordion .accordion-item.active .accordion-header .accordion-icon {
+#savings-faq .container .savings-accordion .accordion-item.active .accordion-header .accordion-icon, #borrow-faq .container .savings-accordion .accordion-item.active .accordion-header .accordion-icon {
   transform: rotate(180deg);
 }
-#savings-faq .container .savings-accordion .accordion-item.active .accordion-header .accordion-icon * {
+#savings-faq .container .savings-accordion .accordion-item.active .accordion-header .accordion-icon *, #borrow-faq .container .savings-accordion .accordion-item.active .accordion-header .accordion-icon * {
   color: #ce2329;
 }
-#savings-faq .container .savings-accordion .accordion-item.active .accordion-header .accordion-icon .plus {
+#savings-faq .container .savings-accordion .accordion-item.active .accordion-header .accordion-icon .plus, #borrow-faq .container .savings-accordion .accordion-item.active .accordion-header .accordion-icon .plus {
   opacity: 0;
   transform: rotate(-90deg);
 }
-#savings-faq .container .savings-accordion .accordion-item.active .accordion-header .accordion-icon .minus {
+#savings-faq .container .savings-accordion .accordion-item.active .accordion-header .accordion-icon .minus, #borrow-faq .container .savings-accordion .accordion-item.active .accordion-header .accordion-icon .minus {
   opacity: 1;
   transform: rotate(0deg);
 }
-#savings-faq .container .savings-accordion .accordion-item.active .accordion-content {
+#savings-faq .container .savings-accordion .accordion-item.active .accordion-content, #borrow-faq .container .savings-accordion .accordion-item.active .accordion-content {
   max-height: 400px;
   opacity: 1;
 }
-#savings-faq .container .savings-accordion .accordion-item:last-of-type {
+#savings-faq .container .savings-accordion .accordion-item:last-of-type, #borrow-faq .container .savings-accordion .accordion-item:last-of-type {
   border: none;
 }
 
-#savings-cta {
+#savings-cta, #borrow-cta {
   background: #f6f5eb;
 }
-#savings-cta .container .cta-card {
+#savings-cta .container .cta-card, #borrow-cta .container .cta-card {
   padding: 5em 0;
 }
-#savings-cta .container .cta-card .cta-desc {
+#savings-cta .container .cta-card .cta-desc, #borrow-cta .container .cta-card .cta-desc {
   margin: 2em 0;
 }
-#savings-cta .container .cta-card .cta-btns {
+#savings-cta .container .cta-card .cta-btns, #borrow-cta .container .cta-card .cta-btns {
   position: relative;
   display: flex;
   align-items: center;
@@ -4091,4 +4111,301 @@ footer#site-footer .contact-section .social-info a:hover {
   height: -moz-fit-content;
   height: fit-content;
   gap: 1em;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/* BORROW PERSONAL PAGES STYLES*/
+#borrow-banner {
+  background: #ebebeb;
+}
+
+#loan-calculator .container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
+  padding: 5em 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+}
+#loan-calculator .container .intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
+}
+#loan-calculator .container .intro h2 {
+  text-align: center;
+}
+#loan-calculator .container .intro p {
+  text-align: center;
+  width: 60%;
+  margin-top: 1em;
+}
+#loan-calculator .container .calculator {
+  margin-top: 3em;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 30px;
+  background: white;
+}
+#loan-calculator .container .calculator .input-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+}
+#loan-calculator .container .calculator .input-group {
+  margin-bottom: 2em;
+}
+#loan-calculator .container .calculator .input-group label {
+  display: block;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 0.5em;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+}
+#loan-calculator .container .calculator .currency-input {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 0.8em 1em;
+  background: #f9f9f9;
+}
+#loan-calculator .container .calculator .currency-input .currency-symbol {
+  font-size: 17px;
+  font-weight: 600;
+  color: #000000;
+  margin-right: 0.8em;
+}
+#loan-calculator .container .calculator .currency-input .loan-input {
+  border: none;
+  background: transparent;
+  font-size: 28px;
+  font-weight: 600;
+  color: #000000;
+  width: 100%;
+  outline: none;
+  padding: 0;
+}
+#loan-calculator .container .calculator .currency-input .loan-input::-moz-placeholder {
+  color: #343131;
+}
+#loan-calculator .container .calculator .currency-input .loan-input::placeholder {
+  color: #343131;
+}
+#loan-calculator .container .calculator .row-group {
+  display: flex;
+  gap: 2em;
+  margin-bottom: 2em;
+}
+#loan-calculator .container .calculator .row-group .input-group {
+  flex: 1;
+  margin-bottom: 0;
+}
+#loan-calculator .container .calculator .row-group .input-group .period-input {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 0.8em 1em;
+  font-size: 18px;
+  font-weight: 500;
+  color: #000000;
+  background: #f9f9f9;
+  outline: none;
+}
+#loan-calculator .container .calculator .row-group .input-group .period-input:focus {
+  border-color: #ce2329;
+}
+#loan-calculator .container .calculator .row-group .input-group.unit-group {
+  flex: 0.5;
+}
+#loan-calculator .container .calculator .row-group .input-group.unit-group .unit-select {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 0.8em 1em;
+  font-size: 18px;
+  font-weight: 500;
+  color: #000000;
+  background: #f9f9f9;
+  cursor: pointer;
+  outline: none;
+}
+#loan-calculator .container .calculator .row-group .input-group.unit-group .unit-select:focus {
+  border-color: #ce2329;
+}
+#loan-calculator .container .calculator .interest-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+}
+#loan-calculator .container .calculator .interest-header label {
+  text-transform: none;
+  margin-bottom: 0;
+}
+#loan-calculator .container .calculator .interest-header .interest-value {
+  font-size: 13px !important;
+  background: #fce8e8;
+  border: 1px solid #e8c5c5;
+  padding: 0.5em;
+  border-radius: 20px;
+  font-weight: 700;
+  color: #ce2329;
+}
+#loan-calculator .container .calculator .slider-container {
+  position: relative;
+  padding-bottom: 30px;
+}
+#loan-calculator .container .calculator .slider-container .interest-slider {
+  width: 100%;
+  height: 4px;
+  -webkit-appearance: none;
+  background: #e0e0e0;
+  border-radius: 2px;
+  outline: none;
+}
+#loan-calculator .container .calculator .slider-container .interest-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ce2329;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  -webkit-transition: transform 0.2s ease;
+  transition: transform 0.2s ease;
+}
+#loan-calculator .container .calculator .slider-container .interest-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+#loan-calculator .container .calculator .slider-container .interest-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ce2329;
+  cursor: pointer;
+  border: none;
+  -moz-transition: transform 0.2s ease;
+  transition: transform 0.2s ease;
+}
+#loan-calculator .container .calculator .slider-container .interest-slider::-moz-range-thumb:hover {
+  transform: scale(1.2);
+}
+#loan-calculator .container .calculator .slider-container .slider-marks {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  padding: 0 4px;
+}
+#loan-calculator .container .calculator .slider-container .slider-marks .mark {
+  font-size: 11px;
+  color: #999;
+  position: relative;
+}
+#loan-calculator .container .calculator .slider-container .slider-marks .mark::before {
+  content: "";
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 8px;
+  background: #ccc;
+}
+#loan-calculator .container .calculator #calculate-btn {
+  width: 100% !important;
+  font-size: 15px !important;
+}
+#loan-calculator .container .calculator .repayment-summary {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 2em;
+}
+#loan-calculator .container .calculator .repayment-summary h3 {
+  font-family: bodyFontBold !important;
+  font-size: 18px;
+  color: #000000;
+  margin-bottom: 0.5em;
+}
+#loan-calculator .container .calculator .repayment-summary hr {
+  width: 100%;
+}
+#loan-calculator .container .calculator .repayment-summary .monthly-repayment {
+  margin-top: 1em;
+  margin-bottom: 2em;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  padding-bottom: 2em;
+}
+#loan-calculator .container .calculator .repayment-summary .monthly-repayment .label {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 0.5em;
+}
+#loan-calculator .container .calculator .repayment-summary .monthly-repayment .amount {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+#loan-calculator .container .calculator .repayment-summary .monthly-repayment .amount .currency {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ce2329;
+}
+#loan-calculator .container .calculator .repayment-summary .monthly-repayment .amount .value {
+  font-family: bodyFontBold !important;
+  font-weight: 800;
+  color: #000000;
+}
+#loan-calculator .container .calculator .repayment-summary .summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5em;
+  margin-bottom: 2em;
+}
+#loan-calculator .container .calculator .repayment-summary .summary-grid .summary-item {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  padding: 1em;
+}
+#loan-calculator .container .calculator .repayment-summary .summary-grid .summary-item .label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 0.5em;
+}
+#loan-calculator .container .calculator .repayment-summary .summary-grid .summary-item .amount .currency {
+  font-size: 14px;
+  font-weight: 700;
+  color: #000000;
+  margin-right: 4px;
+}
+#loan-calculator .container .calculator .repayment-summary .summary-grid .summary-item .amount .value {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000000;
+}
+#loan-calculator .container .calculator .repayment-summary .disclaimer {
+  font-size: 12px !important;
+  line-height: 18px;
+  color: #999;
+  text-align: center;
+  margin: 1em 0 0 0;
+  padding-top: 1em;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#borrow-cta {
+  background: #f6f5eb;
+}
+
+/* BORROW BUSINESS PAGES STYLES *//*# sourceMappingURL=style.css.map */

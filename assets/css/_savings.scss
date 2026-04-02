@@ -102,7 +102,7 @@
         overflow: hidden;
         .content-wrapper {
           height: fit-content;
-          min-height: 220px;
+          min-height: 240px;
           width: 100%;
           @include flex-col;
           justify-content: space-between;
@@ -143,9 +143,11 @@
       }
       &.centered {
         display: flex !important;
+        flex-wrap: wrap !important;
         justify-content: center !important;
         gap: 1.5rem !important;
-
+        max-width: 100%;
+        width: 100%;
         .card {
           max-width: 280px !important;
           flex: 0 0 auto !important;
@@ -210,6 +212,7 @@
         }
         .items {
           width: 100%;
+          height: fit-content;
           @include flex-col;
           gap: 0.6em;
           .item {
@@ -228,16 +231,27 @@
           }
         }
       }
+      &.inverse {
+        flex-direction: row-reverse;
+      }
     }
     .requirements {
       height: fit-content !important;
       .content-wrapper {
         height: fit-content !important;
+        max-height: fit-content !important;
         padding: 2em 3em;
       }
       .image-wrapper {
-        min-height: 100% !important;
-        height: 400px !important;
+        min-height: 200px !important;
+        height: 100% !important;
+        width: 100% !important;
+        img {
+          height: 100% !important;
+          max-height: 100% !important;
+          width: 100% !important;
+          object-fit: cover;
+        }
       }
     }
   }

@@ -1064,3 +1064,228 @@ jQuery(document).ready(function ($) {
     },
   );
 });
+
+// Loan Calculator Functionality
+jQuery(document).ready(function ($) {
+  // Cache DOM elements
+  const $loanAmount = $("#loan-amount");
+  const $repaymentPeriod = $("#repayment-period");
+  const $periodUnit = $("#period-unit");
+  const $interestRate = $("#interest-rate");
+  const $interestValue = $("#interest-value");
+  const $calculateBtn = $("#calculate-btn");
+  const $monthlyRepayment = $("#monthly-repayment");
+  const $totalInterest = $("#total-interest");
+  const $totalPayable = $("#total-payable");
+  const $principal = $("#principal");
+  const $effectiveRate = $("#effective-rate");
+
+  // Format number as currency (with commas)
+  function formatCurrency(value) {
+    return value.toLocaleString("en-KE", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
+  }
+
+  // Calculate loan repayment
+  function calculateLoan() {
+    // Get input values - no defaults, use actual input values
+    let loanAmount = parseFloat($loanAmount.val()) || 0;
+    let period = parseFloat($repaymentPeriod.val()) || 0;
+    let unit = $periodUnit.val();
+    let annualRate = parseFloat($interestRate.val()) || 0;
+
+    // Check if any required fields are empty or zero
+    if (loanAmount <= 0 || period <= 0 || annualRate <= 0) {
+      // Clear summary fields if inputs are invalid
+      $monthlyRepayment.text("0.00");
+      $totalInterest.text("0.00");
+      $totalPayable.text("0.00");
+      $principal.text("0.00");
+      $effectiveRate.text("0.00");
+      return;
+    }
+
+    // Convert period to months
+    let months = unit === "years" ? period * 12 : period;
+
+    // Calculate monthly interest rate
+    let monthlyRate = annualRate / 100 / 12;
+
+    let monthlyPayment = 0;
+    let totalPayment = 0;
+    let totalInterestPaid = 0;
+
+    if (monthlyRate === 0) {
+      monthlyPayment = loanAmount / months;
+      totalPayment = loanAmount;
+      totalInterestPaid = 0;
+    } else {
+      // Calculate EMI using formula: P * r * (1+r)^n / ((1+r)^n - 1)
+      const denominator = Math.pow(1 + monthlyRate, months) - 1;
+      if (denominator !== 0) {
+        monthlyPayment =
+          (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, months)) /
+          denominator;
+      } else {
+        monthlyPayment = loanAmount / months;
+      }
+
+      totalPayment = monthlyPayment * months;
+      totalInterestPaid = totalPayment - loanAmount;
+    }
+
+    // Update display values with formatted currency
+    $monthlyRepayment.text(formatCurrency(monthlyPayment));
+    $totalInterest.text(formatCurrency(totalInterestPaid));
+    $totalPayable.text(formatCurrency(totalPayment));
+    $principal.text(formatCurrency(loanAmount));
+    $effectiveRate.text(formatCurrency(loanAmount));
+  }
+
+  // Handle loan amount input (number input)
+  $loanAmount.on("input", function () {
+    let value = parseFloat($(this).val());
+
+    // Ensure value is not negative
+    if (value < 0) {
+      $(this).val(0);
+      value = 0;
+    }
+
+    // Auto-calculate on input
+    calculateLoan();
+  });
+
+  // Update interest rate display
+  function updateInterestDisplay() {
+    const value = $interestRate.val();
+    $interestValue.text(value + "%");
+    calculateLoan();
+  }
+
+  // Handle interest rate slider
+  $interestRate.on("input", function () {
+    updateInterestDisplay();
+  });
+
+  // Handle repayment period input
+  $repaymentPeriod.on("input", function () {
+    let value = parseFloat($(this).val());
+
+    // Ensure period is at least 1
+    if (value < 1 && $(this).val() !== "") {
+      $(this).val(1);
+    }
+
+    calculateLoan();
+  });
+
+  // Handle unit change
+  $periodUnit.on("change", function () {
+    calculateLoan();
+  });
+
+  // Handle calculate button click
+  $calculateBtn.on("click", function (e) {
+    e.preventDefault();
+    calculateLoan();
+
+    // Add a subtle animation effect
+    $(this).addClass("calculating");
+    setTimeout(() => {
+      $(this).removeClass("calculating");
+    }, 300);
+  });
+
+  // Handle loan amount blur - ensure proper formatting
+  $loanAmount.on("blur", function () {
+    let value = parseFloat($(this).val());
+    if (isNaN(value) || value < 0) {
+      $(this).val("");
+      value = 0;
+    }
+    calculateLoan();
+  });
+
+  // Handle repayment period blur
+  $repaymentPeriod.on("blur", function () {
+    let value = parseFloat($(this).val());
+    if (isNaN(value) || value < 1) {
+      $(this).val("");
+      calculateLoan();
+    }
+  });
+
+  // Handle Enter key press on any input
+  $("input, select").on("keypress", function (e) {
+    if (e.which === 13) {
+      e.preventDefault();
+      calculateLoan();
+    }
+  });
+
+  // Clear all fields (optional reset functionality)
+  window.resetCalculator = function () {
+    $loanAmount.val("");
+    $repaymentPeriod.val("");
+    $periodUnit.val("months");
+    $interestRate.val(11);
+    $interestValue.text("11.0%");
+
+    // Clear summary
+    $monthlyRepayment.text("0.00");
+    $totalInterest.text("0.00");
+    $totalPayable.text("0.00");
+    $principal.text("0.00");
+    $effectiveRate.text("0.00");
+
+    // Update slider marks
+    updateSliderMarks();
+  };
+
+  // Add custom styling for the slider marks
+  const $slider = $(".interest-slider");
+  const $marks = $(".slider-marks .mark");
+  const accentColor =
+    getComputedStyle(document.documentElement)
+      .getPropertyValue("--accent-main")
+      .trim() || "#ff0000";
+
+  function updateSliderMarks() {
+    const value = parseFloat($slider.val());
+    const max = parseFloat($slider.attr("max"));
+
+    $marks.each(function () {
+      const markValue = parseFloat($(this).text());
+
+      if (value >= markValue) {
+        $(this).css("color", accentColor);
+      } else {
+        $(this).css("color", "#999");
+      }
+    });
+  }
+
+  $slider.on("input", updateSliderMarks);
+  updateSliderMarks();
+
+  // Initial calculation - only if values exist
+  // Check if any inputs have values
+  const hasInitialValues =
+    $loanAmount.val() !== "" &&
+    $repaymentPeriod.val() !== "" &&
+    parseFloat($interestRate.val()) > 0;
+
+  if (hasInitialValues) {
+    calculateLoan();
+  } else {
+    // Clear summary fields initially
+    $monthlyRepayment.text("0.00");
+    $totalInterest.text("0.00");
+    $totalPayable.text("0.00");
+    $principal.text("0.00");
+    $effectiveRate.text("0.00");
+  }
+});
