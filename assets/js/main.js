@@ -1289,3 +1289,199 @@ jQuery(document).ready(function ($) {
     $effectiveRate.text("0.00");
   }
 });
+
+// Location Section Functionality
+jQuery(document).ready(function ($) {
+  // Branch data for dynamic summary update
+  const branchData = {
+    "cardinal-otunga": {
+      name: "Cardinal Otunga Branch",
+      address: [
+        "Cardinal Otunga Plaza",
+        "Next to Holy Family Basilica,",
+        "Kaunda Street, Nairobi",
+      ],
+      contact: {
+        poBox: "P.O. Box 38721-00100 Nairobi, Kenya",
+        phone: "+254771198565",
+        email: "cardinal@unaitas.com",
+      },
+      hours: "Open until 5:00 PM",
+    },
+    kawangware: {
+      name: "Kawangware Branch",
+      address: ["Muhu Holdings house", "Along Naivasha Road"],
+      contact: {
+        poBox: "P.O. Box 123-00100 Nairobi, Kenya",
+        phone: "+254712345678",
+        email: "kawangware@unaitas.com",
+      },
+      hours: "Open until 5:00 PM",
+    },
+    thika: {
+      name: "Thika Branch",
+      address: ["Kwame Nkrumah Road", "Thika"],
+      contact: {
+        poBox: "P.O. Box 456-01000 Thika, Kenya",
+        phone: "+254723456789",
+        email: "thika@unaitas.com",
+      },
+      hours: "Open until 5:00 PM",
+    },
+    kasarani: {
+      name: "Kasarani Branch",
+      address: ["Kasarani Mwiki Rd", "300 Metres Off Thika Super Highway"],
+      contact: {
+        poBox: "P.O. Box 789-00200 Nairobi, Kenya",
+        phone: "+254734567890",
+        email: "kasarani@unaitas.com",
+      },
+      hours: "Open until 5:00 PM",
+    },
+    "temple-road": {
+      name: "Temple Road Branch",
+      address: ["Gatkim Plaza", "Temple Road, Nairobi"],
+      contact: {
+        poBox: "P.O. Box 321-00100 Nairobi, Kenya",
+        phone: "+254745678901",
+        email: "templeroad@unaitas.com",
+      },
+      hours: "Open until 5:00 PM",
+    },
+    kangari: {
+      name: "Kangari Branch",
+      address: ["Unaitas Building", "Kangari"],
+      contact: {
+        poBox: "P.O. Box 654-10200 Kangari, Kenya",
+        phone: "+254756789012",
+        email: "kangari@unaitas.com",
+      },
+      hours: "Open until 5:00 PM",
+    },
+    gatura: {
+      name: "Gatura Branch",
+      address: ["Unaitas Building", "Gatura"],
+      contact: {
+        poBox: "P.O. Box 987-10100 Gatura, Kenya",
+        phone: "+254767890123",
+        email: "gatura@unaitas.com",
+      },
+      hours: "Open until 5:00 PM",
+    },
+  };
+
+  // Update location details summary
+  function updateLocationSummary(branchKey) {
+    const data = branchData[branchKey];
+    if (!data) return;
+
+    const $summary = $("#location-details-summary");
+
+    // Build summary HTML
+    const summaryHTML = `
+      <div class="summary-content">
+        <h3>${data.name}</h3>
+        <div class="summary-address">
+          ${data.address.map((line) => `<p>${line}</p>`).join("")}
+        </div>
+        <a href="#" class="directions-link" data-branch="${branchKey}">Get Directions</a>
+        <div class="summary-contact">
+          <p><strong>${data.contact.poBox}</strong></p>
+          <p>${data.contact.phone}</p>
+          <p>${data.contact.email}</p>
+        </div>
+        <div class="summary-hours">
+          <span>${data.hours}</span>
+        </div>
+      </div>
+    `;
+
+    // Animate the update
+    $summary.fadeOut(200, function () {
+      $(this).html(summaryHTML);
+      $summary.fadeIn(200);
+    });
+  }
+
+  // Handle location item click
+  $(".location-item").on("click", function () {
+    const $this = $(this);
+    const branchKey = $this.data("branch");
+
+    // Remove active class from all items
+    $(".location-item").removeClass("active");
+
+    // Add active class to clicked item
+    $this.addClass("active");
+
+    // Update summary with branch details
+    updateLocationSummary(branchKey);
+  });
+
+  // Handle search functionality
+  $("#location-search").on("input", function () {
+    const searchTerm = $(this).val().toLowerCase();
+
+    $(".location-item").each(function () {
+      const branchName = $(this).find(".branch-name").text().toLowerCase();
+      const branchAddress = $(this)
+        .find(".branch-address")
+        .text()
+        .toLowerCase();
+
+      if (
+        branchName.includes(searchTerm) ||
+        branchAddress.includes(searchTerm)
+      ) {
+        $(this).show();
+      } else {
+        $(this).hide();
+      }
+    });
+  });
+
+  // Handle directions link click (delegated event)
+  $(document).on("click", ".directions-link", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const branchKey = $(this).data("branch");
+    const branch = branchData[branchKey];
+
+    if (branch) {
+      // Encode address for Google Maps URL
+      const address = branch.address.join(", ");
+      const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+      window.open(mapsUrl, "_blank");
+    }
+  });
+
+  // Handle book a chat button
+  $(".site-btn-lg-accent").on("click", function (e) {
+    const btnText = $(this).text();
+
+    if (btnText === "Book A Chat") {
+      // Open chat modal or redirect
+      console.log("Opening chat...");
+    } else if (btnText === "Find a Branch") {
+      // Scroll to locations section
+      e.preventDefault();
+      $("#location-section").length &&
+        $("html, body").animate(
+          {
+            scrollTop: $("#location-section").offset().top - 100,
+          },
+          500,
+        );
+    }
+  });
+
+  // Handle call us section interactions
+  $(".card-extended .info").on("click", function () {
+    // Handle phone or hours click
+    console.log("Info clicked");
+  });
+
+  // Initialize with first branch active
+  updateLocationSummary("cardinal-otunga");
+});
