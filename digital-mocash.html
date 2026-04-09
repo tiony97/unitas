@@ -1,0 +1,1102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon-dark.png"
+      type="image/x-icon"
+    />
+    <title>Unaitas</title>
+  </head>
+  <body>
+    <!--Header-->
+    <header id="site-header">
+      <!-- Top Bar -->
+      <div class="top-bar">
+        <div class="container">
+          <div class="top-bar__wrapper">
+            <div class="top-bar__left">
+              <a href="tel:+254709253000" class="top-bar__contact">
+                <span class="top-bar__icon"
+                  ><img src="./assets/images/call-calling.png" alt="call"
+                /></span>
+                +254 709 253 000
+              </a>
+              <a
+                href="mailto:memberservice@unaitas.com"
+                class="top-bar__contact"
+              >
+                <span class="top-bar__icon"
+                  ><img src="./assets/images/messages-3.png" alt="call"
+                /></span>
+                memberservice@unaitas.com
+              </a>
+            </div>
+
+            <div class="top-bar__right">
+              <nav class="top-bar__nav">
+                <ul class="top-bar__menu">
+                  <li class="menu-item">
+                    <a href="/">Home</a>
+                  </li>
+                  <li class="menu-item menu-item-has-children">
+                    <a href="#">About Us</a>
+                    <ul class="sub-menu">
+                      <div class="menu-items">
+                        <li class="menu-item">
+                          <a href="./about.html"
+                            ><span class="menu-icon-wrapper">
+                              <img
+                                src="./assets/images/tag-user.svg"
+                                alt=""
+                                class="menu-icon"
+                              /> </span
+                            >Who We Are</a
+                          >
+                        </li>
+                        <li class="menu-item">
+                          <a href="./governance.html"
+                            ><span class="menu-icon-wrapper">
+                              <img
+                                src="./assets/images/bank.svg"
+                                alt=""
+                                class="menu-icon"
+                              /> </span
+                            >Governance</a
+                          >
+                        </li>
+                      </div>
+                      <img
+                        src="./assets/images/menu-promo-image.png"
+                        alt="menu-promo-image"
+                        class="menu-promo"
+                      />
+                    </ul>
+                  </li>
+                  <li class="menu-item">
+                    <a href="./strategic-plan.html">Strategic Plan</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="#">Standards & Policies</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="#">Publications</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="#">CSI</a>
+                  </li>
+                </ul>
+              </nav>
+              <div class="top-bar__search">
+                <input type="text" placeholder="Search" />
+                <button type="submit">
+                  <img src="./assets/images/search.png" alt="search" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Header -->
+      <div class="main-header">
+        <div class="container">
+          <div class="main-header__wrapper">
+            <div class="main-header__logo">
+              <a href="/">
+                <img src="./assets/images/logo_dark.png" alt="unaitas-logo" />
+              </a>
+            </div>
+
+            <nav class="main-header__nav">
+              <ul class="main-header__menu">
+                <!--Membership -->
+                <li class="menu-item menu-item-has-children">
+                  <a href="#">Membership</a>
+                  <div class="mega-menu">
+                    <div class="mega-menu__content">
+                      <!-- Main Menu Links Column -->
+                      <div class="mega-menu__links">
+                        <ul class="mega-menu__items">
+                          <!--Member Link-->
+                          <li class="menu-item" data-submenu="submenu-become">
+                            <a href="./membership.html">
+                              <span class="menu-icon-wrapper">
+                                <img
+                                  src="./assets/images/user-edit.svg"
+                                  alt=""
+                                  class="menu-icon"
+                                />
+                              </span>
+                              Become a Member
+                            </a>
+                          </li>
+                          <li
+                            class="menu-item menu-item-has-children"
+                            data-submenu="submenu-options"
+                          >
+                            <a href="#">
+                              <span class="menu-icon-wrapper">
+                                <img
+                                  src="./assets/images/user-square.svg"
+                                  alt=""
+                                  class="menu-icon"
+                                />
+                              </span>
+                              Membership Options
+                              <i class="fas fa-angle-right"></i>
+                            </a>
+                          </li>
+                          <li
+                            class="menu-item"
+                            data-submenu="submenu-investment"
+                          >
+                            <a href="#">
+                              <span class="menu-icon-wrapper">
+                                <img
+                                  src="./assets/images/profile-2user.svg"
+                                  alt=""
+                                  class="menu-icon"
+                                />
+                              </span>
+                              Investment Shares
+                            </a>
+                          </li>
+                          <li class="menu-item" data-submenu="submenu-accounts">
+                            <a href="#">
+                              <span class="menu-icon-wrapper">
+                                <img
+                                  src="./assets/images/wallet-add.svg"
+                                  alt=""
+                                  class="menu-icon"
+                                />
+                              </span>
+                              Accounts Open Upon Join
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <!-- Dynamic Submenu Column (Shows on hover) -->
+                      <div class="mega-menu__submenus">
+                        <div class="submenu-container" id="submenu-become">
+                          <div class="submenu-content">
+                            <!-- Empty or default content for items without children -->
+                          </div>
+                        </div>
+                        <div class="submenu-container" id="submenu-options">
+                          <ul class="submenu-items">
+                            <li class="menu-item"><a href="#">Basic</a></li>
+                            <li class="menu-item"><a href="#">Premium</a></li>
+                            <li class="menu-item"><a href="#">Business</a></li>
+                          </ul>
+                        </div>
+                        <div class="submenu-container" id="submenu-investment">
+                          <div class="submenu-content">
+                            <!-- Empty or default content -->
+                          </div>
+                        </div>
+                        <div class="submenu-container" id="submenu-accounts">
+                          <div class="submenu-content">
+                            <!-- Empty or default content -->
+                          </div>
+                        </div>
+                        <div class="submenu-container" id="submenu-joint">
+                          <div class="submenu-content">
+                            <!-- Empty or default content -->
+                          </div>
+                        </div>
+                        <div class="submenu-container" id="submenu-group">
+                          <div class="submenu-content">
+                            <!-- Empty or default content -->
+                          </div>
+                        </div>
+                        <div class="submenu-container" id="submenu-corporate">
+                          <div class="submenu-content">
+                            <!-- Empty or default content -->
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Promo Image Column -->
+                      <div class="mega-menu__promo">
+                        <img
+                          src="./assets/images/menu-promo-image.png"
+                          alt="Promo"
+                          class="promo-image"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <!--Individuals-->
+                <li class="menu-item menu-item-has-children">
+                  <a href="#">Individuals</a>
+                  <div class="mega-menu">
+                    <div class="mega-menu__content">
+                      <!-- Main Menu Links Column -->
+                      <div class="mega-menu__links">
+                        <ul class="mega-menu__items">
+                          <!--Savings Accounts-->
+                          <li
+                            class="menu-item menu-item-has-children"
+                            data-submenu="submenu-savings"
+                          >
+                            <a href="#">
+                              <span class="menu-icon-wrapper">
+                                <img
+                                  src="./assets/images/coins.svg"
+                                  alt=""
+                                  class="menu-icon"
+                                />
+                              </span>
+                              Savings Accounts
+                              <i class="fas fa-angle-right"></i>
+                            </a>
+                          </li>
+
+                          <li class="menu-item" data-submenu="submenu-current">
+                            <a href="#">
+                              <span class="menu-icon-wrapper">
+                                <img
+                                  src="./assets/images/credit-card.svg"
+                                  alt=""
+                                  class="menu-icon"
+                                />
+                              </span>
+                              Current Accounts
+                            </a>
+                          </li>
+
+                          <li
+                            class="menu-item menu-item-has-children"
+                            data-submenu="submenu-loans"
+                          >
+                            <a href="#">
+                              <span class="menu-icon-wrapper">
+                                <img
+                                  src="./assets/images/coins.svg"
+                                  alt=""
+                                  class="menu-icon"
+                                />
+                              </span>
+                              Loans
+                              <i class="fas fa-angle-right"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <!-- Dynamic Submenu Column -->
+                      <div class="mega-menu__submenus">
+                        <div class="submenu-container" id="submenu-savings">
+                          <ul class="submenu-items">
+                            <li class="menu-item">
+                              <a href="./savings.html">Accounts</a>
+                            </li>
+                            <li class="menu-item">
+                              <a href="./savings-timiza.html"
+                                >Timiza Transactional Account
+                              </a>
+                            </li>
+                            <li class="menu-item">
+                              <a href="./savings-jipange.html"
+                                >Jipange Account</a
+                              >
+                            </li>
+                            <li class="menu-item">
+                              <a href="./savings-jolly-junior.html"
+                                >Jolly Junior Account</a
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="submenu-container" id="submenu-current">
+                          <div class="submenu-content">
+                            <!-- Empty or default content -->
+                          </div>
+                        </div>
+                        <div class="submenu-container" id="submenu-loans">
+                          <ul class="submenu-items">
+                            <li class="menu-item">
+                              <a href="./borrow.html">All Loans</a>
+                            </li>
+                            <li class="menu-item">
+                              <a href="./borrow-personal.html"
+                                >Personal Loans</a
+                              >
+                            </li>
+                            <li class="menu-item">
+                              <a href="./borrow-personal-checkoff.html"
+                                >Checkoff Personal Loan</a
+                              >
+                            </li>
+                            <li class="menu-item">
+                              <a href="./borrow-personal-dharura.html"
+                                >Dharura Loan</a
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <!-- Promo Image Column -->
+                      <div class="mega-menu__promo">
+                        <img
+                          src="./assets/images/menu-promo-image.png"
+                          alt="Promo"
+                          class="promo-image"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <!--Businesses-->
+                <li class="menu-item menu-item-has-children">
+                  <a href="#">Businesses</a>
+                  <div class="mega-menu">
+                    <div class="mega-menu__content">
+                      <!-- Main Menu Links Column -->
+                      <div class="mega-menu__links">
+                        <ul class="mega-menu__items">
+                          <li
+                            class="menu-item menu-item-has-children"
+                            data-submenu="submenu-loans"
+                          >
+                            <a href="#">
+                              <span class="menu-icon-wrapper">
+                                <img
+                                  src="./assets/images/coins.svg"
+                                  alt=""
+                                  class="menu-icon"
+                                />
+                              </span>
+                              Loans
+                              <i class="fas fa-angle-right"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <!-- Dynamic Submenu Column -->
+                      <div class="mega-menu__submenus">
+                        <div class="submenu-container" id="submenu-loans">
+                          <ul class="submenu-items">
+                            <li class="menu-item">
+                              <a href="./borrow-business.html"
+                                >Business Loans</a
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <!-- Promo Image Column -->
+                      <div class="mega-menu__promo">
+                        <img
+                          src="./assets/images/menu-promo-image.png"
+                          alt="Promo"
+                          class="promo-image"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <!--Groups & Chamas-->
+                <li class="menu-item menu-item-has-children">
+                  <a href="#">Groups & Chamas</a>
+                  <div class="mega-menu">
+                    <div class="mega-menu__content">
+                      <!-- Main Menu Links Column -->
+                      <div class="mega-menu__links">
+                        <ul class="mega-menu__items">
+                          <li
+                            class="menu-item"
+                            data-submenu="submenu-group-accounts"
+                          >
+                            <a href="#">
+                              <span class="menu-icon-wrapper">
+                                <img
+                                  src="./assets/images/users-four.svg"
+                                  alt=""
+                                  class="menu-icon"
+                                />
+                              </span>
+                              Group Accounts
+                            </a>
+                          </li>
+                          <li
+                            class="menu-item"
+                            data-submenu="submenu-chama-loans"
+                          >
+                            <a href="#">
+                              <span class="menu-icon-wrapper">
+                                <img
+                                  src="./assets/images/hand-coins.svg"
+                                  alt=""
+                                  class="menu-icon"
+                                />
+                              </span>
+                              Chama Loans
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <!-- Dynamic Submenu Column -->
+                      <div class="mega-menu__submenus">
+                        <div
+                          class="submenu-container"
+                          id="submenu-group-accounts"
+                        >
+                          <div class="submenu-content">
+                            <!-- Empty or default content -->
+                          </div>
+                        </div>
+                        <div class="submenu-container" id="submenu-chama-loans">
+                          <div class="submenu-content">
+                            <!-- Empty or default content -->
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Promo Image Column -->
+                      <div class="mega-menu__promo">
+                        <img
+                          src="./assets/images/menu-promo-image.png"
+                          alt="Promo"
+                          class="promo-image"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="menu-item"><a href="#">Corporates</a></li>
+                <li class="menu-item"><a href="#">Diaspora Members</a></li>
+                <li class="menu-item"><a href="#">Ways to Bank</a></li>
+              </ul>
+            </nav>
+
+            <div class="main-header__actions">
+              <a href="#" class="btn btn--login">Log In</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!--Page Content-->
+    <main>
+      <!--Digital Banner-->
+      <section id="digital-banner">
+        <img
+          src="./assets/images/membership-vector-image.png"
+          alt="landing vector image"
+          class="landing-vector"
+        />
+        <div class="container">
+          <div class="content-wrapper">
+            <h2>
+              Mo-Cash Mobile <br />
+              Banking
+            </h2>
+            <p>
+              Enjoy secure, fast and convenient banking right from your phone
+              whether you’re at home, at work or on the move.
+            </p>
+            <a href="#" class="site-btn-lg">Download the Mo-Cash app</a>
+          </div>
+          <div class="image-wrapper">
+            <img
+              src="./assets/images/mocash banner.png"
+              alt="about landing image"
+              class="main-mage"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!--Features & Requirements-->
+      <section id="digital-features-requirements">
+        <div class="container">
+          <div class="intro">
+            <h2>
+              Bank Anytime, Anywhere <br />
+              with Mo-Cash
+            </h2>
+            <p>
+              Experience convenient, secure and instant banking through Mo-Cash
+              Mobile Banking. Access it via *493# or download the Mo-Cash App
+              for full mobile access, right from your phone.
+            </p>
+          </div>
+
+          <div class="features inverse">
+            <div class="image-wrapper">
+              <img
+                src="./assets/images/mocash features.png"
+                alt="features-image"
+                class="features-image"
+              />
+            </div>
+            <div class="content-wrapper">
+              <h4>What you get</h4>
+              <div class="items">
+                <div class="item">
+                  <img
+                    src="./assets/images/tick-circle-accent.png"
+                    alt="icon"
+                    class="icon"
+                  />
+                  <p>Cash withdrawals</p>
+                </div>
+                <div class="item">
+                  <img
+                    src="./assets/images/tick-circle-accent.png"
+                    alt="icon"
+                    class="icon"
+                  />
+                  <p>Fund transfers (to Unaitas or other banks)</p>
+                </div>
+                <div class="item">
+                  <img
+                    src="./assets/images/tick-circle-accent.png"
+                    alt="icon"
+                    class="icon"
+                  />
+                  <p>Bill payments (e.g. utilities, school fees)</p>
+                </div>
+                <div class="item">
+                  <img
+                    src="./assets/images/tick-circle-accent.png"
+                    alt="icon"
+                    class="icon"
+                  />
+                  <p>Balance enquiries</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="requirements inverse">
+            <div class="content-wrapper">
+              <h4>What you need</h4>
+              <div class="items">
+                <div class="item">
+                  <img
+                    src="./assets/images/tick-circle-accent.png"
+                    alt="icon"
+                    class="icon"
+                  />
+                  <p>
+                    Visit your nearest Unaitas branch with your National ID and
+                    KRA PIN for one-time registration.
+                  </p>
+                </div>
+                <div class="item">
+                  <img
+                    src="./assets/images/tick-circle-accent.png"
+                    alt="icon"
+                    class="icon"
+                  />
+                  <p>
+                    A PIN will be sent to your registered mobile number to
+                    complete setup.
+                  </p>
+                </div>
+                <div class="item">
+                  <img
+                    src="./assets/images/tick-circle-accent.png"
+                    alt="icon"
+                    class="icon"
+                  />
+                  <p>
+                    Dial *493# or use the Mo-Cash App to start banking on the
+                    go.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="image-wrapper">
+              <img
+                src="./assets/images/mocash req.png"
+                alt="require-image"
+                class="require-image"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--Digital Steps-->
+      <section id="digital-steps">
+        <div class="container">
+          <div class="intro">
+            <h2>
+              Simple to Apply. <br />
+              Easy to Access.
+            </h2>
+            <p>Follow a few simple steps and receive support for your goals.</p>
+          </div>
+
+          <div class="steps">
+            <!--Step 1-->
+            <div class="step">
+              <div class="tag">Step 1</div>
+
+              <div class="content">
+                <h4>Visit a Unaitas Branch</h4>
+                <p>
+                  Go to your nearest Unaitas branch with your National ID and
+                  KRA PIN for one-time registration.
+                </p>
+              </div>
+            </div>
+            <!--Step 2-->
+            <div class="step">
+              <div class="tag">Step 2</div>
+
+              <div class="content">
+                <h4>Complete Your Setup</h4>
+                <p>
+                  A secure PIN will be sent to your registered mobile number to
+                  activate your mobile banking access.
+                </p>
+              </div>
+            </div>
+            <!--Step 3-->
+            <div class="step">
+              <div class="tag">Step 3</div>
+
+              <div class="content">
+                <h4>Start Banking on Your Phone</h4>
+                <p>
+                  Dial *493# or download the Mo-Cash App to start banking
+                  anytime.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <a href="#" class="site-btn-lg account-action-btn"
+            >Download the Mo-Cash app</a
+          >
+        </div>
+      </section>
+
+      <!--Digital FAQ-->
+      <section id="digital-faq">
+        <div class="container">
+          <!--Intro-->
+          <div class="intro">
+            <h2>Frequently Asked Questions</h2>
+          </div>
+
+          <!-- Accordion -->
+          <div class="savings-accordion">
+            <!-- Accordion Item 1 -->
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <span class="accordion-title"
+                  >What is Mo-Cash Mobile Banking?</span
+                >
+                <div class="accordion-icon">
+                  <span class="plus">+</span>
+                  <span class="minus">−</span>
+                </div>
+              </div>
+              <div class="accordion-content">
+                <div class="content-wrapper">
+                  <p>
+                    Yes. At a minimum, all vehicles must have Third Party
+                    Insurance as required by law.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Accordion Item 2 -->
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <span class="accordion-title"
+                  >How do I deposit money into the account?</span
+                >
+                <div class="accordion-icon">
+                  <span class="plus">+</span>
+                  <span class="minus">−</span>
+                </div>
+              </div>
+              <div class="accordion-content">
+                <div class="content-wrapper">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Facere hic quis unde exercitationem cupiditate velit
+                    asperiores veniam possimus aperiam tenetur repellendus
+                    quisquam, quo porro harum quas atque? Quisquam, et
+                    assumenda.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Accordion Item 3 -->
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <span class="accordion-title"
+                  >Does the account earn interest?</span
+                >
+                <div class="accordion-icon">
+                  <span class="plus">+</span>
+                  <span class="minus">−</span>
+                </div>
+              </div>
+              <div class="accordion-content">
+                <div class="content-wrapper">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Facere hic quis unde exercitationem cupiditate velit
+                    asperiores veniam possimus aperiam tenetur repellendus
+                    quisquam, quo porro harum quas atque? Quisquam, et
+                    assumenda.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Accordion Item 4 -->
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <span class="accordion-title"
+                  >Can my savings help me qualify for a loan?</span
+                >
+                <div class="accordion-icon">
+                  <span class="plus">+</span>
+                  <span class="minus">−</span>
+                </div>
+              </div>
+              <div class="accordion-content">
+                <div class="content-wrapper">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Facere hic quis unde exercitationem cupiditate velit
+                    asperiores veniam possimus aperiam tenetur repellendus
+                    quisquam, quo porro harum quas atque? Quisquam, et
+                    assumenda.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Accordion Item 5 -->
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <span class="accordion-title"
+                  >How long does approval take?</span
+                >
+                <div class="accordion-icon">
+                  <span class="plus">+</span>
+                  <span class="minus">−</span>
+                </div>
+              </div>
+              <div class="accordion-content">
+                <div class="content-wrapper">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Facere hic quis unde exercitationem cupiditate velit
+                    asperiores veniam possimus aperiam tenetur repellendus
+                    quisquam, quo porro harum quas atque? Quisquam, et
+                    assumenda.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Accordion Item 6 -->
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <span class="accordion-title"
+                  >Who can open a Jipange Account?</span
+                >
+                <div class="accordion-icon">
+                  <span class="plus">+</span>
+                  <span class="minus">−</span>
+                </div>
+              </div>
+              <div class="accordion-content">
+                <div class="content-wrapper">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Facere hic quis unde exercitationem cupiditate velit
+                    asperiores veniam possimus aperiam tenetur repellendus
+                    quisquam, quo porro harum quas atque? Quisquam, et
+                    assumenda.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--Testimonials Section-->
+      <section id="testimonials">
+        <!-- Intro Section -->
+        <div class="intro">
+          <h2>Community In Action</h2>
+          <p>
+            Whether you're building your first savings, raising a family,
+            running a business, or planning for the future this is a community
+            built to support.
+          </p>
+        </div>
+
+        <!-- Full Width Swiper Slider -->
+        <div class="swiper testimonial-swiper">
+          <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <div class="testimonial-image">
+                  <img
+                    src="./assets/images/test-img-1.png"
+                    alt="Naomi Swekhwe"
+                  />
+                </div>
+                <div class="testimonial-content">
+                  <p class="testimonial-quote">
+                    "When I visit the branch, everybody is so friendly and
+                    helpful."
+                  </p>
+                  <div class="testimonial-author">
+                    <h4 class="author-name">Naomi Swekhwe</h4>
+                    <p class="author-since">Member Since 2010</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <div class="testimonial-image">
+                  <img src="./assets/images/test-img-2.png" alt="Tina Ardor" />
+                </div>
+                <div class="testimonial-content">
+                  <p class="testimonial-quote">
+                    "When I visit the branch, everybody is so friendly and
+                    helpful."
+                  </p>
+                  <div class="testimonial-author">
+                    <h4 class="author-name">Tina Ardor</h4>
+                    <p class="author-since">Member Since 2003</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <div class="testimonial-image">
+                  <img
+                    src="./assets/images/test-img-3.png"
+                    alt="Christina Wakes"
+                  />
+                </div>
+                <div class="testimonial-content">
+                  <p class="testimonial-quote">
+                    "When I visit the branch, everybody is so friendly and
+                    helpful."
+                  </p>
+                  <div class="testimonial-author">
+                    <h4 class="author-name">Christina Wakes</h4>
+                    <p class="author-since">Member Since 2010</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 4  -->
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <div class="testimonial-image">
+                  <img src="./assets/images/test-img-2.png" alt="John Doe" />
+                </div>
+                <div class="testimonial-content">
+                  <p class="testimonial-quote">
+                    "When I visit the branch, everybody is so friendly and
+                    helpful."
+                  </p>
+                  <div class="testimonial-author">
+                    <h4 class="author-name">John Doe</h4>
+                    <p class="author-since">Member Since 2015</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--CTA-->
+      <section id="digital-cta">
+        <div class="container">
+          <div class="cta-card">
+            <div class="title-section">
+              <h1>Join Our</h1>
+              <img
+                src="./assets/images/savings-cta-image.png"
+                alt="cta-title-image"
+                class="title-image"
+              />
+              <h1>Community</h1>
+            </div>
+            <p class="cta-desc">
+              Open your Timiza Transactional Account today online or at any
+              Unaitas centre near you.
+            </p>
+            <div class="cta-btns">
+              <a href="#" class="site-btn-lg-accent">Locate Branch</a>
+              <a href="#" class="site-btn-lg-accent">Talk to a Member</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--Footer-->
+    <footer id="site-footer">
+      <div class="container">
+        <div class="footer-wrapper">
+          <!-- Company Info with QR -->
+          <div class="footer-company">
+            <a href="/" class="footer-logo"
+              ><img src="./assets/images/footer-logo.png" alt="footer logo"
+            /></a>
+            <p class="footer-description">
+              Unaitas is a deposit taking Savings and Credit Cooperative (SACCO)
+              organization, licensed under the SACCO Societies Act, 2012. The
+              SACCO was initially registered on 14 May 1993 as a cooperative
+              society.
+            </p>
+            <div class="footer-app">
+              <h4>Download the app</h4>
+              <div class="qr-code">
+                <!-- QR code image  -->
+                <img
+                  src="./assets/images/app-qr.png"
+                  alt="Download app QR code"
+                />
+              </div>
+
+              <p class="copyright">
+                © Unaitas Sacco Society Ltd Regulated under the Co-operative
+                Societies Act of Kenya
+              </p>
+            </div>
+          </div>
+
+          <!-- Bordered Sections -->
+          <div class="footer-bordered-sections">
+            <!-- Governance & Policies -->
+            <div class="footer-section bordered">
+              <div class="footer-section-header">
+                <h3 class="footer-title">Governance & Policies</h3>
+              </div>
+
+              <ul class="footer-menu">
+                <li><a href="#">Supervisory Committee</a></li>
+                <li><a href="#">Delegates</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Service Charter</a></li>
+                <li><a href="#">Board Charter</a></li>
+              </ul>
+            </div>
+
+            <!-- Help & Support -->
+            <div class="footer-section bordered">
+              <div class="footer-section-header">
+                <h3 class="footer-title">Help & Support</h3>
+              </div>
+              <ul class="footer-menu">
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Branch & Agent Locator</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Loan Calculator</a></li>
+                <li><a href="#">Forms & Downloads</a></li>
+              </ul>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="footer-section contact-section bordered">
+              <div class="contact-info">
+                <div class="contact-card">
+                  <img
+                    src="./assets/images/location.png"
+                    alt="icon"
+                    class="icon"
+                  />
+                  <div class="details">
+                    <h4 class="title">Nairobi</h4>
+                    <p class="desc">
+                      Cardinal Otunga Plaza, Cardinal Otunga road, Nairobi
+                    </p>
+                  </div>
+                </div>
+                <div class="contact-card">
+                  <img
+                    src="./assets/images/call-calling.png"
+                    alt="icon"
+                    class="icon"
+                  />
+                  <div class="details">
+                    <h4 class="title">Phone</h4>
+                    <p class="desc">+254709 253 000</p>
+                  </div>
+                </div>
+                <div class="contact-card">
+                  <img
+                    src="./assets/images/messages-3.png"
+                    alt="icon"
+                    class="icon"
+                  />
+                  <div class="details">
+                    <h4 class="title">Email</h4>
+                    <p class="desc"> memberservice@unaitas.com</p>
+                  </div>
+                </div>
+              </div>
+              <div class="social-info">
+                <div class="wrapper">
+                  <p>social</p>
+                  <div class="links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!--Scripts-->
+    <script src="./assets/js/all.min.js"></script>
+    <script src="./assets/js/barba.js"></script>
+    <script src="./assets/js/fontawesome.min.js"></script>
+    <script src="./assets/js/gsap.min.js"></script>
+    <script src="./assets/js/ScrollToPlugin.min.js"></script>
+    <script src="./assets/js/ScrollTrigger.min.js"></script>
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="./assets/js/swiper-bundle.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>

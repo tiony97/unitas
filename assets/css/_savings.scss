@@ -181,7 +181,7 @@
     .requirements {
       position: relative;
       width: 100%;
-      height: fit-content;
+      height: fit-content !important;
       border: 1px solid rgb(0, 0, 0, 0.8);
       border-radius: 30px;
       display: flex;
@@ -238,17 +238,17 @@
     .requirements {
       height: fit-content !important;
       .content-wrapper {
-        height: fit-content !important;
-        max-height: fit-content !important;
+        height: 100% !important;
         padding: 2em 3em;
       }
       .image-wrapper {
         min-height: 200px !important;
+        max-height: 100% !important;
         height: 100% !important;
         width: 100% !important;
         img {
           height: 100% !important;
-          max-height: 100% !important;
+          max-height: 450px !important;
           width: 100% !important;
           object-fit: cover;
         }
