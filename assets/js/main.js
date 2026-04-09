@@ -1485,3 +1485,39 @@ jQuery(document).ready(function ($) {
   // Initialize with first branch active
   updateLocationSummary("cardinal-otunga");
 });
+
+$(document).ready(function () {
+  // Tab functionality with enhanced features
+  function initializeTabs() {
+    $("#features-requirements .tab").on("click", function (e) {
+      e.preventDefault();
+
+      // Get current active tab
+      const currentTab = $(this);
+
+      // Don't do anything if already active
+      if (currentTab.hasClass("active")) {
+        return;
+      }
+
+      // Update tab buttons
+      $("#features-requirements .tab").removeClass("active");
+      currentTab.addClass("active");
+
+      // Update content
+      const tabId = currentTab.data("tab");
+      const activePane = $("#" + tabId);
+
+      // Fade out current content and fade in new content
+      $("#features-requirements .tab-pane").fadeOut(200, function () {
+        $(this).removeClass("active");
+        activePane.fadeIn(200, function () {
+          $(this).addClass("active");
+        });
+      });
+    });
+  }
+
+  // Initialize tabs
+  initializeTabs();
+});
