@@ -1,0 +1,357 @@
+/* BORROW PERSONAL PAGES STYLES*/
+#agri-banner {
+  @extend #savings-banner;
+  background: #ebebeb;
+}
+
+.agri-card-section {
+  @extend .savings-card-section;
+  .agri-cards {
+    @extend .savings-cards;
+  }
+}
+
+#agri-steps {
+  @extend #savings-steps;
+}
+
+#loan-calculator {
+  .container {
+    width: 80%;
+    @include flex-col;
+    align-items: center;
+    justify-content: center;
+    padding: 5em 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+
+    .intro {
+      @include flex-col;
+      align-items: center;
+      justify-content: center;
+
+      h2 {
+        text-align: center;
+      }
+
+      p {
+        text-align: center;
+        width: 60%;
+        margin-top: 1em;
+      }
+    }
+
+    .calculator {
+      margin-top: 3em;
+      height: fit-content;
+      width: 100%;
+      max-width: 800px;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(0, 0, 0, 0.3);
+      border-radius: 30px;
+      background: white;
+
+      .input-wrapper {
+        display: flex;
+        flex-direction: column;
+        padding: 2em;
+      }
+
+      // Input Groups
+      .input-group {
+        margin-bottom: 2em;
+
+        label {
+          display: block;
+          //font-size: 14px;
+          font-weight: 600;
+          color: $foreground-dark;
+          margin-bottom: 0.5em;
+          text-transform: capitalize;
+          letter-spacing: 0.5px;
+        }
+      }
+
+      // Currency Input
+      .currency-input {
+        display: flex;
+        align-items: center;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        padding: 0.8em 1em;
+        background: #f9f9f9;
+
+        .currency-symbol {
+          font-size: 17px;
+          font-weight: 600;
+          color: $foreground-dark;
+          margin-right: 0.8em;
+        }
+
+        .loan-input {
+          border: none;
+          background: transparent;
+          font-size: 28px;
+          font-weight: 600;
+          color: $foreground-dark;
+          width: 100%;
+          outline: none;
+          padding: 0;
+
+          &::placeholder {
+            color: $foreground-light;
+          }
+        }
+      }
+
+      // Row Group (Repayment Period and Unit)
+      .row-group {
+        display: flex;
+        gap: 2em;
+        margin-bottom: 2em;
+
+        .input-group {
+          flex: 1;
+          margin-bottom: 0;
+
+          .period-input {
+            width: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 0.8em 1em;
+            font-size: 18px;
+            font-weight: 500;
+            color: $foreground-dark;
+            background: #f9f9f9;
+            outline: none;
+
+            &:focus {
+              border-color: $accent-main;
+            }
+          }
+
+          &.unit-group {
+            flex: 0.5;
+
+            .unit-select {
+              width: 100%;
+              border: 1px solid rgba(0, 0, 0, 0.2);
+              border-radius: 8px;
+              padding: 0.8em 1em;
+              font-size: 18px;
+              font-weight: 500;
+              color: $foreground-dark;
+              background: #f9f9f9;
+              cursor: pointer;
+              outline: none;
+
+              &:focus {
+                border-color: $accent-main;
+              }
+            }
+          }
+        }
+      }
+
+      // Interest Rate with Slider
+      .interest-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1em;
+
+        label {
+          text-transform: none;
+          margin-bottom: 0;
+        }
+
+        .interest-value {
+          font-size: 13px !important;
+          background: #fce8e8;
+          border: 1px solid #e8c5c5;
+          padding: 0.5em;
+          border-radius: 20px;
+          font-weight: 700;
+          color: $accent-main;
+        }
+      }
+
+      .slider-container {
+        position: relative;
+        padding-bottom: 30px;
+
+        .interest-slider {
+          width: 100%;
+          height: 4px;
+          -webkit-appearance: none;
+          background: #e0e0e0;
+          border-radius: 2px;
+          outline: none;
+
+          &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: $accent-main;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease;
+
+            &:hover {
+              transform: scale(1.2);
+            }
+          }
+
+          &::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: $accent-main;
+            cursor: pointer;
+            border: none;
+            transition: transform 0.2s ease;
+
+            &:hover {
+              transform: scale(1.2);
+            }
+          }
+        }
+
+        .slider-marks {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 8px;
+          padding: 0 4px;
+
+          .mark {
+            font-size: 11px;
+            color: #999;
+            position: relative;
+
+            &::before {
+              content: "";
+              position: absolute;
+              top: -18px;
+              left: 50%;
+              transform: translateX(-50%);
+              width: 1px;
+              height: 8px;
+              background: #ccc;
+            }
+          }
+        }
+      }
+
+      // Calculate Button
+      #calculate-btn {
+        width: 100% !important;
+        font-size: 15px !important;
+      }
+
+      // Repayment Summary
+      .repayment-summary {
+        border-top: 1px solid rgba(0, 0, 0, 0.2);
+        padding: 2em;
+        h3 {
+          font-family: bodyFontBold !important;
+          font-size: 18px;
+          color: $foreground-dark;
+          margin-bottom: 0.5em;
+        }
+        hr {
+          width: 100%;
+        }
+
+        .monthly-repayment {
+          margin-top: 1em;
+          margin-bottom: 2em;
+          text-align: left;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+          padding-bottom: 2em;
+          .label {
+            font-size: 14px;
+            font-weight: 600;
+            color: rgba(0, 0, 0, 0.5);
+            margin-bottom: 0.5em;
+          }
+
+          .amount {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            .currency {
+              font-size: 18px;
+              font-weight: 600;
+              color: $accent-main;
+            }
+
+            .value {
+              font-family: bodyFontBold !important;
+              font-weight: 800;
+              color: $foreground-dark;
+            }
+          }
+        }
+
+        .summary-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1.5em;
+          margin-bottom: 2em;
+
+          .summary-item {
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            padding: 1em;
+            .label {
+              font-size: 12px;
+              font-weight: 600;
+              color: #666;
+              margin-bottom: 0.5em;
+            }
+
+            .amount {
+              .currency {
+                font-size: 14px;
+                font-weight: 700;
+                color: $foreground-dark;
+                margin-right: 4px;
+              }
+
+              .value {
+                font-size: 20px;
+                font-weight: 700;
+                color: $foreground-dark;
+              }
+            }
+          }
+        }
+
+        .disclaimer {
+          font-size: 12px !important;
+          line-height: 18px;
+          color: #999;
+          text-align: center;
+          margin: 1em 0 0 0;
+          padding-top: 1em;
+          border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  }
+}
+
+#agri-faq {
+  @extend #savings-faq;
+}
+
+#agri-cta {
+  @extend #savings-cta;
+  background: #f6f5eb;
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+}
