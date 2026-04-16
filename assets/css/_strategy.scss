@@ -203,3 +203,205 @@
     }
   }
 }
+
+/* Tablet Devices (1024px and below) */
+@media (max-width: 1024px) {
+  /* Strategy Banner */
+  #strategy-banner {
+    .landing-vector {
+      width: 150px;
+    }
+
+    .container {
+      width: 85%;
+      gap: 1.5em;
+
+      .content-wrapper {
+        flex: 1;
+        padding-top: 5em;
+        padding-bottom: 6em;
+
+        h2 {
+          font-size: 48px;
+          line-height: 56px;
+        }
+
+        p {
+          font-size: 16px;
+          line-height: 26px;
+        }
+      }
+
+      .image-wrapper {
+        .main-mage {
+          height: 350px;
+        }
+
+        .savings-image {
+          height: 90px;
+          left: 1em;
+          bottom: 25%;
+        }
+      }
+    }
+  }
+
+  /* Unaitas Accordion Section */
+  #unaitas-accordion {
+    padding: 3em 0;
+
+    .container {
+      width: 85%;
+
+      .unaitas-accordion {
+        .accordion-item {
+          .accordion-header {
+            padding: 1.2em 0;
+
+            .accordion-title {
+              font-size: 18px;
+            }
+
+            .accordion-icon {
+              width: 30px;
+              height: 30px;
+
+              .plus,
+              .minus {
+                font-size: 30px;
+              }
+            }
+          }
+
+          .accordion-content {
+            .content-wrapper {
+              gap: 2em;
+
+              .content-text {
+                p {
+                  font-size: 14px;
+                  line-height: 24px;
+                }
+              }
+
+              .content-image {
+                img {
+                  width: 80px;
+                }
+              }
+            }
+          }
+
+          &.active .accordion-content {
+            max-height: 350px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Mobile Devices (768px and below) */
+@media (max-width: 768px) {
+  /* Strategy Banner */
+  #strategy-banner {
+    .landing-vector {
+      display: none;
+    }
+
+    .container {
+      width: 90%;
+      flex-direction: column;
+      text-align: center;
+
+      .content-wrapper {
+        padding-top: 4em;
+        padding-bottom: 2em;
+
+        h2 {
+          font-size: 40px;
+          line-height: 48px;
+        }
+
+        p {
+          font-size: 15px;
+          line-height: 25px;
+        }
+      }
+
+      .image-wrapper {
+        padding-bottom: 3em;
+
+        .main-mage {
+          height: 280px;
+        }
+
+        .savings-image {
+          height: 70px;
+          left: 20%;
+          bottom: 20%;
+        }
+      }
+    }
+  }
+
+  /* Unaitas Accordion Section */
+  #unaitas-accordion {
+    padding: 2em 0;
+
+    .container {
+      width: 90%;
+
+      .unaitas-accordion {
+        .accordion-item {
+          .accordion-header {
+            padding: 1em 0;
+
+            .accordion-title {
+              font-size: 16px;
+              line-height: 24px;
+              width: 85%;
+            }
+
+            .accordion-icon {
+              width: 25px;
+              height: 25px;
+
+              .plus,
+              .minus {
+                font-size: 25px;
+              }
+            }
+          }
+
+          .accordion-content {
+            .content-wrapper {
+              flex-direction: column;
+              gap: 1.5em;
+
+              .content-text {
+                p {
+                  font-size: 13px;
+                  line-height: 22px;
+                }
+              }
+
+              .content-image {
+                display: flex;
+                justify-content: center;
+
+                img {
+                  width: 70px;
+                }
+              }
+            }
+          }
+
+          &.active .accordion-content {
+            max-height: 450px;
+          }
+        }
+      }
+    }
+  }
+}

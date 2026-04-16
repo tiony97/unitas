@@ -1,3 +1,79 @@
+// Mobile Menu Functionality
+jQuery(document).ready(function ($) {
+  // Mobile menu elements
+  const $toggle = $("#mobileMenuToggle");
+  const $overlay = $("#mobileMenuOverlay");
+  const $panel = $("#mobileMenuPanel");
+  const $close = $("#mobileMenuClose");
+
+  // Open mobile menu
+  function openMobileMenu() {
+    $toggle.addClass("active");
+    $overlay.addClass("active");
+    $panel.addClass("active");
+    $("body").css("overflow", "hidden");
+  }
+
+  // Close mobile menu
+  function closeMobileMenu() {
+    $toggle.removeClass("active");
+    $overlay.removeClass("active");
+    $panel.removeClass("active");
+    $("body").css("overflow", "");
+  }
+
+  // Event listeners
+  $toggle.on("click", openMobileMenu);
+  $close.on("click", closeMobileMenu);
+  $overlay.on("click", closeMobileMenu);
+
+  // Handle dropdown toggles in mobile menu
+  $(".mobile-dropdown-toggle").on("click", function (e) {
+    e.preventDefault();
+    const $this = $(this);
+    const $parent = $this.closest(".menu-item-has-children");
+    const $submenu = $parent.find(".mobile-sub-menu");
+    const $icon = $this.find(".dropdown-icon");
+
+    // Close other open dropdowns
+    $(".mobile-sub-menu").not($submenu).removeClass("open");
+    $(".mobile-dropdown-toggle .dropdown-icon")
+      .not($icon)
+      .removeClass("rotated");
+
+    // Toggle current dropdown
+    $submenu.toggleClass("open");
+    $icon.toggleClass("rotated");
+  });
+
+  // Handle nested dropdown toggles
+  $(".mobile-nested-toggle").on("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    const $this = $(this);
+    const $parent = $this.closest(".menu-item-has-children");
+    const $nestedMenu = $parent.find(".mobile-nested-menu");
+    const $icon = $this.find(".dropdown-icon");
+
+    // Toggle nested dropdown
+    $nestedMenu.toggleClass("open");
+    $icon.toggleClass("rotated");
+  });
+
+  // Close menu when clicking on a link (optional - for better UX)
+  $(".mobile-menu-panel a").on("click", function (e) {
+    // Don't close if clicking on dropdown toggles
+    if (
+      $(this).hasClass("mobile-dropdown-toggle") ||
+      $(this).hasClass("mobile-nested-toggle") ||
+      $(this).find(".dropdown-icon").length
+    ) {
+      return;
+    }
+    closeMobileMenu();
+  });
+});
+
 // Active Menu Style Functionality
 jQuery(document).ready(function ($) {
   // Add active class to current menu item

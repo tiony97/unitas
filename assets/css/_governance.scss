@@ -325,3 +325,545 @@
     }
   }
 }
+
+/* Tablet Devices (1024px and below) */
+@media (max-width: 1024px) {
+  /* Governance Banner */
+  #governance-banner {
+    .landing-vector {
+      width: 150px;
+    }
+
+    .container {
+      width: 90%;
+      gap: 1.5em;
+
+      .content-wrapper {
+        padding-top: 5em;
+        padding-bottom: 6em;
+
+        h2 {
+          font-size: 48px;
+          line-height: 56px;
+        }
+
+        p {
+          font-size: 16px;
+          line-height: 26px;
+        }
+      }
+
+      .image-wrapper {
+        padding-top: 4em;
+
+        .main-mage {
+          height: 350px;
+          margin-left: 1em;
+        }
+
+        .savings-image {
+          width: 180px;
+          left: -1em;
+          bottom: 35%;
+        }
+
+        .image-vector {
+          width: 180px;
+        }
+      }
+    }
+  }
+
+  /* Board Section */
+  #board {
+    padding-bottom: 3em;
+
+    .section-vector {
+      width: 150px;
+    }
+
+    .container {
+      width: 90%;
+
+      .members {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5em;
+
+        .member {
+          .image-wrapper {
+            height: 220px;
+          }
+
+          .member-details {
+            span {
+              font-size: 16px;
+            }
+
+            p {
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* Supervisors Section */
+  #supervisors {
+    padding-bottom: 3em;
+
+    .section-vector {
+      width: 80px;
+    }
+
+    .container {
+      width: 90%;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.5em;
+      padding-top: 3em;
+
+      h3 {
+        flex: auto;
+      }
+
+      .members {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5em;
+
+        .member {
+          .image-wrapper {
+            height: 220px;
+          }
+
+          .member-details {
+            span {
+              font-size: 16px;
+            }
+
+            p {
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* Delegates Section */
+  #delegates {
+    padding: 3em 0;
+
+    .container {
+      width: 90%;
+
+      .intro {
+        flex-direction: column;
+        gap: 1em;
+
+        h2 {
+          flex: auto;
+        }
+
+        p {
+          flex: auto;
+          font-size: 16px;
+          line-height: 26px;
+        }
+      }
+
+      .delegate-roles {
+        grid-template-columns: 1fr;
+        gap: 2em;
+        margin-top: 3em;
+
+        .content-wrapper {
+          span {
+            font-size: 16px;
+          }
+
+          .roles {
+            .role {
+              padding: 0.8em;
+
+              img {
+                width: 22px;
+                height: 22px;
+              }
+
+              p {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+
+        .image-wrapper {
+          img {
+            max-height: 400px;
+          }
+        }
+      }
+    }
+  }
+
+  /* Senior Section */
+  #senior {
+    padding: 3em 0;
+
+    .container {
+      width: 90%;
+
+      .members {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5em;
+
+        .member {
+          .image-wrapper {
+            height: 220px;
+          }
+
+          .member-details {
+            span {
+              font-size: 16px;
+            }
+
+            p {
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Mobile Devices (768px and below) */
+@media (max-width: 768px) {
+  /* Governance Banner */
+  #governance-banner {
+    .landing-vector {
+      display: none;
+    }
+
+    .container {
+      width: 92%;
+      flex-direction: column;
+      text-align: center;
+
+      .content-wrapper {
+        padding-top: 4em;
+        padding-bottom: 2em;
+
+        h2 {
+          font-size: 40px;
+          line-height: 48px;
+        }
+
+        p {
+          font-size: 15px;
+          line-height: 25px;
+        }
+      }
+
+      .image-wrapper {
+        padding-top: 0;
+        padding-bottom: 3em;
+
+        .main-mage {
+          height: 280px;
+          margin-left: 0;
+        }
+
+        .savings-image {
+          width: 140px;
+          left: -0.5em;
+          bottom: 30%;
+        }
+
+        .image-vector {
+          width: 140px;
+        }
+      }
+    }
+  }
+
+  /* Board Section */
+  #board {
+    .container {
+      .members {
+        grid-template-columns: 1fr;
+        gap: 1.5em;
+
+        .member {
+          .image-wrapper {
+            height: 240px;
+          }
+        }
+      }
+    }
+  }
+
+  /* Supervisors Section */
+  #supervisors {
+    .container {
+      .members {
+        grid-template-columns: 1fr;
+        gap: 1.5em;
+
+        .member {
+          .image-wrapper {
+            height: 240px;
+          }
+        }
+      }
+    }
+  }
+
+  /* Delegates Section */
+  #delegates {
+    .container {
+      .delegate-roles {
+        .image-wrapper {
+          img {
+            max-height: 350px;
+          }
+        }
+      }
+    }
+  }
+
+  /* Senior Section */
+  #senior {
+    .container {
+      .members {
+        grid-template-columns: 1fr;
+        gap: 1.5em;
+
+        .member {
+          .image-wrapper {
+            height: 240px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Small Mobile Devices (480px and below) */
+@media (max-width: 480px) {
+  /* Governance Banner */
+  #governance-banner {
+    .container {
+      width: 95%;
+
+      .content-wrapper {
+        padding-top: 3em;
+
+        h2 {
+          font-size: 32px;
+          line-height: 40px;
+        }
+
+        p {
+          font-size: 14px;
+          line-height: 24px;
+        }
+      }
+
+      .image-wrapper {
+        .main-mage {
+          height: 220px;
+        }
+
+        .savings-image {
+          width: 100px;
+          bottom: 25%;
+          left: 20%;
+        }
+
+        .image-vector {
+          width: 150px;
+        }
+      }
+    }
+  }
+
+  /* Board Section */
+  #board {
+    padding-bottom: 2em;
+
+    .section-vector {
+      width: 100px;
+    }
+
+    .container {
+      width: 92%;
+      gap: 1.5em;
+      @include flex-col;
+      align-items: center;
+      h2 {
+        font-size: 28px;
+        text-align: center;
+      }
+
+      .members {
+        gap: 1.2em;
+
+        .member {
+          .image-wrapper {
+            height: 200px;
+          }
+
+          .member-details {
+            text-align: center;
+
+            span {
+              font-size: 15px;
+            }
+
+            p {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* Supervisors Section */
+  #supervisors {
+    padding-bottom: 2em;
+
+    .section-vector {
+      width: 60px;
+    }
+
+    .container {
+      width: 92%;
+      padding-top: 2em;
+
+      h3 {
+        font-size: 22px;
+        text-align: center;
+        width: 100%;
+      }
+
+      .members {
+        gap: 1.2em;
+
+        .member {
+          .image-wrapper {
+            height: 200px;
+          }
+
+          .member-details {
+            text-align: center;
+
+            span {
+              font-size: 15px;
+            }
+
+            p {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* Delegates Section */
+  #delegates {
+    padding: 2em 0;
+
+    .container {
+      width: 92%;
+
+      .intro {
+        h2 {
+          font-size: 28px;
+          text-align: center;
+        }
+
+        p {
+          font-size: 14px;
+          line-height: 24px;
+          text-align: center;
+        }
+      }
+
+      .delegate-roles {
+        margin-top: 2em;
+        gap: 1.5em;
+
+        .content-wrapper {
+          span {
+            font-size: 15px;
+            text-align: center;
+          }
+
+          .roles {
+            gap: 0.8em;
+
+            .role {
+              padding: 0.8em;
+
+              img {
+                width: 20px;
+                height: 20px;
+              }
+
+              p {
+                font-size: 13px;
+              }
+            }
+          }
+        }
+
+        .image-wrapper {
+          img {
+            max-height: 280px;
+          }
+        }
+      }
+    }
+  }
+
+  /* Senior Section */
+  #senior {
+    padding: 2em 0;
+
+    .container {
+      width: 92%;
+      @include flex-col;
+      align-items: center;
+      h2 {
+        font-size: 28px;
+        text-align: center;
+      }
+
+      .members {
+        gap: 1.2em;
+
+        .member {
+          .image-wrapper {
+            height: 200px;
+          }
+
+          .member-details {
+            text-align: center;
+
+            span {
+              font-size: 15px;
+            }
+
+            p {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
