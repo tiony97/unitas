@@ -355,5 +355,367 @@
 /* BORROW BUSINESS PAGES STYLES */
 
 // Responsive Design
+/* Tablet Devices (1024px and below) */
+@media (max-width: 1024px) {
+  #loan-calculator {
+    .container {
+      width: 90%;
+      padding: 3em 0;
+
+      .intro {
+        p {
+          width: 80%;
+        }
+      }
+
+      .calculator {
+        max-width: 700px;
+
+        .input-wrapper {
+          padding: 1.5em;
+        }
+
+        .input-group {
+          margin-bottom: 1.5em;
+
+          label {
+            font-size: 14px;
+          }
+        }
+
+        .currency-input {
+          padding: 0.6em 1em;
+
+          .currency-symbol {
+            font-size: 15px;
+          }
+
+          .loan-input {
+            font-size: 24px;
+          }
+        }
+
+        .row-group {
+          gap: 1.5em;
+          margin-bottom: 1.5em;
+
+          .input-group {
+            .period-input {
+              padding: 0.6em 1em;
+              font-size: 16px;
+            }
+
+            &.unit-group {
+              flex: 0.6;
+
+              .unit-select {
+                padding: 0.6em 1em;
+                font-size: 16px;
+              }
+            }
+          }
+        }
+
+        .interest-header {
+          .interest-value {
+            font-size: 12px !important;
+          }
+        }
+
+        .repayment-summary {
+          padding: 1.5em;
+
+          h3 {
+            font-size: 16px;
+          }
+
+          .monthly-repayment {
+            margin-bottom: 1.5em;
+            padding-bottom: 1.5em;
+
+            .label {
+              font-size: 13px;
+            }
+
+            .amount {
+              .currency {
+                font-size: 16px;
+              }
+
+              .value {
+                font-size: 28px;
+              }
+            }
+          }
+
+          .summary-grid {
+            gap: 1em;
+            margin-bottom: 1.5em;
+
+            .summary-item {
+              padding: 0.8em;
+
+              .label {
+                font-size: 11px;
+              }
+
+              .amount {
+                .currency {
+                  font-size: 12px;
+                }
+
+                .value {
+                  font-size: 16px;
+                }
+              }
+            }
+          }
+
+          .disclaimer {
+            font-size: 11px !important;
+            line-height: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Mobile Devices (768px and below) */
 @media (max-width: 768px) {
+  #loan-calculator {
+    .container {
+      width: 92%;
+      padding: 2em 0;
+
+      .intro {
+        h2 {
+          font-size: 28px;
+        }
+
+        p {
+          width: 100%;
+          font-size: 14px;
+        }
+      }
+
+      .calculator {
+        margin-top: 2em;
+        border-radius: 20px;
+
+        .input-wrapper {
+          padding: 1.2em;
+        }
+
+        .input-group {
+          margin-bottom: 1.2em;
+
+          label {
+            font-size: 13px;
+            margin-bottom: 0.4em;
+          }
+        }
+
+        .currency-input {
+          padding: 0.5em 0.8em;
+
+          .currency-symbol {
+            font-size: 14px;
+            margin-right: 0.5em;
+          }
+
+          .loan-input {
+            font-size: 20px;
+          }
+        }
+
+        .row-group {
+          flex-direction: column;
+          gap: 1.2em;
+          margin-bottom: 1.2em;
+
+          .input-group {
+            margin-bottom: 0;
+
+            .period-input {
+              padding: 0.5em 0.8em;
+              font-size: 15px;
+            }
+
+            &.unit-group {
+              flex: auto;
+
+              .unit-select {
+                padding: 0.5em 0.8em;
+                font-size: 15px;
+              }
+            }
+          }
+        }
+
+        .interest-header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.5em;
+          margin-bottom: 1em;
+
+          label {
+            margin-bottom: 0;
+          }
+
+          .interest-value {
+            font-size: 11px !important;
+            padding: 0.3em 0.8em;
+          }
+        }
+
+        .slider-container {
+          padding-bottom: 25px;
+
+          .slider-marks {
+            .mark {
+              font-size: 9px;
+
+              &::before {
+                top: -16px;
+                height: 6px;
+              }
+            }
+          }
+        }
+
+        #calculate-btn {
+          font-size: 14px !important;
+          padding: 10px 20px !important;
+        }
+
+        .repayment-summary {
+          padding: 1.2em;
+
+          h3 {
+            font-size: 15px;
+            margin-bottom: 0.3em;
+          }
+
+          .monthly-repayment {
+            margin-bottom: 1.2em;
+            padding-bottom: 1.2em;
+
+            .label {
+              font-size: 12px;
+              margin-bottom: 0.3em;
+            }
+
+            .amount {
+              .currency {
+                font-size: 14px;
+              }
+
+              .value {
+                font-size: 24px;
+              }
+            }
+          }
+
+          .summary-grid {
+            gap: 0.8em;
+            margin-bottom: 1.2em;
+            grid-template-columns: 1fr !important;
+            .summary-item {
+              padding: 0.6em;
+              flex-direction: column !important;
+              align-items: flex-start !important;
+              .label {
+                font-size: 10px;
+                margin-bottom: 0.3em;
+              }
+
+              .amount {
+                .currency {
+                  font-size: 11px;
+                }
+
+                .value {
+                  font-size: 14px;
+                }
+              }
+            }
+          }
+
+          .disclaimer {
+            font-size: 10px !important;
+            line-height: 15px;
+            margin: 0.8em 0 0 0;
+            padding-top: 0.8em;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Extra Small Mobile Devices (480px and below) - Additional refinements */
+@media (max-width: 480px) {
+  #loan-calculator {
+    .container {
+      .calculator {
+        .input-wrapper {
+          padding: 1em;
+        }
+
+        .currency-input {
+          .loan-input {
+            font-size: 18px;
+          }
+        }
+
+        .row-group {
+          .input-group {
+            .period-input {
+              font-size: 14px;
+            }
+
+            &.unit-group {
+              .unit-select {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+
+        .repayment-summary {
+          .monthly-repayment {
+            .amount {
+              .value {
+                font-size: 20px;
+              }
+            }
+          }
+
+          .summary-grid {
+            grid-template-columns: 1fr;
+            gap: 0.8em;
+
+            .summary-item {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 0.8em;
+
+              .label {
+                margin-bottom: 0;
+              }
+
+              .amount {
+                .currency,
+                .value {
+                  font-size: 14px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

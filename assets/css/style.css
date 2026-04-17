@@ -341,10 +341,12 @@ header .top-bar__nav .top-bar__menu .menu-item:hover .sub-menu {
 header .top-bar__search {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background: rgba(255, 255, 255, 0.4);
   width: 150px;
   height: 35px;
   border-radius: 30px;
+  padding-right: 15px;
 }
 header .top-bar__search input {
   height: 100%;
@@ -1074,6 +1076,67 @@ footer#site-footer .contact-section .social-info a:last-of-type {
 }
 footer#site-footer .contact-section .social-info a:hover {
   color: #ce2329;
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #ce2329;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.scroll-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+.scroll-to-top:hover {
+  background: rgb(162.4066390041, 27.5933609959, 32.3236514523);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+.scroll-to-top:active {
+  transform: translateY(0);
+}
+.scroll-to-top .scroll-icon {
+  font-size: 28px;
+  font-weight: bold;
+  color: #ffffff;
+  line-height: 1;
+}
+@media (max-width: 768px) {
+  .scroll-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+  }
+  .scroll-to-top .scroll-icon {
+    font-size: 24px;
+  }
+}
+@media (max-width: 480px) {
+  .scroll-to-top {
+    bottom: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+  }
+  .scroll-to-top .scroll-icon {
+    font-size: 22px;
+  }
 }
 
 /* Responsive layout for tablet devices */
@@ -5371,47 +5434,387 @@ footer#site-footer .contact-section .social-info a:hover {
     transform: translateY(5px) rotate(-5deg);
   }
 }
+/* Tablet Devices (1024px and below) */
 @media (max-width: 1024px) {
+  /* Membership Banner */
+  #membership-banner .landing-vector {
+    width: 150px;
+  }
+  #membership-banner .container {
+    width: 90%;
+    gap: 1.5em;
+  }
+  #membership-banner .container .content-wrapper {
+    padding-top: 5em;
+    padding-bottom: 6em;
+  }
+  #membership-banner .container .content-wrapper h2 {
+    font-size: 48px;
+    line-height: 56px;
+  }
+  #membership-banner .container .content-wrapper p {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  #membership-banner .container .image-wrapper {
+    padding-top: 4em;
+  }
+  #membership-banner .container .image-wrapper .main-mage {
+    height: 350px;
+  }
+  #membership-banner .container .image-wrapper .savings-image {
+    width: 200px;
+    bottom: 30%;
+  }
+  /* Become Member Section */
+  #become-member {
+    padding: 3em 0;
+  }
   #become-member .container {
     width: 90%;
   }
   #become-member .container .intro {
     flex-direction: column;
     gap: 1.5em;
+    text-align: center;
   }
   #become-member .container .intro h2 {
     flex: none;
   }
-  #become-member .container .journey-title h3 {
+  #become-member .container .intro p {
+    font-size: 15px;
+    line-height: 25px;
+  }
+  #become-member .container .member-accordion .accordion-item {
+    border-radius: 30px;
+  }
+  #become-member .container .member-accordion .accordion-item .accordion-header {
+    padding: 1.2em 1.5em;
+  }
+  #become-member .container .member-accordion .accordion-item .accordion-header h4 {
+    font-size: 22px;
+    line-height: 28px;
+  }
+  #become-member .container .member-accordion .accordion-item .accordion-header .accordion-icon {
+    width: 35px;
+    height: 35px;
+  }
+  #become-member .container .member-accordion .accordion-item .accordion-header .accordion-icon .plus,
+  #become-member .container .member-accordion .accordion-item .accordion-header .accordion-icon .minus {
+    font-size: 30px;
+  }
+  #become-member .container .member-accordion .accordion-item .accordion-content .content-flex {
+    flex-direction: column;
+    padding: 0 1.5em 1.5em 1.5em;
+  }
+  #become-member .container .member-accordion .accordion-item .accordion-content .content-flex .content-image {
+    flex: 0 0 auto;
+    width: 100%;
+    height: 250px;
+    border-radius: 15px;
+  }
+  #become-member .container .member-accordion .accordion-item .accordion-content .content-flex .content-image img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #become-member .container .member-accordion .accordion-item .accordion-content .content-flex .content-details .requirements-list {
+    padding: 1.2em;
+  }
+  #become-member .container .member-accordion .accordion-item .accordion-content .content-flex .content-details .requirements-list .requirement-item {
+    padding: 8px 12px;
+  }
+  #become-member .container .member-accordion .accordion-item .accordion-content .content-flex .content-details .requirements-list .requirement-item .requirement-icon {
+    font-size: 18px;
+  }
+  #become-member .container .member-accordion .accordion-item .accordion-content .content-flex .content-details .requirements-list .requirement-item span {
+    font-size: 13px;
+  }
+  #become-member .container .member-accordion .accordion-item .accordion-content .content-flex .content-details .become-btn {
+    font-size: 14px;
+  }
+  #become-member .container .member-accordion .accordion-item.active .accordion-content {
+    max-height: 800px;
+  }
+  /* Investment Section */
+  #investment .container {
+    width: 90%;
+    padding: 3em 0;
+    padding-top: 3em;
+  }
+  #investment .container .intro h2 {
     font-size: 36px;
-    line-height: 42px;
   }
-  #become-member .container .member-accordion .accordion-item .accordion-image {
-    flex: 0 0 150px;
+  #investment .container .intro p {
+    font-size: 15px;
   }
-  #become-member .container .member-accordion .accordion-item .accordion-content-wrapper {
-    padding: 1.5em;
+  #investment .container .investment-details {
+    grid-template-columns: 1fr;
+    gap: 2em;
+    margin-top: 3em;
   }
-  #become-member .container .member-accordion .accordion-item .accordion-content-wrapper .accordion-header h4 {
-    font-size: 24px;
-    line-height: 30px;
+  #investment .container .investment-details .image-wrapper {
+    height: 300px;
+  }
+  #investment .container .investment-details .content-wrapper .detail {
+    padding: 0.8em 1.2em;
+    font-size: 14px;
+    text-align: center;
+  }
+  /* What You Get Section */
+  #what-you-get {
+    padding: 3em 0;
+  }
+  #what-you-get .container {
+    width: 90%;
+  }
+  #what-you-get .container .intro h2 {
+    font-size: 36px;
+  }
+  #what-you-get .container .intro p {
+    font-size: 15px;
+  }
+  #what-you-get .container .details {
+    grid-template-columns: 1fr;
+    gap: 2em;
+    margin-top: 3em;
+  }
+  #what-you-get .container .details .image-wrapper {
+    height: 300px;
+  }
+  #what-you-get .container .details .content-wrapper .detail {
+    padding: 0.8em 1.2em;
+    font-size: 14px;
+  }
+  #what-you-get .container .details .content-wrapper .detail img {
+    width: 22px;
+    height: 22px;
   }
 }
+/* Mobile Devices (768px and below) */
 @media (max-width: 768px) {
-  #become-member .container .member-accordion .accordion-item {
-    flex-direction: column;
+  /* Membership Banner */
+  #membership-banner .landing-vector {
+    display: none;
   }
-  #become-member .container .member-accordion .accordion-item .accordion-image {
-    flex: none;
+  #membership-banner .container {
+    width: 92%;
+    flex-direction: column;
+    text-align: center;
+  }
+  #membership-banner .container .content-wrapper {
+    padding-top: 4em;
+    padding-bottom: 2em;
     width: 100%;
+  }
+  #membership-banner .container .content-wrapper h2 {
+    font-size: 40px;
+    line-height: 48px;
+  }
+  #membership-banner .container .content-wrapper p {
+    font-size: 15px;
+    line-height: 25px;
+  }
+  #membership-banner .container .image-wrapper {
+    padding-top: 0;
+    padding-bottom: 3em;
+    justify-content: flex-end;
+  }
+  #membership-banner .container .image-wrapper .main-mage {
+    height: 280px;
+  }
+  #membership-banner .container .image-wrapper .savings-image {
+    width: 150px;
+    bottom: 25%;
+    left: 20%;
+  }
+  /* Become Member Section */
+  #become-member {
+    padding: 2em 0;
+  }
+  #become-member .container {
+    width: 92%;
+  }
+  #become-member .container .intro {
+    margin-bottom: 2em;
+    align-items: center;
+  }
+  #become-member .container .intro h2 {
+    font-size: 28px;
+    text-align: center;
+  }
+  #become-member .container .intro p {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  #become-member .container .member-accordion {
+    gap: 15px;
+  }
+  #become-member .container .member-accordion .accordion-item {
+    border-radius: 25px;
+  }
+  #become-member .container .member-accordion .accordion-item .accordion-header {
+    padding: 1em 1.2em;
+  }
+  #become-member .container .member-accordion .accordion-item .accordion-header h4 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  #become-member .container .member-accordion .accordion-item .accordion-header .accordion-icon {
+    width: 30px;
+    height: 30px;
+  }
+  #become-member .container .member-accordion .accordion-item .accordion-header .accordion-icon .plus,
+  #become-member .container .member-accordion .accordion-item .accordion-header .accordion-icon .minus {
+    font-size: 26px;
+  }
+  #become-member .container .member-accordion .accordion-item .accordion-content .content-flex {
+    padding: 0 1.2em 1.2em 1.2em;
+  }
+  #become-member .container .member-accordion .accordion-item .accordion-content .content-flex .content-image {
+    height: 200px;
+    -o-object-position: top center;
+       object-position: top center;
+  }
+  #become-member .container .member-accordion .accordion-item .accordion-content .content-flex .content-details .requirements-list {
+    padding: 1em;
+    gap: 8px;
+  }
+  #become-member .container .member-accordion .accordion-item .accordion-content .content-flex .content-details .requirements-list .requirement-item {
+    padding: 8px 12px;
+  }
+  #become-member .container .member-accordion .accordion-item .accordion-content .content-flex .content-details .requirements-list .requirement-item .requirement-icon {
+    font-size: 16px;
+  }
+  #become-member .container .member-accordion .accordion-item .accordion-content .content-flex .content-details .requirements-list .requirement-item span {
+    font-size: 12px;
+  }
+  #become-member .container .member-accordion .accordion-item .accordion-content .content-flex .content-details .become-btn {
+    font-size: 13px;
+    padding-bottom: 6px;
+  }
+  #become-member .container .member-accordion .accordion-item.active .accordion-content {
+    max-height: 700px;
+  }
+  /* Investment Section */
+  #investment .container {
+    width: 92%;
+    padding: 2em 0;
+    padding-top: 2em;
+  }
+  #investment .container .intro {
+    gap: 0.8em;
+  }
+  #investment .container .intro h2 {
+    font-size: 28px;
+  }
+  #investment .container .intro p {
+    font-size: 14px;
+    text-align: center;
+  }
+  #investment .container .investment-details {
+    gap: 1.5em;
+    margin-top: 2em;
+  }
+  #investment .container .investment-details .image-wrapper {
+    height: 250px;
+    border-radius: 20px;
+  }
+  #investment .container .investment-details .content-wrapper {
+    gap: 1em;
+  }
+  #investment .container .investment-details .content-wrapper .detail {
+    padding: 0.8em 1em;
+    font-size: 13px;
+    text-align: center;
+  }
+  /* What You Get Section */
+  #what-you-get {
+    padding: 2em 0;
+  }
+  #what-you-get .container {
+    width: 92%;
+  }
+  #what-you-get .container .intro {
+    gap: 0.8em;
+  }
+  #what-you-get .container .intro h2 {
+    font-size: 28px;
+  }
+  #what-you-get .container .intro p {
+    font-size: 14px;
+    text-align: center;
+  }
+  #what-you-get .container .details {
+    gap: 1.5em;
+    margin-top: 2em;
+  }
+  #what-you-get .container .details .image-wrapper {
+    height: 250px;
+    border-radius: 20px;
+  }
+  #what-you-get .container .details .content-wrapper {
+    gap: 1em;
+  }
+  #what-you-get .container .details .content-wrapper .detail {
+    padding: 0.8em 1em;
+    font-size: 13px;
+  }
+  #what-you-get .container .details .content-wrapper .detail img {
+    width: 20px;
+    height: 20px;
+  }
+}
+/* Extra Small Mobile Devices (480px and below) */
+@media (max-width: 480px) {
+  /* Membership Banner */
+  #membership-banner .container .content-wrapper h2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  #membership-banner .container .content-wrapper p {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  #membership-banner .container .image-wrapper .main-mage {
+    height: 220px;
+  }
+  #membership-banner .container .image-wrapper .savings-image {
+    width: 120px;
+    bottom: 40%;
+  }
+  /* Become Member Section */
+  #become-member .container .member-accordion .accordion-item .accordion-header h4 {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  #become-member .container .member-accordion .accordion-item .accordion-content .content-flex .content-image {
+    height: 180px;
+  }
+  #become-member .container .member-accordion .accordion-item .accordion-content .content-flex .content-details .requirements-list .requirement-item span {
+    font-size: 11px;
+  }
+  #become-member .container .member-accordion .accordion-item.active .accordion-content {
+    max-height: 650px;
+  }
+  /* Investment Section */
+  #investment .container .investment-details .image-wrapper {
     height: 200px;
   }
-  #become-member .container .member-accordion .accordion-item .accordion-content-wrapper {
-    padding: 1.5em;
+  #investment .container .investment-details .content-wrapper .detail {
+    font-size: 12px;
   }
-  #become-member .container .journey-title h3 {
-    font-size: 28px;
-    line-height: 34px;
+  /* What You Get Section */
+  #what-you-get .container .details .image-wrapper {
+    height: 200px;
+  }
+  #what-you-get .container .details .content-wrapper .detail {
+    font-size: 12px;
+  }
+  #what-you-get .container .details .content-wrapper .detail img {
+    width: 18px;
+    height: 18px;
   }
 }
 #savings-banner, #real-banner, #agri-banner, #invest-banner, #borrow-banner {
@@ -5944,6 +6347,542 @@ footer#site-footer .contact-section .social-info a:hover {
   gap: 1em;
 }
 
+/* Tablet Devices (1024px and below) */
+@media (max-width: 1024px) {
+  /* Savings Banner */
+  #savings-banner .landing-vector, #real-banner .landing-vector, #agri-banner .landing-vector, #invest-banner .landing-vector, #borrow-banner .landing-vector {
+    width: auto;
+  }
+  #savings-banner .container, #real-banner .container, #agri-banner .container, #invest-banner .container, #borrow-banner .container {
+    width: 90%;
+    gap: 1.5em;
+  }
+  #savings-banner .container .content-wrapper, #real-banner .container .content-wrapper, #agri-banner .container .content-wrapper, #invest-banner .container .content-wrapper, #borrow-banner .container .content-wrapper {
+    padding-top: 5em;
+    padding-bottom: 6em;
+  }
+  #savings-banner .container .content-wrapper h2, #real-banner .container .content-wrapper h2, #agri-banner .container .content-wrapper h2, #invest-banner .container .content-wrapper h2, #borrow-banner .container .content-wrapper h2 {
+    font-size: 48px;
+    line-height: 56px;
+  }
+  #savings-banner .container .content-wrapper p, #real-banner .container .content-wrapper p, #agri-banner .container .content-wrapper p, #invest-banner .container .content-wrapper p, #borrow-banner .container .content-wrapper p {
+    width: 60% !important;
+    font-size: 16px;
+    line-height: 26px;
+  }
+  #savings-banner .container .image-wrapper, #real-banner .container .image-wrapper, #agri-banner .container .image-wrapper, #invest-banner .container .image-wrapper, #borrow-banner .container .image-wrapper {
+    padding-top: 4em;
+  }
+  #savings-banner .container .image-wrapper .main-mage, #real-banner .container .image-wrapper .main-mage, #agri-banner .container .image-wrapper .main-mage, #invest-banner .container .image-wrapper .main-mage, #borrow-banner .container .image-wrapper .main-mage {
+    height: 400px;
+  }
+  #savings-banner .container .image-wrapper .savings-image, #real-banner .container .image-wrapper .savings-image, #agri-banner .container .image-wrapper .savings-image, #invest-banner .container .image-wrapper .savings-image, #borrow-banner .container .image-wrapper .savings-image {
+    width: 180px;
+    left: 10%;
+    bottom: 30%;
+  }
+  /* Savings Card Section */
+  .savings-card-section .container, .real-card-section .container, .agri-card-section .container, .invest-card-section .container, .digital-card-section .container, .banc-card-section .container, .borrow-card-section .container {
+    width: 90%;
+    padding: 3em 0;
+  }
+  .savings-card-section .container .intro, .real-card-section .container .intro, .agri-card-section .container .intro, .invest-card-section .container .intro, .digital-card-section .container .intro, .banc-card-section .container .intro, .borrow-card-section .container .intro {
+    margin-bottom: 2em;
+  }
+  .savings-card-section .container .intro p, .real-card-section .container .intro p, .agri-card-section .container .intro p, .invest-card-section .container .intro p, .digital-card-section .container .intro p, .banc-card-section .container .intro p, .borrow-card-section .container .intro p {
+    width: 70%;
+  }
+  .savings-card-section .container .savings-cards, .savings-card-section .container .real-card-section .real-cards, .real-card-section .container .savings-cards, .real-card-section .container .real-cards, .savings-card-section .container .agri-card-section .agri-cards, .real-card-section .container .agri-card-section .agri-cards, .agri-card-section .container .savings-cards, .agri-card-section .container .real-card-section .real-cards, .agri-card-section .container .agri-cards, .savings-card-section .container .invest-card-section .invest-cards, .real-card-section .container .invest-card-section .invest-cards, .agri-card-section .container .invest-card-section .invest-cards, .invest-card-section .container .savings-cards, .invest-card-section .container .real-card-section .real-cards, .invest-card-section .container .agri-card-section .agri-cards, .invest-card-section .container .invest-cards, .savings-card-section .container .digital-card-section .digital-cards, .real-card-section .container .digital-card-section .digital-cards, .agri-card-section .container .digital-card-section .digital-cards, .invest-card-section .container .digital-card-section .digital-cards, .digital-card-section .container .savings-cards, .digital-card-section .container .real-card-section .real-cards, .digital-card-section .container .agri-card-section .agri-cards, .digital-card-section .container .invest-card-section .invest-cards, .digital-card-section .container .digital-cards, .savings-card-section .container .banc-card-section .banc-cards, .real-card-section .container .banc-card-section .banc-cards, .agri-card-section .container .banc-card-section .banc-cards, .invest-card-section .container .banc-card-section .banc-cards, .digital-card-section .container .banc-card-section .banc-cards, .banc-card-section .container .savings-cards, .banc-card-section .container .real-card-section .real-cards, .banc-card-section .container .agri-card-section .agri-cards, .banc-card-section .container .invest-card-section .invest-cards, .banc-card-section .container .digital-card-section .digital-cards, .banc-card-section .container .banc-cards, .savings-card-section .container .borrow-card-section .borrow-cards, .real-card-section .container .borrow-card-section .borrow-cards, .agri-card-section .container .borrow-card-section .borrow-cards, .invest-card-section .container .borrow-card-section .borrow-cards, .digital-card-section .container .borrow-card-section .borrow-cards, .banc-card-section .container .borrow-card-section .borrow-cards, .borrow-card-section .container .savings-cards, .borrow-card-section .container .real-card-section .real-cards, .borrow-card-section .container .agri-card-section .agri-cards, .borrow-card-section .container .invest-card-section .invest-cards, .borrow-card-section .container .digital-card-section .digital-cards, .borrow-card-section .container .banc-card-section .banc-cards, .borrow-card-section .container .borrow-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .savings-card-section .container .savings-cards .card .content-wrapper, .savings-card-section .container .real-card-section .real-cards .card .content-wrapper, .real-card-section .container .savings-cards .card .content-wrapper, .real-card-section .container .real-cards .card .content-wrapper, .savings-card-section .container .agri-card-section .agri-cards .card .content-wrapper, .real-card-section .container .agri-card-section .agri-cards .card .content-wrapper, .agri-card-section .container .savings-cards .card .content-wrapper, .agri-card-section .container .real-card-section .real-cards .card .content-wrapper, .agri-card-section .container .agri-cards .card .content-wrapper, .savings-card-section .container .invest-card-section .invest-cards .card .content-wrapper, .real-card-section .container .invest-card-section .invest-cards .card .content-wrapper, .agri-card-section .container .invest-card-section .invest-cards .card .content-wrapper, .invest-card-section .container .savings-cards .card .content-wrapper, .invest-card-section .container .real-card-section .real-cards .card .content-wrapper, .invest-card-section .container .agri-card-section .agri-cards .card .content-wrapper, .invest-card-section .container .invest-cards .card .content-wrapper, .savings-card-section .container .digital-card-section .digital-cards .card .content-wrapper, .real-card-section .container .digital-card-section .digital-cards .card .content-wrapper, .agri-card-section .container .digital-card-section .digital-cards .card .content-wrapper, .invest-card-section .container .digital-card-section .digital-cards .card .content-wrapper, .digital-card-section .container .savings-cards .card .content-wrapper, .digital-card-section .container .real-card-section .real-cards .card .content-wrapper, .digital-card-section .container .agri-card-section .agri-cards .card .content-wrapper, .digital-card-section .container .invest-card-section .invest-cards .card .content-wrapper, .digital-card-section .container .digital-cards .card .content-wrapper, .savings-card-section .container .banc-card-section .banc-cards .card .content-wrapper, .real-card-section .container .banc-card-section .banc-cards .card .content-wrapper, .agri-card-section .container .banc-card-section .banc-cards .card .content-wrapper, .invest-card-section .container .banc-card-section .banc-cards .card .content-wrapper, .digital-card-section .container .banc-card-section .banc-cards .card .content-wrapper, .banc-card-section .container .savings-cards .card .content-wrapper, .banc-card-section .container .real-card-section .real-cards .card .content-wrapper, .banc-card-section .container .agri-card-section .agri-cards .card .content-wrapper, .banc-card-section .container .invest-card-section .invest-cards .card .content-wrapper, .banc-card-section .container .digital-card-section .digital-cards .card .content-wrapper, .banc-card-section .container .banc-cards .card .content-wrapper, .savings-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper, .real-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper, .agri-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper, .invest-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper, .digital-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper, .banc-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper, .borrow-card-section .container .savings-cards .card .content-wrapper, .borrow-card-section .container .real-card-section .real-cards .card .content-wrapper, .borrow-card-section .container .agri-card-section .agri-cards .card .content-wrapper, .borrow-card-section .container .invest-card-section .invest-cards .card .content-wrapper, .borrow-card-section .container .digital-card-section .digital-cards .card .content-wrapper, .borrow-card-section .container .banc-card-section .banc-cards .card .content-wrapper, .borrow-card-section .container .borrow-cards .card .content-wrapper {
+    min-height: 220px;
+    padding: 1.2em;
+  }
+  .savings-card-section .container .savings-cards .card .content-wrapper h5, .savings-card-section .container .real-card-section .real-cards .card .content-wrapper h5, .real-card-section .container .savings-cards .card .content-wrapper h5, .real-card-section .container .real-cards .card .content-wrapper h5, .savings-card-section .container .agri-card-section .agri-cards .card .content-wrapper h5, .real-card-section .container .agri-card-section .agri-cards .card .content-wrapper h5, .agri-card-section .container .savings-cards .card .content-wrapper h5, .agri-card-section .container .real-card-section .real-cards .card .content-wrapper h5, .agri-card-section .container .agri-cards .card .content-wrapper h5, .savings-card-section .container .invest-card-section .invest-cards .card .content-wrapper h5, .real-card-section .container .invest-card-section .invest-cards .card .content-wrapper h5, .agri-card-section .container .invest-card-section .invest-cards .card .content-wrapper h5, .invest-card-section .container .savings-cards .card .content-wrapper h5, .invest-card-section .container .real-card-section .real-cards .card .content-wrapper h5, .invest-card-section .container .agri-card-section .agri-cards .card .content-wrapper h5, .invest-card-section .container .invest-cards .card .content-wrapper h5, .savings-card-section .container .digital-card-section .digital-cards .card .content-wrapper h5, .real-card-section .container .digital-card-section .digital-cards .card .content-wrapper h5, .agri-card-section .container .digital-card-section .digital-cards .card .content-wrapper h5, .invest-card-section .container .digital-card-section .digital-cards .card .content-wrapper h5, .digital-card-section .container .savings-cards .card .content-wrapper h5, .digital-card-section .container .real-card-section .real-cards .card .content-wrapper h5, .digital-card-section .container .agri-card-section .agri-cards .card .content-wrapper h5, .digital-card-section .container .invest-card-section .invest-cards .card .content-wrapper h5, .digital-card-section .container .digital-cards .card .content-wrapper h5, .savings-card-section .container .banc-card-section .banc-cards .card .content-wrapper h5, .real-card-section .container .banc-card-section .banc-cards .card .content-wrapper h5, .agri-card-section .container .banc-card-section .banc-cards .card .content-wrapper h5, .invest-card-section .container .banc-card-section .banc-cards .card .content-wrapper h5, .digital-card-section .container .banc-card-section .banc-cards .card .content-wrapper h5, .banc-card-section .container .savings-cards .card .content-wrapper h5, .banc-card-section .container .real-card-section .real-cards .card .content-wrapper h5, .banc-card-section .container .agri-card-section .agri-cards .card .content-wrapper h5, .banc-card-section .container .invest-card-section .invest-cards .card .content-wrapper h5, .banc-card-section .container .digital-card-section .digital-cards .card .content-wrapper h5, .banc-card-section .container .banc-cards .card .content-wrapper h5, .savings-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper h5, .real-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper h5, .agri-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper h5, .invest-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper h5, .digital-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper h5, .banc-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper h5, .borrow-card-section .container .savings-cards .card .content-wrapper h5, .borrow-card-section .container .real-card-section .real-cards .card .content-wrapper h5, .borrow-card-section .container .agri-card-section .agri-cards .card .content-wrapper h5, .borrow-card-section .container .invest-card-section .invest-cards .card .content-wrapper h5, .borrow-card-section .container .digital-card-section .digital-cards .card .content-wrapper h5, .borrow-card-section .container .banc-card-section .banc-cards .card .content-wrapper h5, .borrow-card-section .container .borrow-cards .card .content-wrapper h5 {
+    font-size: 18px;
+  }
+  .savings-card-section .container .savings-cards .card .content-wrapper p, .savings-card-section .container .real-card-section .real-cards .card .content-wrapper p, .real-card-section .container .savings-cards .card .content-wrapper p, .real-card-section .container .real-cards .card .content-wrapper p, .savings-card-section .container .agri-card-section .agri-cards .card .content-wrapper p, .real-card-section .container .agri-card-section .agri-cards .card .content-wrapper p, .agri-card-section .container .savings-cards .card .content-wrapper p, .agri-card-section .container .real-card-section .real-cards .card .content-wrapper p, .agri-card-section .container .agri-cards .card .content-wrapper p, .savings-card-section .container .invest-card-section .invest-cards .card .content-wrapper p, .real-card-section .container .invest-card-section .invest-cards .card .content-wrapper p, .agri-card-section .container .invest-card-section .invest-cards .card .content-wrapper p, .invest-card-section .container .savings-cards .card .content-wrapper p, .invest-card-section .container .real-card-section .real-cards .card .content-wrapper p, .invest-card-section .container .agri-card-section .agri-cards .card .content-wrapper p, .invest-card-section .container .invest-cards .card .content-wrapper p, .savings-card-section .container .digital-card-section .digital-cards .card .content-wrapper p, .real-card-section .container .digital-card-section .digital-cards .card .content-wrapper p, .agri-card-section .container .digital-card-section .digital-cards .card .content-wrapper p, .invest-card-section .container .digital-card-section .digital-cards .card .content-wrapper p, .digital-card-section .container .savings-cards .card .content-wrapper p, .digital-card-section .container .real-card-section .real-cards .card .content-wrapper p, .digital-card-section .container .agri-card-section .agri-cards .card .content-wrapper p, .digital-card-section .container .invest-card-section .invest-cards .card .content-wrapper p, .digital-card-section .container .digital-cards .card .content-wrapper p, .savings-card-section .container .banc-card-section .banc-cards .card .content-wrapper p, .real-card-section .container .banc-card-section .banc-cards .card .content-wrapper p, .agri-card-section .container .banc-card-section .banc-cards .card .content-wrapper p, .invest-card-section .container .banc-card-section .banc-cards .card .content-wrapper p, .digital-card-section .container .banc-card-section .banc-cards .card .content-wrapper p, .banc-card-section .container .savings-cards .card .content-wrapper p, .banc-card-section .container .real-card-section .real-cards .card .content-wrapper p, .banc-card-section .container .agri-card-section .agri-cards .card .content-wrapper p, .banc-card-section .container .invest-card-section .invest-cards .card .content-wrapper p, .banc-card-section .container .digital-card-section .digital-cards .card .content-wrapper p, .banc-card-section .container .banc-cards .card .content-wrapper p, .savings-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper p, .real-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper p, .agri-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper p, .invest-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper p, .digital-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper p, .banc-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper p, .borrow-card-section .container .savings-cards .card .content-wrapper p, .borrow-card-section .container .real-card-section .real-cards .card .content-wrapper p, .borrow-card-section .container .agri-card-section .agri-cards .card .content-wrapper p, .borrow-card-section .container .invest-card-section .invest-cards .card .content-wrapper p, .borrow-card-section .container .digital-card-section .digital-cards .card .content-wrapper p, .borrow-card-section .container .banc-card-section .banc-cards .card .content-wrapper p, .borrow-card-section .container .borrow-cards .card .content-wrapper p {
+    font-size: 12px !important;
+    line-height: 18px !important;
+  }
+  .savings-card-section .container .savings-cards .card .image-wrapper, .savings-card-section .container .real-card-section .real-cards .card .image-wrapper, .real-card-section .container .savings-cards .card .image-wrapper, .real-card-section .container .real-cards .card .image-wrapper, .savings-card-section .container .agri-card-section .agri-cards .card .image-wrapper, .real-card-section .container .agri-card-section .agri-cards .card .image-wrapper, .agri-card-section .container .savings-cards .card .image-wrapper, .agri-card-section .container .real-card-section .real-cards .card .image-wrapper, .agri-card-section .container .agri-cards .card .image-wrapper, .savings-card-section .container .invest-card-section .invest-cards .card .image-wrapper, .real-card-section .container .invest-card-section .invest-cards .card .image-wrapper, .agri-card-section .container .invest-card-section .invest-cards .card .image-wrapper, .invest-card-section .container .savings-cards .card .image-wrapper, .invest-card-section .container .real-card-section .real-cards .card .image-wrapper, .invest-card-section .container .agri-card-section .agri-cards .card .image-wrapper, .invest-card-section .container .invest-cards .card .image-wrapper, .savings-card-section .container .digital-card-section .digital-cards .card .image-wrapper, .real-card-section .container .digital-card-section .digital-cards .card .image-wrapper, .agri-card-section .container .digital-card-section .digital-cards .card .image-wrapper, .invest-card-section .container .digital-card-section .digital-cards .card .image-wrapper, .digital-card-section .container .savings-cards .card .image-wrapper, .digital-card-section .container .real-card-section .real-cards .card .image-wrapper, .digital-card-section .container .agri-card-section .agri-cards .card .image-wrapper, .digital-card-section .container .invest-card-section .invest-cards .card .image-wrapper, .digital-card-section .container .digital-cards .card .image-wrapper, .savings-card-section .container .banc-card-section .banc-cards .card .image-wrapper, .real-card-section .container .banc-card-section .banc-cards .card .image-wrapper, .agri-card-section .container .banc-card-section .banc-cards .card .image-wrapper, .invest-card-section .container .banc-card-section .banc-cards .card .image-wrapper, .digital-card-section .container .banc-card-section .banc-cards .card .image-wrapper, .banc-card-section .container .savings-cards .card .image-wrapper, .banc-card-section .container .real-card-section .real-cards .card .image-wrapper, .banc-card-section .container .agri-card-section .agri-cards .card .image-wrapper, .banc-card-section .container .invest-card-section .invest-cards .card .image-wrapper, .banc-card-section .container .digital-card-section .digital-cards .card .image-wrapper, .banc-card-section .container .banc-cards .card .image-wrapper, .savings-card-section .container .borrow-card-section .borrow-cards .card .image-wrapper, .real-card-section .container .borrow-card-section .borrow-cards .card .image-wrapper, .agri-card-section .container .borrow-card-section .borrow-cards .card .image-wrapper, .invest-card-section .container .borrow-card-section .borrow-cards .card .image-wrapper, .digital-card-section .container .borrow-card-section .borrow-cards .card .image-wrapper, .banc-card-section .container .borrow-card-section .borrow-cards .card .image-wrapper, .borrow-card-section .container .savings-cards .card .image-wrapper, .borrow-card-section .container .real-card-section .real-cards .card .image-wrapper, .borrow-card-section .container .agri-card-section .agri-cards .card .image-wrapper, .borrow-card-section .container .invest-card-section .invest-cards .card .image-wrapper, .borrow-card-section .container .digital-card-section .digital-cards .card .image-wrapper, .borrow-card-section .container .banc-card-section .banc-cards .card .image-wrapper, .borrow-card-section .container .borrow-cards .card .image-wrapper {
+    height: 180px;
+  }
+  .savings-card-section .container .savings-cards.centered .card, .savings-card-section .container .real-card-section .centered.real-cards .card, .real-card-section .container .savings-cards.centered .card, .real-card-section .container .centered.real-cards .card, .savings-card-section .container .agri-card-section .centered.agri-cards .card, .real-card-section .container .agri-card-section .centered.agri-cards .card, .agri-card-section .container .savings-cards.centered .card, .agri-card-section .container .real-card-section .centered.real-cards .card, .agri-card-section .container .centered.agri-cards .card, .savings-card-section .container .invest-card-section .centered.invest-cards .card, .real-card-section .container .invest-card-section .centered.invest-cards .card, .agri-card-section .container .invest-card-section .centered.invest-cards .card, .invest-card-section .container .savings-cards.centered .card, .invest-card-section .container .real-card-section .centered.real-cards .card, .invest-card-section .container .agri-card-section .centered.agri-cards .card, .invest-card-section .container .centered.invest-cards .card, .savings-card-section .container .digital-card-section .centered.digital-cards .card, .real-card-section .container .digital-card-section .centered.digital-cards .card, .agri-card-section .container .digital-card-section .centered.digital-cards .card, .invest-card-section .container .digital-card-section .centered.digital-cards .card, .digital-card-section .container .savings-cards.centered .card, .digital-card-section .container .real-card-section .centered.real-cards .card, .digital-card-section .container .agri-card-section .centered.agri-cards .card, .digital-card-section .container .invest-card-section .centered.invest-cards .card, .digital-card-section .container .centered.digital-cards .card, .savings-card-section .container .banc-card-section .centered.banc-cards .card, .real-card-section .container .banc-card-section .centered.banc-cards .card, .agri-card-section .container .banc-card-section .centered.banc-cards .card, .invest-card-section .container .banc-card-section .centered.banc-cards .card, .digital-card-section .container .banc-card-section .centered.banc-cards .card, .banc-card-section .container .savings-cards.centered .card, .banc-card-section .container .real-card-section .centered.real-cards .card, .banc-card-section .container .agri-card-section .centered.agri-cards .card, .banc-card-section .container .invest-card-section .centered.invest-cards .card, .banc-card-section .container .digital-card-section .centered.digital-cards .card, .banc-card-section .container .centered.banc-cards .card, .savings-card-section .container .borrow-card-section .centered.borrow-cards .card, .real-card-section .container .borrow-card-section .centered.borrow-cards .card, .agri-card-section .container .borrow-card-section .centered.borrow-cards .card, .invest-card-section .container .borrow-card-section .centered.borrow-cards .card, .digital-card-section .container .borrow-card-section .centered.borrow-cards .card, .banc-card-section .container .borrow-card-section .centered.borrow-cards .card, .borrow-card-section .container .savings-cards.centered .card, .borrow-card-section .container .real-card-section .centered.real-cards .card, .borrow-card-section .container .agri-card-section .centered.agri-cards .card, .borrow-card-section .container .invest-card-section .centered.invest-cards .card, .borrow-card-section .container .digital-card-section .centered.digital-cards .card, .borrow-card-section .container .banc-card-section .centered.banc-cards .card, .borrow-card-section .container .centered.borrow-cards .card {
+    max-width: 100% !important;
+  }
+  /* Features & Requirements Section */
+  #features-requirements, #digital-features-requirements, #banc-features-requirements {
+    padding: 3em 0;
+  }
+  #features-requirements .container, #digital-features-requirements .container, #banc-features-requirements .container {
+    width: 90%;
+  }
+  #features-requirements .container .intro p, #digital-features-requirements .container .intro p, #banc-features-requirements .container .intro p {
+    width: 80%;
+  }
+  #features-requirements .container .features, #digital-features-requirements .container .features, #banc-features-requirements .container .features,
+  #features-requirements .container .requirements,
+  #digital-features-requirements .container .requirements,
+  #banc-features-requirements .container .requirements {
+    flex-direction: column;
+    margin-top: 2em;
+  }
+  #features-requirements .container .features .image-wrapper, #digital-features-requirements .container .features .image-wrapper, #banc-features-requirements .container .features .image-wrapper,
+  #features-requirements .container .requirements .image-wrapper,
+  #digital-features-requirements .container .requirements .image-wrapper,
+  #banc-features-requirements .container .requirements .image-wrapper {
+    flex: auto;
+    min-height: 250px;
+    height: 350px;
+  }
+  #features-requirements .container .features .content-wrapper, #digital-features-requirements .container .features .content-wrapper, #banc-features-requirements .container .features .content-wrapper,
+  #features-requirements .container .requirements .content-wrapper,
+  #digital-features-requirements .container .requirements .content-wrapper,
+  #banc-features-requirements .container .requirements .content-wrapper {
+    flex: auto;
+    padding: 1.5em 2em;
+  }
+  #features-requirements .container .features .content-wrapper h4, #digital-features-requirements .container .features .content-wrapper h4, #banc-features-requirements .container .features .content-wrapper h4,
+  #features-requirements .container .requirements .content-wrapper h4,
+  #digital-features-requirements .container .requirements .content-wrapper h4,
+  #banc-features-requirements .container .requirements .content-wrapper h4 {
+    text-align: center;
+  }
+  #features-requirements .container .features .content-wrapper .items .item, #digital-features-requirements .container .features .content-wrapper .items .item, #banc-features-requirements .container .features .content-wrapper .items .item,
+  #features-requirements .container .requirements .content-wrapper .items .item,
+  #digital-features-requirements .container .requirements .content-wrapper .items .item,
+  #banc-features-requirements .container .requirements .content-wrapper .items .item {
+    padding: 0.8em 1em;
+  }
+  #features-requirements .container .features .content-wrapper .items .item img, #digital-features-requirements .container .features .content-wrapper .items .item img, #banc-features-requirements .container .features .content-wrapper .items .item img,
+  #features-requirements .container .requirements .content-wrapper .items .item img,
+  #digital-features-requirements .container .requirements .content-wrapper .items .item img,
+  #banc-features-requirements .container .requirements .content-wrapper .items .item img {
+    width: 22px;
+    height: 22px;
+  }
+  #features-requirements .container .features .content-wrapper .items .item span, #digital-features-requirements .container .features .content-wrapper .items .item span, #banc-features-requirements .container .features .content-wrapper .items .item span,
+  #features-requirements .container .requirements .content-wrapper .items .item span,
+  #digital-features-requirements .container .requirements .content-wrapper .items .item span,
+  #banc-features-requirements .container .requirements .content-wrapper .items .item span {
+    font-size: 13px;
+  }
+  #features-requirements .container .features.inverse, #digital-features-requirements .container .features.inverse, #banc-features-requirements .container .features.inverse,
+  #features-requirements .container .requirements.inverse,
+  #digital-features-requirements .container .requirements.inverse,
+  #banc-features-requirements .container .requirements.inverse {
+    flex-direction: column;
+  }
+  #features-requirements .container .requirements .content-wrapper, #digital-features-requirements .container .requirements .content-wrapper, #banc-features-requirements .container .requirements .content-wrapper {
+    padding: 1.5em 2em;
+  }
+  #features-requirements .container .requirements .image-wrapper, #digital-features-requirements .container .requirements .image-wrapper, #banc-features-requirements .container .requirements .image-wrapper {
+    min-height: 250px !important;
+  }
+  #features-requirements .container .requirements .image-wrapper img, #digital-features-requirements .container .requirements .image-wrapper img, #banc-features-requirements .container .requirements .image-wrapper img {
+    max-height: 350px !important;
+    -o-object-position: top !important;
+       object-position: top !important;
+  }
+  /* Savings Steps Section */
+  #savings-steps .container, #real-steps .container, #agri-steps .container, #invest-steps .container, #digital-steps .container, #banc-steps .container, #borrow-steps .container {
+    width: 90%;
+    padding: 3em 0;
+  }
+  #savings-steps .container .intro p, #real-steps .container .intro p, #agri-steps .container .intro p, #invest-steps .container .intro p, #digital-steps .container .intro p, #banc-steps .container .intro p, #borrow-steps .container .intro p {
+    width: 80%;
+  }
+  #savings-steps .container .steps, #real-steps .container .steps, #agri-steps .container .steps, #invest-steps .container .steps, #digital-steps .container .steps, #banc-steps .container .steps, #borrow-steps .container .steps {
+    gap: 1.5em;
+  }
+  #savings-steps .container .steps .step, #real-steps .container .steps .step, #agri-steps .container .steps .step, #invest-steps .container .steps .step, #digital-steps .container .steps .step, #banc-steps .container .steps .step, #borrow-steps .container .steps .step {
+    height: auto;
+    min-height: 260px;
+    padding: 1.2em;
+  }
+  #savings-steps .container .steps .step .tag, #real-steps .container .steps .step .tag, #agri-steps .container .steps .step .tag, #invest-steps .container .steps .step .tag, #digital-steps .container .steps .step .tag, #banc-steps .container .steps .step .tag, #borrow-steps .container .steps .step .tag {
+    font-size: 16px;
+    padding: 0.5em 0.8em;
+  }
+  #savings-steps .container .steps .step .content h4, #real-steps .container .steps .step .content h4, #agri-steps .container .steps .step .content h4, #invest-steps .container .steps .step .content h4, #digital-steps .container .steps .step .content h4, #banc-steps .container .steps .step .content h4, #borrow-steps .container .steps .step .content h4 {
+    font-size: 18px;
+  }
+  #savings-steps .container .steps .step .content p, #real-steps .container .steps .step .content p, #agri-steps .container .steps .step .content p, #invest-steps .container .steps .step .content p, #digital-steps .container .steps .step .content p, #banc-steps .container .steps .step .content p, #borrow-steps .container .steps .step .content p {
+    font-size: 13px;
+  }
+  #savings-steps .container .account-action-btn, #real-steps .container .account-action-btn, #agri-steps .container .account-action-btn, #invest-steps .container .account-action-btn, #digital-steps .container .account-action-btn, #banc-steps .container .account-action-btn, #borrow-steps .container .account-action-btn {
+    margin-top: 3em;
+  }
+  /* Savings FAQ Section */
+  #savings-faq, #real-faq, #agri-faq, #invest-faq, #digital-faq, #banc-faq, #borrow-faq {
+    padding: 3em 0;
+  }
+  #savings-faq .container, #real-faq .container, #agri-faq .container, #invest-faq .container, #digital-faq .container, #banc-faq .container, #borrow-faq .container {
+    width: 85%;
+  }
+  #savings-faq .container .intro, #real-faq .container .intro, #agri-faq .container .intro, #invest-faq .container .intro, #digital-faq .container .intro, #banc-faq .container .intro, #borrow-faq .container .intro {
+    margin-bottom: 2em;
+  }
+  #savings-faq .container .savings-accordion .accordion-item .accordion-header, #real-faq .container .savings-accordion .accordion-item .accordion-header, #agri-faq .container .savings-accordion .accordion-item .accordion-header, #invest-faq .container .savings-accordion .accordion-item .accordion-header, #digital-faq .container .savings-accordion .accordion-item .accordion-header, #banc-faq .container .savings-accordion .accordion-item .accordion-header, #borrow-faq .container .savings-accordion .accordion-item .accordion-header {
+    padding: 1.2em 0;
+  }
+  #savings-faq .container .savings-accordion .accordion-item .accordion-header .accordion-title, #real-faq .container .savings-accordion .accordion-item .accordion-header .accordion-title, #agri-faq .container .savings-accordion .accordion-item .accordion-header .accordion-title, #invest-faq .container .savings-accordion .accordion-item .accordion-header .accordion-title, #digital-faq .container .savings-accordion .accordion-item .accordion-header .accordion-title, #banc-faq .container .savings-accordion .accordion-item .accordion-header .accordion-title, #borrow-faq .container .savings-accordion .accordion-item .accordion-header .accordion-title {
+    font-size: 18px;
+  }
+  #savings-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon, #real-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon, #agri-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon, #invest-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon, #digital-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon, #banc-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon, #borrow-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon {
+    width: 30px;
+    height: 30px;
+  }
+  #savings-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .plus, #real-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .plus, #agri-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .plus, #invest-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .plus, #digital-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .plus, #banc-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .plus, #borrow-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .plus,
+  #savings-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .minus,
+  #real-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .minus,
+  #agri-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .minus,
+  #invest-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .minus,
+  #digital-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .minus,
+  #banc-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .minus,
+  #borrow-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .minus {
+    font-size: 30px;
+  }
+  #savings-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper, #real-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper, #agri-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper, #invest-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper, #digital-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper, #banc-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper, #borrow-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper {
+    padding: 1.5em 0;
+  }
+  #savings-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper p, #real-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper p, #agri-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper p, #invest-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper p, #digital-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper p, #banc-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper p, #borrow-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper p {
+    font-size: 14px;
+  }
+  #savings-faq .container .savings-accordion .accordion-item.active .accordion-content, #real-faq .container .savings-accordion .accordion-item.active .accordion-content, #agri-faq .container .savings-accordion .accordion-item.active .accordion-content, #invest-faq .container .savings-accordion .accordion-item.active .accordion-content, #digital-faq .container .savings-accordion .accordion-item.active .accordion-content, #banc-faq .container .savings-accordion .accordion-item.active .accordion-content, #borrow-faq .container .savings-accordion .accordion-item.active .accordion-content {
+    max-height: 350px;
+  }
+  /* Savings CTA Section */
+  #savings-cta .container .cta-card, #real-cta .container .cta-card, #agri-cta .container .cta-card, #invest-cta .container .cta-card, #digital-cta .container .cta-card, #banc-cta .container .cta-card, #borrow-cta .container .cta-card {
+    padding: 3em 0;
+  }
+  #savings-cta .container .cta-card .cta-desc, #real-cta .container .cta-card .cta-desc, #agri-cta .container .cta-card .cta-desc, #invest-cta .container .cta-card .cta-desc, #digital-cta .container .cta-card .cta-desc, #banc-cta .container .cta-card .cta-desc, #borrow-cta .container .cta-card .cta-desc {
+    margin: 1.5em 0;
+    width: 70%;
+  }
+}
+/* Mobile Devices (768px and below) */
+@media (max-width: 768px) {
+  /* Savings Banner */
+  #savings-banner .landing-vector, #real-banner .landing-vector, #agri-banner .landing-vector, #invest-banner .landing-vector, #borrow-banner .landing-vector {
+    width: 100%;
+  }
+  #savings-banner .container, #real-banner .container, #agri-banner .container, #invest-banner .container, #borrow-banner .container {
+    width: 92%;
+    flex-direction: column;
+    text-align: center;
+  }
+  #savings-banner .container .content-wrapper, #real-banner .container .content-wrapper, #agri-banner .container .content-wrapper, #invest-banner .container .content-wrapper, #borrow-banner .container .content-wrapper {
+    padding-top: 4em;
+    padding-bottom: 2em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-items: center;
+  }
+  #savings-banner .container .content-wrapper h2, #real-banner .container .content-wrapper h2, #agri-banner .container .content-wrapper h2, #invest-banner .container .content-wrapper h2, #borrow-banner .container .content-wrapper h2 {
+    font-size: 40px;
+    line-height: 48px;
+  }
+  #savings-banner .container .content-wrapper p, #real-banner .container .content-wrapper p, #agri-banner .container .content-wrapper p, #invest-banner .container .content-wrapper p, #borrow-banner .container .content-wrapper p {
+    width: 100%;
+    font-size: 15px;
+    line-height: 25px;
+  }
+  #savings-banner .container .image-wrapper, #real-banner .container .image-wrapper, #agri-banner .container .image-wrapper, #invest-banner .container .image-wrapper, #borrow-banner .container .image-wrapper {
+    padding-top: 0;
+    padding-bottom: 3em;
+    justify-content: flex-end;
+    flex: 1;
+    width: 100%;
+  }
+  #savings-banner .container .image-wrapper .main-mage, #real-banner .container .image-wrapper .main-mage, #agri-banner .container .image-wrapper .main-mage, #invest-banner .container .image-wrapper .main-mage, #borrow-banner .container .image-wrapper .main-mage {
+    height: 320px;
+  }
+  #savings-banner .container .image-wrapper .savings-image, #real-banner .container .image-wrapper .savings-image, #agri-banner .container .image-wrapper .savings-image, #invest-banner .container .image-wrapper .savings-image, #borrow-banner .container .image-wrapper .savings-image {
+    width: 140px;
+    left: 50% !important;
+    bottom: 50%;
+  }
+  /* Savings Card Section */
+  .savings-card-section .container, .real-card-section .container, .agri-card-section .container, .invest-card-section .container, .digital-card-section .container, .banc-card-section .container, .borrow-card-section .container {
+    width: 92%;
+    padding: 2em 0;
+  }
+  .savings-card-section .container .intro, .real-card-section .container .intro, .agri-card-section .container .intro, .invest-card-section .container .intro, .digital-card-section .container .intro, .banc-card-section .container .intro, .borrow-card-section .container .intro {
+    margin-bottom: 1.5em;
+  }
+  .savings-card-section .container .intro h2, .real-card-section .container .intro h2, .agri-card-section .container .intro h2, .invest-card-section .container .intro h2, .digital-card-section .container .intro h2, .banc-card-section .container .intro h2, .borrow-card-section .container .intro h2 {
+    font-size: 28px;
+  }
+  .savings-card-section .container .intro p, .real-card-section .container .intro p, .agri-card-section .container .intro p, .invest-card-section .container .intro p, .digital-card-section .container .intro p, .banc-card-section .container .intro p, .borrow-card-section .container .intro p {
+    width: 90%;
+    font-size: 14px;
+  }
+  .savings-card-section .container .savings-cards, .savings-card-section .container .real-card-section .real-cards, .real-card-section .container .savings-cards, .real-card-section .container .real-cards, .savings-card-section .container .agri-card-section .agri-cards, .real-card-section .container .agri-card-section .agri-cards, .agri-card-section .container .savings-cards, .agri-card-section .container .real-card-section .real-cards, .agri-card-section .container .agri-cards, .savings-card-section .container .invest-card-section .invest-cards, .real-card-section .container .invest-card-section .invest-cards, .agri-card-section .container .invest-card-section .invest-cards, .invest-card-section .container .savings-cards, .invest-card-section .container .real-card-section .real-cards, .invest-card-section .container .agri-card-section .agri-cards, .invest-card-section .container .invest-cards, .savings-card-section .container .digital-card-section .digital-cards, .real-card-section .container .digital-card-section .digital-cards, .agri-card-section .container .digital-card-section .digital-cards, .invest-card-section .container .digital-card-section .digital-cards, .digital-card-section .container .savings-cards, .digital-card-section .container .real-card-section .real-cards, .digital-card-section .container .agri-card-section .agri-cards, .digital-card-section .container .invest-card-section .invest-cards, .digital-card-section .container .digital-cards, .savings-card-section .container .banc-card-section .banc-cards, .real-card-section .container .banc-card-section .banc-cards, .agri-card-section .container .banc-card-section .banc-cards, .invest-card-section .container .banc-card-section .banc-cards, .digital-card-section .container .banc-card-section .banc-cards, .banc-card-section .container .savings-cards, .banc-card-section .container .real-card-section .real-cards, .banc-card-section .container .agri-card-section .agri-cards, .banc-card-section .container .invest-card-section .invest-cards, .banc-card-section .container .digital-card-section .digital-cards, .banc-card-section .container .banc-cards, .savings-card-section .container .borrow-card-section .borrow-cards, .real-card-section .container .borrow-card-section .borrow-cards, .agri-card-section .container .borrow-card-section .borrow-cards, .invest-card-section .container .borrow-card-section .borrow-cards, .digital-card-section .container .borrow-card-section .borrow-cards, .banc-card-section .container .borrow-card-section .borrow-cards, .borrow-card-section .container .savings-cards, .borrow-card-section .container .real-card-section .real-cards, .borrow-card-section .container .agri-card-section .agri-cards, .borrow-card-section .container .invest-card-section .invest-cards, .borrow-card-section .container .digital-card-section .digital-cards, .borrow-card-section .container .banc-card-section .banc-cards, .borrow-card-section .container .borrow-cards {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .savings-card-section .container .savings-cards .card .content-wrapper, .savings-card-section .container .real-card-section .real-cards .card .content-wrapper, .real-card-section .container .savings-cards .card .content-wrapper, .real-card-section .container .real-cards .card .content-wrapper, .savings-card-section .container .agri-card-section .agri-cards .card .content-wrapper, .real-card-section .container .agri-card-section .agri-cards .card .content-wrapper, .agri-card-section .container .savings-cards .card .content-wrapper, .agri-card-section .container .real-card-section .real-cards .card .content-wrapper, .agri-card-section .container .agri-cards .card .content-wrapper, .savings-card-section .container .invest-card-section .invest-cards .card .content-wrapper, .real-card-section .container .invest-card-section .invest-cards .card .content-wrapper, .agri-card-section .container .invest-card-section .invest-cards .card .content-wrapper, .invest-card-section .container .savings-cards .card .content-wrapper, .invest-card-section .container .real-card-section .real-cards .card .content-wrapper, .invest-card-section .container .agri-card-section .agri-cards .card .content-wrapper, .invest-card-section .container .invest-cards .card .content-wrapper, .savings-card-section .container .digital-card-section .digital-cards .card .content-wrapper, .real-card-section .container .digital-card-section .digital-cards .card .content-wrapper, .agri-card-section .container .digital-card-section .digital-cards .card .content-wrapper, .invest-card-section .container .digital-card-section .digital-cards .card .content-wrapper, .digital-card-section .container .savings-cards .card .content-wrapper, .digital-card-section .container .real-card-section .real-cards .card .content-wrapper, .digital-card-section .container .agri-card-section .agri-cards .card .content-wrapper, .digital-card-section .container .invest-card-section .invest-cards .card .content-wrapper, .digital-card-section .container .digital-cards .card .content-wrapper, .savings-card-section .container .banc-card-section .banc-cards .card .content-wrapper, .real-card-section .container .banc-card-section .banc-cards .card .content-wrapper, .agri-card-section .container .banc-card-section .banc-cards .card .content-wrapper, .invest-card-section .container .banc-card-section .banc-cards .card .content-wrapper, .digital-card-section .container .banc-card-section .banc-cards .card .content-wrapper, .banc-card-section .container .savings-cards .card .content-wrapper, .banc-card-section .container .real-card-section .real-cards .card .content-wrapper, .banc-card-section .container .agri-card-section .agri-cards .card .content-wrapper, .banc-card-section .container .invest-card-section .invest-cards .card .content-wrapper, .banc-card-section .container .digital-card-section .digital-cards .card .content-wrapper, .banc-card-section .container .banc-cards .card .content-wrapper, .savings-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper, .real-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper, .agri-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper, .invest-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper, .digital-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper, .banc-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper, .borrow-card-section .container .savings-cards .card .content-wrapper, .borrow-card-section .container .real-card-section .real-cards .card .content-wrapper, .borrow-card-section .container .agri-card-section .agri-cards .card .content-wrapper, .borrow-card-section .container .invest-card-section .invest-cards .card .content-wrapper, .borrow-card-section .container .digital-card-section .digital-cards .card .content-wrapper, .borrow-card-section .container .banc-card-section .banc-cards .card .content-wrapper, .borrow-card-section .container .borrow-cards .card .content-wrapper {
+    min-height: auto;
+    padding: 1.2em;
+    gap: 1em !important;
+  }
+  .savings-card-section .container .savings-cards .card .content-wrapper h5, .savings-card-section .container .real-card-section .real-cards .card .content-wrapper h5, .real-card-section .container .savings-cards .card .content-wrapper h5, .real-card-section .container .real-cards .card .content-wrapper h5, .savings-card-section .container .agri-card-section .agri-cards .card .content-wrapper h5, .real-card-section .container .agri-card-section .agri-cards .card .content-wrapper h5, .agri-card-section .container .savings-cards .card .content-wrapper h5, .agri-card-section .container .real-card-section .real-cards .card .content-wrapper h5, .agri-card-section .container .agri-cards .card .content-wrapper h5, .savings-card-section .container .invest-card-section .invest-cards .card .content-wrapper h5, .real-card-section .container .invest-card-section .invest-cards .card .content-wrapper h5, .agri-card-section .container .invest-card-section .invest-cards .card .content-wrapper h5, .invest-card-section .container .savings-cards .card .content-wrapper h5, .invest-card-section .container .real-card-section .real-cards .card .content-wrapper h5, .invest-card-section .container .agri-card-section .agri-cards .card .content-wrapper h5, .invest-card-section .container .invest-cards .card .content-wrapper h5, .savings-card-section .container .digital-card-section .digital-cards .card .content-wrapper h5, .real-card-section .container .digital-card-section .digital-cards .card .content-wrapper h5, .agri-card-section .container .digital-card-section .digital-cards .card .content-wrapper h5, .invest-card-section .container .digital-card-section .digital-cards .card .content-wrapper h5, .digital-card-section .container .savings-cards .card .content-wrapper h5, .digital-card-section .container .real-card-section .real-cards .card .content-wrapper h5, .digital-card-section .container .agri-card-section .agri-cards .card .content-wrapper h5, .digital-card-section .container .invest-card-section .invest-cards .card .content-wrapper h5, .digital-card-section .container .digital-cards .card .content-wrapper h5, .savings-card-section .container .banc-card-section .banc-cards .card .content-wrapper h5, .real-card-section .container .banc-card-section .banc-cards .card .content-wrapper h5, .agri-card-section .container .banc-card-section .banc-cards .card .content-wrapper h5, .invest-card-section .container .banc-card-section .banc-cards .card .content-wrapper h5, .digital-card-section .container .banc-card-section .banc-cards .card .content-wrapper h5, .banc-card-section .container .savings-cards .card .content-wrapper h5, .banc-card-section .container .real-card-section .real-cards .card .content-wrapper h5, .banc-card-section .container .agri-card-section .agri-cards .card .content-wrapper h5, .banc-card-section .container .invest-card-section .invest-cards .card .content-wrapper h5, .banc-card-section .container .digital-card-section .digital-cards .card .content-wrapper h5, .banc-card-section .container .banc-cards .card .content-wrapper h5, .savings-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper h5, .real-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper h5, .agri-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper h5, .invest-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper h5, .digital-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper h5, .banc-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper h5, .borrow-card-section .container .savings-cards .card .content-wrapper h5, .borrow-card-section .container .real-card-section .real-cards .card .content-wrapper h5, .borrow-card-section .container .agri-card-section .agri-cards .card .content-wrapper h5, .borrow-card-section .container .invest-card-section .invest-cards .card .content-wrapper h5, .borrow-card-section .container .digital-card-section .digital-cards .card .content-wrapper h5, .borrow-card-section .container .banc-card-section .banc-cards .card .content-wrapper h5, .borrow-card-section .container .borrow-cards .card .content-wrapper h5 {
+    font-size: 18px;
+  }
+  .savings-card-section .container .savings-cards .card .content-wrapper p, .savings-card-section .container .real-card-section .real-cards .card .content-wrapper p, .real-card-section .container .savings-cards .card .content-wrapper p, .real-card-section .container .real-cards .card .content-wrapper p, .savings-card-section .container .agri-card-section .agri-cards .card .content-wrapper p, .real-card-section .container .agri-card-section .agri-cards .card .content-wrapper p, .agri-card-section .container .savings-cards .card .content-wrapper p, .agri-card-section .container .real-card-section .real-cards .card .content-wrapper p, .agri-card-section .container .agri-cards .card .content-wrapper p, .savings-card-section .container .invest-card-section .invest-cards .card .content-wrapper p, .real-card-section .container .invest-card-section .invest-cards .card .content-wrapper p, .agri-card-section .container .invest-card-section .invest-cards .card .content-wrapper p, .invest-card-section .container .savings-cards .card .content-wrapper p, .invest-card-section .container .real-card-section .real-cards .card .content-wrapper p, .invest-card-section .container .agri-card-section .agri-cards .card .content-wrapper p, .invest-card-section .container .invest-cards .card .content-wrapper p, .savings-card-section .container .digital-card-section .digital-cards .card .content-wrapper p, .real-card-section .container .digital-card-section .digital-cards .card .content-wrapper p, .agri-card-section .container .digital-card-section .digital-cards .card .content-wrapper p, .invest-card-section .container .digital-card-section .digital-cards .card .content-wrapper p, .digital-card-section .container .savings-cards .card .content-wrapper p, .digital-card-section .container .real-card-section .real-cards .card .content-wrapper p, .digital-card-section .container .agri-card-section .agri-cards .card .content-wrapper p, .digital-card-section .container .invest-card-section .invest-cards .card .content-wrapper p, .digital-card-section .container .digital-cards .card .content-wrapper p, .savings-card-section .container .banc-card-section .banc-cards .card .content-wrapper p, .real-card-section .container .banc-card-section .banc-cards .card .content-wrapper p, .agri-card-section .container .banc-card-section .banc-cards .card .content-wrapper p, .invest-card-section .container .banc-card-section .banc-cards .card .content-wrapper p, .digital-card-section .container .banc-card-section .banc-cards .card .content-wrapper p, .banc-card-section .container .savings-cards .card .content-wrapper p, .banc-card-section .container .real-card-section .real-cards .card .content-wrapper p, .banc-card-section .container .agri-card-section .agri-cards .card .content-wrapper p, .banc-card-section .container .invest-card-section .invest-cards .card .content-wrapper p, .banc-card-section .container .digital-card-section .digital-cards .card .content-wrapper p, .banc-card-section .container .banc-cards .card .content-wrapper p, .savings-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper p, .real-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper p, .agri-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper p, .invest-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper p, .digital-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper p, .banc-card-section .container .borrow-card-section .borrow-cards .card .content-wrapper p, .borrow-card-section .container .savings-cards .card .content-wrapper p, .borrow-card-section .container .real-card-section .real-cards .card .content-wrapper p, .borrow-card-section .container .agri-card-section .agri-cards .card .content-wrapper p, .borrow-card-section .container .invest-card-section .invest-cards .card .content-wrapper p, .borrow-card-section .container .digital-card-section .digital-cards .card .content-wrapper p, .borrow-card-section .container .banc-card-section .banc-cards .card .content-wrapper p, .borrow-card-section .container .borrow-cards .card .content-wrapper p {
+    font-size: 12px !important;
+  }
+  .savings-card-section .container .savings-cards .card .image-wrapper, .savings-card-section .container .real-card-section .real-cards .card .image-wrapper, .real-card-section .container .savings-cards .card .image-wrapper, .real-card-section .container .real-cards .card .image-wrapper, .savings-card-section .container .agri-card-section .agri-cards .card .image-wrapper, .real-card-section .container .agri-card-section .agri-cards .card .image-wrapper, .agri-card-section .container .savings-cards .card .image-wrapper, .agri-card-section .container .real-card-section .real-cards .card .image-wrapper, .agri-card-section .container .agri-cards .card .image-wrapper, .savings-card-section .container .invest-card-section .invest-cards .card .image-wrapper, .real-card-section .container .invest-card-section .invest-cards .card .image-wrapper, .agri-card-section .container .invest-card-section .invest-cards .card .image-wrapper, .invest-card-section .container .savings-cards .card .image-wrapper, .invest-card-section .container .real-card-section .real-cards .card .image-wrapper, .invest-card-section .container .agri-card-section .agri-cards .card .image-wrapper, .invest-card-section .container .invest-cards .card .image-wrapper, .savings-card-section .container .digital-card-section .digital-cards .card .image-wrapper, .real-card-section .container .digital-card-section .digital-cards .card .image-wrapper, .agri-card-section .container .digital-card-section .digital-cards .card .image-wrapper, .invest-card-section .container .digital-card-section .digital-cards .card .image-wrapper, .digital-card-section .container .savings-cards .card .image-wrapper, .digital-card-section .container .real-card-section .real-cards .card .image-wrapper, .digital-card-section .container .agri-card-section .agri-cards .card .image-wrapper, .digital-card-section .container .invest-card-section .invest-cards .card .image-wrapper, .digital-card-section .container .digital-cards .card .image-wrapper, .savings-card-section .container .banc-card-section .banc-cards .card .image-wrapper, .real-card-section .container .banc-card-section .banc-cards .card .image-wrapper, .agri-card-section .container .banc-card-section .banc-cards .card .image-wrapper, .invest-card-section .container .banc-card-section .banc-cards .card .image-wrapper, .digital-card-section .container .banc-card-section .banc-cards .card .image-wrapper, .banc-card-section .container .savings-cards .card .image-wrapper, .banc-card-section .container .real-card-section .real-cards .card .image-wrapper, .banc-card-section .container .agri-card-section .agri-cards .card .image-wrapper, .banc-card-section .container .invest-card-section .invest-cards .card .image-wrapper, .banc-card-section .container .digital-card-section .digital-cards .card .image-wrapper, .banc-card-section .container .banc-cards .card .image-wrapper, .savings-card-section .container .borrow-card-section .borrow-cards .card .image-wrapper, .real-card-section .container .borrow-card-section .borrow-cards .card .image-wrapper, .agri-card-section .container .borrow-card-section .borrow-cards .card .image-wrapper, .invest-card-section .container .borrow-card-section .borrow-cards .card .image-wrapper, .digital-card-section .container .borrow-card-section .borrow-cards .card .image-wrapper, .banc-card-section .container .borrow-card-section .borrow-cards .card .image-wrapper, .borrow-card-section .container .savings-cards .card .image-wrapper, .borrow-card-section .container .real-card-section .real-cards .card .image-wrapper, .borrow-card-section .container .agri-card-section .agri-cards .card .image-wrapper, .borrow-card-section .container .invest-card-section .invest-cards .card .image-wrapper, .borrow-card-section .container .digital-card-section .digital-cards .card .image-wrapper, .borrow-card-section .container .banc-card-section .banc-cards .card .image-wrapper, .borrow-card-section .container .borrow-cards .card .image-wrapper {
+    height: 200px;
+  }
+  /* Features & Requirements Section */
+  #features-requirements, #digital-features-requirements, #banc-features-requirements {
+    padding: 2em 0;
+  }
+  #features-requirements .container, #digital-features-requirements .container, #banc-features-requirements .container {
+    width: 92%;
+  }
+  #features-requirements .container .intro h2, #digital-features-requirements .container .intro h2, #banc-features-requirements .container .intro h2 {
+    font-size: 28px;
+  }
+  #features-requirements .container .intro p, #digital-features-requirements .container .intro p, #banc-features-requirements .container .intro p {
+    width: 100%;
+    font-size: 14px;
+  }
+  #features-requirements .container .features, #digital-features-requirements .container .features, #banc-features-requirements .container .features,
+  #features-requirements .container .requirements,
+  #digital-features-requirements .container .requirements,
+  #banc-features-requirements .container .requirements {
+    margin-top: 1.5em;
+  }
+  #features-requirements .container .features .image-wrapper, #digital-features-requirements .container .features .image-wrapper, #banc-features-requirements .container .features .image-wrapper,
+  #features-requirements .container .requirements .image-wrapper,
+  #digital-features-requirements .container .requirements .image-wrapper,
+  #banc-features-requirements .container .requirements .image-wrapper {
+    min-height: 200px;
+  }
+  #features-requirements .container .features .content-wrapper, #digital-features-requirements .container .features .content-wrapper, #banc-features-requirements .container .features .content-wrapper,
+  #features-requirements .container .requirements .content-wrapper,
+  #digital-features-requirements .container .requirements .content-wrapper,
+  #banc-features-requirements .container .requirements .content-wrapper {
+    padding: 1.2em 1.5em;
+  }
+  #features-requirements .container .features .content-wrapper h4, #digital-features-requirements .container .features .content-wrapper h4, #banc-features-requirements .container .features .content-wrapper h4,
+  #features-requirements .container .requirements .content-wrapper h4,
+  #digital-features-requirements .container .requirements .content-wrapper h4,
+  #banc-features-requirements .container .requirements .content-wrapper h4 {
+    font-size: 20px;
+    margin-bottom: 0.8em;
+  }
+  #features-requirements .container .features .content-wrapper .items .item, #digital-features-requirements .container .features .content-wrapper .items .item, #banc-features-requirements .container .features .content-wrapper .items .item,
+  #features-requirements .container .requirements .content-wrapper .items .item,
+  #digital-features-requirements .container .requirements .content-wrapper .items .item,
+  #banc-features-requirements .container .requirements .content-wrapper .items .item {
+    padding: 0.7em 0.8em;
+  }
+  #features-requirements .container .features .content-wrapper .items .item img, #digital-features-requirements .container .features .content-wrapper .items .item img, #banc-features-requirements .container .features .content-wrapper .items .item img,
+  #features-requirements .container .requirements .content-wrapper .items .item img,
+  #digital-features-requirements .container .requirements .content-wrapper .items .item img,
+  #banc-features-requirements .container .requirements .content-wrapper .items .item img {
+    width: 20px;
+    height: 20px;
+  }
+  #features-requirements .container .features .content-wrapper .items .item span, #digital-features-requirements .container .features .content-wrapper .items .item span, #banc-features-requirements .container .features .content-wrapper .items .item span,
+  #features-requirements .container .requirements .content-wrapper .items .item span,
+  #digital-features-requirements .container .requirements .content-wrapper .items .item span,
+  #banc-features-requirements .container .requirements .content-wrapper .items .item span {
+    font-size: 12px;
+  }
+  #features-requirements .container .requirements .content-wrapper, #digital-features-requirements .container .requirements .content-wrapper, #banc-features-requirements .container .requirements .content-wrapper {
+    padding: 1.2em 1.5em;
+  }
+  #features-requirements .container .requirements .image-wrapper, #digital-features-requirements .container .requirements .image-wrapper, #banc-features-requirements .container .requirements .image-wrapper {
+    min-height: 200px !important;
+  }
+  #features-requirements .container .requirements .image-wrapper img, #digital-features-requirements .container .requirements .image-wrapper img, #banc-features-requirements .container .requirements .image-wrapper img {
+    max-height: 280px !important;
+  }
+  /* Savings Steps Section */
+  #savings-steps .container, #real-steps .container, #agri-steps .container, #invest-steps .container, #digital-steps .container, #banc-steps .container, #borrow-steps .container {
+    width: 92%;
+    padding: 2em 0;
+  }
+  #savings-steps .container .intro h2, #real-steps .container .intro h2, #agri-steps .container .intro h2, #invest-steps .container .intro h2, #digital-steps .container .intro h2, #banc-steps .container .intro h2, #borrow-steps .container .intro h2 {
+    font-size: 28px;
+  }
+  #savings-steps .container .intro p, #real-steps .container .intro p, #agri-steps .container .intro p, #invest-steps .container .intro p, #digital-steps .container .intro p, #banc-steps .container .intro p, #borrow-steps .container .intro p {
+    width: 100%;
+    font-size: 14px;
+  }
+  #savings-steps .container .steps, #real-steps .container .steps, #agri-steps .container .steps, #invest-steps .container .steps, #digital-steps .container .steps, #banc-steps .container .steps, #borrow-steps .container .steps {
+    flex-direction: column;
+    margin-top: 2em;
+  }
+  #savings-steps .container .steps .step, #real-steps .container .steps .step, #agri-steps .container .steps .step, #invest-steps .container .steps .step, #digital-steps .container .steps .step, #banc-steps .container .steps .step, #borrow-steps .container .steps .step {
+    min-height: auto;
+    padding: 1.2em;
+  }
+  #savings-steps .container .steps .step .tag, #real-steps .container .steps .step .tag, #agri-steps .container .steps .step .tag, #invest-steps .container .steps .step .tag, #digital-steps .container .steps .step .tag, #banc-steps .container .steps .step .tag, #borrow-steps .container .steps .step .tag {
+    font-size: 14px;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  #savings-steps .container .steps .step .content h4, #real-steps .container .steps .step .content h4, #agri-steps .container .steps .step .content h4, #invest-steps .container .steps .step .content h4, #digital-steps .container .steps .step .content h4, #banc-steps .container .steps .step .content h4, #borrow-steps .container .steps .step .content h4 {
+    font-size: 18px;
+  }
+  #savings-steps .container .steps .step .content p, #real-steps .container .steps .step .content p, #agri-steps .container .steps .step .content p, #invest-steps .container .steps .step .content p, #digital-steps .container .steps .step .content p, #banc-steps .container .steps .step .content p, #borrow-steps .container .steps .step .content p {
+    font-size: 13px;
+  }
+  #savings-steps .container .account-action-btn, #real-steps .container .account-action-btn, #agri-steps .container .account-action-btn, #invest-steps .container .account-action-btn, #digital-steps .container .account-action-btn, #banc-steps .container .account-action-btn, #borrow-steps .container .account-action-btn {
+    margin-top: 2.5em;
+  }
+  #savings-steps .container .account-action-btn .site-btn-lg, #real-steps .container .account-action-btn .site-btn-lg, #agri-steps .container .account-action-btn .site-btn-lg, #invest-steps .container .account-action-btn .site-btn-lg, #digital-steps .container .account-action-btn .site-btn-lg, #banc-steps .container .account-action-btn .site-btn-lg, #borrow-steps .container .account-action-btn .site-btn-lg, #savings-steps .container .account-action-btn .site-btn-lg-light, #real-steps .container .account-action-btn .site-btn-lg-light, #agri-steps .container .account-action-btn .site-btn-lg-light, #invest-steps .container .account-action-btn .site-btn-lg-light, #digital-steps .container .account-action-btn .site-btn-lg-light, #banc-steps .container .account-action-btn .site-btn-lg-light, #borrow-steps .container .account-action-btn .site-btn-lg-light, #savings-steps .container .account-action-btn .site-btn-lg-accent, #real-steps .container .account-action-btn .site-btn-lg-accent, #agri-steps .container .account-action-btn .site-btn-lg-accent, #invest-steps .container .account-action-btn .site-btn-lg-accent, #digital-steps .container .account-action-btn .site-btn-lg-accent, #banc-steps .container .account-action-btn .site-btn-lg-accent, #borrow-steps .container .account-action-btn .site-btn-lg-accent {
+    padding: 12px 30px;
+    font-size: 13px !important;
+  }
+  /* Savings FAQ Section */
+  #savings-faq, #real-faq, #agri-faq, #invest-faq, #digital-faq, #banc-faq, #borrow-faq {
+    padding: 2em 0;
+  }
+  #savings-faq .container, #real-faq .container, #agri-faq .container, #invest-faq .container, #digital-faq .container, #banc-faq .container, #borrow-faq .container {
+    width: 92%;
+  }
+  #savings-faq .container .intro, #real-faq .container .intro, #agri-faq .container .intro, #invest-faq .container .intro, #digital-faq .container .intro, #banc-faq .container .intro, #borrow-faq .container .intro {
+    margin-bottom: 1.5em;
+  }
+  #savings-faq .container .intro h2, #real-faq .container .intro h2, #agri-faq .container .intro h2, #invest-faq .container .intro h2, #digital-faq .container .intro h2, #banc-faq .container .intro h2, #borrow-faq .container .intro h2 {
+    font-size: 28px;
+  }
+  #savings-faq .container .savings-accordion .accordion-item, #real-faq .container .savings-accordion .accordion-item, #agri-faq .container .savings-accordion .accordion-item, #invest-faq .container .savings-accordion .accordion-item, #digital-faq .container .savings-accordion .accordion-item, #banc-faq .container .savings-accordion .accordion-item, #borrow-faq .container .savings-accordion .accordion-item {
+    margin-bottom: 1em;
+  }
+  #savings-faq .container .savings-accordion .accordion-item .accordion-header, #real-faq .container .savings-accordion .accordion-item .accordion-header, #agri-faq .container .savings-accordion .accordion-item .accordion-header, #invest-faq .container .savings-accordion .accordion-item .accordion-header, #digital-faq .container .savings-accordion .accordion-item .accordion-header, #banc-faq .container .savings-accordion .accordion-item .accordion-header, #borrow-faq .container .savings-accordion .accordion-item .accordion-header {
+    padding: 1em 0;
+  }
+  #savings-faq .container .savings-accordion .accordion-item .accordion-header .accordion-title, #real-faq .container .savings-accordion .accordion-item .accordion-header .accordion-title, #agri-faq .container .savings-accordion .accordion-item .accordion-header .accordion-title, #invest-faq .container .savings-accordion .accordion-item .accordion-header .accordion-title, #digital-faq .container .savings-accordion .accordion-item .accordion-header .accordion-title, #banc-faq .container .savings-accordion .accordion-item .accordion-header .accordion-title, #borrow-faq .container .savings-accordion .accordion-item .accordion-header .accordion-title {
+    font-size: 16px;
+    line-height: 24px;
+    width: 85%;
+  }
+  #savings-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon, #real-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon, #agri-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon, #invest-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon, #digital-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon, #banc-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon, #borrow-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon {
+    width: 25px;
+    height: 25px;
+  }
+  #savings-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .plus, #real-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .plus, #agri-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .plus, #invest-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .plus, #digital-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .plus, #banc-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .plus, #borrow-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .plus,
+  #savings-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .minus,
+  #real-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .minus,
+  #agri-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .minus,
+  #invest-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .minus,
+  #digital-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .minus,
+  #banc-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .minus,
+  #borrow-faq .container .savings-accordion .accordion-item .accordion-header .accordion-icon .minus {
+    font-size: 25px;
+  }
+  #savings-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper, #real-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper, #agri-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper, #invest-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper, #digital-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper, #banc-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper, #borrow-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper {
+    padding: 1em 0;
+  }
+  #savings-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper p, #real-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper p, #agri-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper p, #invest-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper p, #digital-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper p, #banc-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper p, #borrow-faq .container .savings-accordion .accordion-item .accordion-content .content-wrapper p {
+    font-size: 13px;
+    line-height: 22px;
+  }
+  #savings-faq .container .savings-accordion .accordion-item.active .accordion-content, #real-faq .container .savings-accordion .accordion-item.active .accordion-content, #agri-faq .container .savings-accordion .accordion-item.active .accordion-content, #invest-faq .container .savings-accordion .accordion-item.active .accordion-content, #digital-faq .container .savings-accordion .accordion-item.active .accordion-content, #banc-faq .container .savings-accordion .accordion-item.active .accordion-content, #borrow-faq .container .savings-accordion .accordion-item.active .accordion-content {
+    max-height: 400px;
+  }
+  /* Savings CTA Section */
+  #savings-cta .container .cta-card, #real-cta .container .cta-card, #agri-cta .container .cta-card, #invest-cta .container .cta-card, #digital-cta .container .cta-card, #banc-cta .container .cta-card, #borrow-cta .container .cta-card {
+    padding: 2em 1em;
+  }
+  #savings-cta .container .cta-card .title-section, #real-cta .container .cta-card .title-section, #agri-cta .container .cta-card .title-section, #invest-cta .container .cta-card .title-section, #digital-cta .container .cta-card .title-section, #banc-cta .container .cta-card .title-section, #borrow-cta .container .cta-card .title-section {
+    flex-direction: column;
+    gap: 0.5em;
+    text-align: center;
+  }
+  #savings-cta .container .cta-card .title-section img, #real-cta .container .cta-card .title-section img, #agri-cta .container .cta-card .title-section img, #invest-cta .container .cta-card .title-section img, #digital-cta .container .cta-card .title-section img, #banc-cta .container .cta-card .title-section img, #borrow-cta .container .cta-card .title-section img {
+    width: 100px;
+  }
+  #savings-cta .container .cta-card .title-section h2, #real-cta .container .cta-card .title-section h2, #agri-cta .container .cta-card .title-section h2, #invest-cta .container .cta-card .title-section h2, #digital-cta .container .cta-card .title-section h2, #banc-cta .container .cta-card .title-section h2, #borrow-cta .container .cta-card .title-section h2 {
+    font-size: 24px;
+  }
+  #savings-cta .container .cta-card .cta-desc, #real-cta .container .cta-card .cta-desc, #agri-cta .container .cta-card .cta-desc, #invest-cta .container .cta-card .cta-desc, #digital-cta .container .cta-card .cta-desc, #banc-cta .container .cta-card .cta-desc, #borrow-cta .container .cta-card .cta-desc {
+    width: 90%;
+    font-size: 14px;
+    line-height: 24px;
+    margin: 1em 0;
+  }
+  #savings-cta .container .cta-card .cta-btns, #real-cta .container .cta-card .cta-btns, #agri-cta .container .cta-card .cta-btns, #invest-cta .container .cta-card .cta-btns, #digital-cta .container .cta-card .cta-btns, #banc-cta .container .cta-card .cta-btns, #borrow-cta .container .cta-card .cta-btns {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.8em;
+  }
+  #savings-cta .container .cta-card .cta-btns .site-btn-lg, #real-cta .container .cta-card .cta-btns .site-btn-lg, #agri-cta .container .cta-card .cta-btns .site-btn-lg, #invest-cta .container .cta-card .cta-btns .site-btn-lg, #digital-cta .container .cta-card .cta-btns .site-btn-lg, #banc-cta .container .cta-card .cta-btns .site-btn-lg, #borrow-cta .container .cta-card .cta-btns .site-btn-lg, #savings-cta .container .cta-card .cta-btns .site-btn-lg-accent, #real-cta .container .cta-card .cta-btns .site-btn-lg-accent, #agri-cta .container .cta-card .cta-btns .site-btn-lg-accent, #invest-cta .container .cta-card .cta-btns .site-btn-lg-accent, #digital-cta .container .cta-card .cta-btns .site-btn-lg-accent, #banc-cta .container .cta-card .cta-btns .site-btn-lg-accent, #borrow-cta .container .cta-card .cta-btns .site-btn-lg-accent,
+  #savings-cta .container .cta-card .cta-btns .site-btn-lg-light,
+  #real-cta .container .cta-card .cta-btns .site-btn-lg-light,
+  #agri-cta .container .cta-card .cta-btns .site-btn-lg-light,
+  #invest-cta .container .cta-card .cta-btns .site-btn-lg-light,
+  #digital-cta .container .cta-card .cta-btns .site-btn-lg-light,
+  #banc-cta .container .cta-card .cta-btns .site-btn-lg-light,
+  #borrow-cta .container .cta-card .cta-btns .site-btn-lg-light {
+    width: 100%;
+    text-align: center;
+  }
+}
+/* Extra Small Mobile Devices (480px and below) - Additional refinements */
+@media (max-width: 480px) {
+  /* Savings Banner */
+  #savings-banner .container .content-wrapper h2, #real-banner .container .content-wrapper h2, #agri-banner .container .content-wrapper h2, #invest-banner .container .content-wrapper h2, #borrow-banner .container .content-wrapper h2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  #savings-banner .container .content-wrapper p, #real-banner .container .content-wrapper p, #agri-banner .container .content-wrapper p, #invest-banner .container .content-wrapper p, #borrow-banner .container .content-wrapper p {
+    font-size: 14px;
+    line-height: 24px;
+    width: 90% !important;
+  }
+  #savings-banner .container .image-wrapper .main-mage, #real-banner .container .image-wrapper .main-mage, #agri-banner .container .image-wrapper .main-mage, #invest-banner .container .image-wrapper .main-mage, #borrow-banner .container .image-wrapper .main-mage {
+    height: 250px;
+  }
+  #savings-banner .container .image-wrapper .savings-image, #real-banner .container .image-wrapper .savings-image, #agri-banner .container .image-wrapper .savings-image, #invest-banner .container .image-wrapper .savings-image, #borrow-banner .container .image-wrapper .savings-image {
+    width: 100px;
+    left: 20% !important;
+  }
+  /* Savings Card Section */
+  .savings-card-section .container .savings-cards .card .image-wrapper, .savings-card-section .container .real-card-section .real-cards .card .image-wrapper, .real-card-section .container .savings-cards .card .image-wrapper, .real-card-section .container .real-cards .card .image-wrapper, .savings-card-section .container .agri-card-section .agri-cards .card .image-wrapper, .real-card-section .container .agri-card-section .agri-cards .card .image-wrapper, .agri-card-section .container .savings-cards .card .image-wrapper, .agri-card-section .container .real-card-section .real-cards .card .image-wrapper, .agri-card-section .container .agri-cards .card .image-wrapper, .savings-card-section .container .invest-card-section .invest-cards .card .image-wrapper, .real-card-section .container .invest-card-section .invest-cards .card .image-wrapper, .agri-card-section .container .invest-card-section .invest-cards .card .image-wrapper, .invest-card-section .container .savings-cards .card .image-wrapper, .invest-card-section .container .real-card-section .real-cards .card .image-wrapper, .invest-card-section .container .agri-card-section .agri-cards .card .image-wrapper, .invest-card-section .container .invest-cards .card .image-wrapper, .savings-card-section .container .digital-card-section .digital-cards .card .image-wrapper, .real-card-section .container .digital-card-section .digital-cards .card .image-wrapper, .agri-card-section .container .digital-card-section .digital-cards .card .image-wrapper, .invest-card-section .container .digital-card-section .digital-cards .card .image-wrapper, .digital-card-section .container .savings-cards .card .image-wrapper, .digital-card-section .container .real-card-section .real-cards .card .image-wrapper, .digital-card-section .container .agri-card-section .agri-cards .card .image-wrapper, .digital-card-section .container .invest-card-section .invest-cards .card .image-wrapper, .digital-card-section .container .digital-cards .card .image-wrapper, .savings-card-section .container .banc-card-section .banc-cards .card .image-wrapper, .real-card-section .container .banc-card-section .banc-cards .card .image-wrapper, .agri-card-section .container .banc-card-section .banc-cards .card .image-wrapper, .invest-card-section .container .banc-card-section .banc-cards .card .image-wrapper, .digital-card-section .container .banc-card-section .banc-cards .card .image-wrapper, .banc-card-section .container .savings-cards .card .image-wrapper, .banc-card-section .container .real-card-section .real-cards .card .image-wrapper, .banc-card-section .container .agri-card-section .agri-cards .card .image-wrapper, .banc-card-section .container .invest-card-section .invest-cards .card .image-wrapper, .banc-card-section .container .digital-card-section .digital-cards .card .image-wrapper, .banc-card-section .container .banc-cards .card .image-wrapper, .savings-card-section .container .borrow-card-section .borrow-cards .card .image-wrapper, .real-card-section .container .borrow-card-section .borrow-cards .card .image-wrapper, .agri-card-section .container .borrow-card-section .borrow-cards .card .image-wrapper, .invest-card-section .container .borrow-card-section .borrow-cards .card .image-wrapper, .digital-card-section .container .borrow-card-section .borrow-cards .card .image-wrapper, .banc-card-section .container .borrow-card-section .borrow-cards .card .image-wrapper, .borrow-card-section .container .savings-cards .card .image-wrapper, .borrow-card-section .container .real-card-section .real-cards .card .image-wrapper, .borrow-card-section .container .agri-card-section .agri-cards .card .image-wrapper, .borrow-card-section .container .invest-card-section .invest-cards .card .image-wrapper, .borrow-card-section .container .digital-card-section .digital-cards .card .image-wrapper, .borrow-card-section .container .banc-card-section .banc-cards .card .image-wrapper, .borrow-card-section .container .borrow-cards .card .image-wrapper {
+    height: 180px;
+  }
+  /* Features & Requirements Section */
+  #features-requirements .container .features .content-wrapper, #digital-features-requirements .container .features .content-wrapper, #banc-features-requirements .container .features .content-wrapper,
+  #features-requirements .container .requirements .content-wrapper,
+  #digital-features-requirements .container .requirements .content-wrapper,
+  #banc-features-requirements .container .requirements .content-wrapper {
+    padding: 1em;
+  }
+  #features-requirements .container .features .content-wrapper .items .item span, #digital-features-requirements .container .features .content-wrapper .items .item span, #banc-features-requirements .container .features .content-wrapper .items .item span,
+  #features-requirements .container .requirements .content-wrapper .items .item span,
+  #digital-features-requirements .container .requirements .content-wrapper .items .item span,
+  #banc-features-requirements .container .requirements .content-wrapper .items .item span {
+    font-size: 11px;
+  }
+  /* Savings Steps Section */
+  #savings-steps .container .steps .step .tag, #real-steps .container .steps .step .tag, #agri-steps .container .steps .step .tag, #invest-steps .container .steps .step .tag, #digital-steps .container .steps .step .tag, #banc-steps .container .steps .step .tag, #borrow-steps .container .steps .step .tag {
+    font-size: 12px;
+  }
+  #savings-steps .container .steps .step .content h4, #real-steps .container .steps .step .content h4, #agri-steps .container .steps .step .content h4, #invest-steps .container .steps .step .content h4, #digital-steps .container .steps .step .content h4, #banc-steps .container .steps .step .content h4, #borrow-steps .container .steps .step .content h4 {
+    font-size: 16px;
+  }
+  #savings-steps .container .steps .step .content p, #real-steps .container .steps .step .content p, #agri-steps .container .steps .step .content p, #invest-steps .container .steps .step .content p, #digital-steps .container .steps .step .content p, #banc-steps .container .steps .step .content p, #borrow-steps .container .steps .step .content p {
+    font-size: 12px;
+  }
+  /* Savings FAQ Section */
+  #savings-faq .container .savings-accordion .accordion-item .accordion-header .accordion-title, #real-faq .container .savings-accordion .accordion-item .accordion-header .accordion-title, #agri-faq .container .savings-accordion .accordion-item .accordion-header .accordion-title, #invest-faq .container .savings-accordion .accordion-item .accordion-header .accordion-title, #digital-faq .container .savings-accordion .accordion-item .accordion-header .accordion-title, #banc-faq .container .savings-accordion .accordion-item .accordion-header .accordion-title, #borrow-faq .container .savings-accordion .accordion-item .accordion-header .accordion-title {
+    font-size: 14px;
+  }
+}
 /* BORROW PERSONAL PAGES STYLES*/
 #borrow-banner {
   background: #ebebeb;
@@ -6240,6 +7179,260 @@ footer#site-footer .contact-section .social-info a:hover {
 }
 
 /* BORROW BUSINESS PAGES STYLES */
+/* Tablet Devices (1024px and below) */
+@media (max-width: 1024px) {
+  #loan-calculator .container {
+    width: 90%;
+    padding: 3em 0;
+  }
+  #loan-calculator .container .intro p {
+    width: 80%;
+  }
+  #loan-calculator .container .calculator {
+    max-width: 700px;
+  }
+  #loan-calculator .container .calculator .input-wrapper {
+    padding: 1.5em;
+  }
+  #loan-calculator .container .calculator .input-group {
+    margin-bottom: 1.5em;
+  }
+  #loan-calculator .container .calculator .input-group label {
+    font-size: 14px;
+  }
+  #loan-calculator .container .calculator .currency-input {
+    padding: 0.6em 1em;
+  }
+  #loan-calculator .container .calculator .currency-input .currency-symbol {
+    font-size: 15px;
+  }
+  #loan-calculator .container .calculator .currency-input .loan-input {
+    font-size: 24px;
+  }
+  #loan-calculator .container .calculator .row-group {
+    gap: 1.5em;
+    margin-bottom: 1.5em;
+  }
+  #loan-calculator .container .calculator .row-group .input-group .period-input {
+    padding: 0.6em 1em;
+    font-size: 16px;
+  }
+  #loan-calculator .container .calculator .row-group .input-group.unit-group {
+    flex: 0.6;
+  }
+  #loan-calculator .container .calculator .row-group .input-group.unit-group .unit-select {
+    padding: 0.6em 1em;
+    font-size: 16px;
+  }
+  #loan-calculator .container .calculator .interest-header .interest-value {
+    font-size: 12px !important;
+  }
+  #loan-calculator .container .calculator .repayment-summary {
+    padding: 1.5em;
+  }
+  #loan-calculator .container .calculator .repayment-summary h3 {
+    font-size: 16px;
+  }
+  #loan-calculator .container .calculator .repayment-summary .monthly-repayment {
+    margin-bottom: 1.5em;
+    padding-bottom: 1.5em;
+  }
+  #loan-calculator .container .calculator .repayment-summary .monthly-repayment .label {
+    font-size: 13px;
+  }
+  #loan-calculator .container .calculator .repayment-summary .monthly-repayment .amount .currency {
+    font-size: 16px;
+  }
+  #loan-calculator .container .calculator .repayment-summary .monthly-repayment .amount .value {
+    font-size: 28px;
+  }
+  #loan-calculator .container .calculator .repayment-summary .summary-grid {
+    gap: 1em;
+    margin-bottom: 1.5em;
+  }
+  #loan-calculator .container .calculator .repayment-summary .summary-grid .summary-item {
+    padding: 0.8em;
+  }
+  #loan-calculator .container .calculator .repayment-summary .summary-grid .summary-item .label {
+    font-size: 11px;
+  }
+  #loan-calculator .container .calculator .repayment-summary .summary-grid .summary-item .amount .currency {
+    font-size: 12px;
+  }
+  #loan-calculator .container .calculator .repayment-summary .summary-grid .summary-item .amount .value {
+    font-size: 16px;
+  }
+  #loan-calculator .container .calculator .repayment-summary .disclaimer {
+    font-size: 11px !important;
+    line-height: 16px;
+  }
+}
+/* Mobile Devices (768px and below) */
+@media (max-width: 768px) {
+  #loan-calculator .container {
+    width: 92%;
+    padding: 2em 0;
+  }
+  #loan-calculator .container .intro h2 {
+    font-size: 28px;
+  }
+  #loan-calculator .container .intro p {
+    width: 100%;
+    font-size: 14px;
+  }
+  #loan-calculator .container .calculator {
+    margin-top: 2em;
+    border-radius: 20px;
+  }
+  #loan-calculator .container .calculator .input-wrapper {
+    padding: 1.2em;
+  }
+  #loan-calculator .container .calculator .input-group {
+    margin-bottom: 1.2em;
+  }
+  #loan-calculator .container .calculator .input-group label {
+    font-size: 13px;
+    margin-bottom: 0.4em;
+  }
+  #loan-calculator .container .calculator .currency-input {
+    padding: 0.5em 0.8em;
+  }
+  #loan-calculator .container .calculator .currency-input .currency-symbol {
+    font-size: 14px;
+    margin-right: 0.5em;
+  }
+  #loan-calculator .container .calculator .currency-input .loan-input {
+    font-size: 20px;
+  }
+  #loan-calculator .container .calculator .row-group {
+    flex-direction: column;
+    gap: 1.2em;
+    margin-bottom: 1.2em;
+  }
+  #loan-calculator .container .calculator .row-group .input-group {
+    margin-bottom: 0;
+  }
+  #loan-calculator .container .calculator .row-group .input-group .period-input {
+    padding: 0.5em 0.8em;
+    font-size: 15px;
+  }
+  #loan-calculator .container .calculator .row-group .input-group.unit-group {
+    flex: auto;
+  }
+  #loan-calculator .container .calculator .row-group .input-group.unit-group .unit-select {
+    padding: 0.5em 0.8em;
+    font-size: 15px;
+  }
+  #loan-calculator .container .calculator .interest-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5em;
+    margin-bottom: 1em;
+  }
+  #loan-calculator .container .calculator .interest-header label {
+    margin-bottom: 0;
+  }
+  #loan-calculator .container .calculator .interest-header .interest-value {
+    font-size: 11px !important;
+    padding: 0.3em 0.8em;
+  }
+  #loan-calculator .container .calculator .slider-container {
+    padding-bottom: 25px;
+  }
+  #loan-calculator .container .calculator .slider-container .slider-marks .mark {
+    font-size: 9px;
+  }
+  #loan-calculator .container .calculator .slider-container .slider-marks .mark::before {
+    top: -16px;
+    height: 6px;
+  }
+  #loan-calculator .container .calculator #calculate-btn {
+    font-size: 14px !important;
+    padding: 10px 20px !important;
+  }
+  #loan-calculator .container .calculator .repayment-summary {
+    padding: 1.2em;
+  }
+  #loan-calculator .container .calculator .repayment-summary h3 {
+    font-size: 15px;
+    margin-bottom: 0.3em;
+  }
+  #loan-calculator .container .calculator .repayment-summary .monthly-repayment {
+    margin-bottom: 1.2em;
+    padding-bottom: 1.2em;
+  }
+  #loan-calculator .container .calculator .repayment-summary .monthly-repayment .label {
+    font-size: 12px;
+    margin-bottom: 0.3em;
+  }
+  #loan-calculator .container .calculator .repayment-summary .monthly-repayment .amount .currency {
+    font-size: 14px;
+  }
+  #loan-calculator .container .calculator .repayment-summary .monthly-repayment .amount .value {
+    font-size: 24px;
+  }
+  #loan-calculator .container .calculator .repayment-summary .summary-grid {
+    gap: 0.8em;
+    margin-bottom: 1.2em;
+    grid-template-columns: 1fr !important;
+  }
+  #loan-calculator .container .calculator .repayment-summary .summary-grid .summary-item {
+    padding: 0.6em;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  #loan-calculator .container .calculator .repayment-summary .summary-grid .summary-item .label {
+    font-size: 10px;
+    margin-bottom: 0.3em;
+  }
+  #loan-calculator .container .calculator .repayment-summary .summary-grid .summary-item .amount .currency {
+    font-size: 11px;
+  }
+  #loan-calculator .container .calculator .repayment-summary .summary-grid .summary-item .amount .value {
+    font-size: 14px;
+  }
+  #loan-calculator .container .calculator .repayment-summary .disclaimer {
+    font-size: 10px !important;
+    line-height: 15px;
+    margin: 0.8em 0 0 0;
+    padding-top: 0.8em;
+  }
+}
+/* Extra Small Mobile Devices (480px and below) - Additional refinements */
+@media (max-width: 480px) {
+  #loan-calculator .container .calculator .input-wrapper {
+    padding: 1em;
+  }
+  #loan-calculator .container .calculator .currency-input .loan-input {
+    font-size: 18px;
+  }
+  #loan-calculator .container .calculator .row-group .input-group .period-input {
+    font-size: 14px;
+  }
+  #loan-calculator .container .calculator .row-group .input-group.unit-group .unit-select {
+    font-size: 14px;
+  }
+  #loan-calculator .container .calculator .repayment-summary .monthly-repayment .amount .value {
+    font-size: 20px;
+  }
+  #loan-calculator .container .calculator .repayment-summary .summary-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8em;
+  }
+  #loan-calculator .container .calculator .repayment-summary .summary-grid .summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8em;
+  }
+  #loan-calculator .container .calculator .repayment-summary .summary-grid .summary-item .label {
+    margin-bottom: 0;
+  }
+  #loan-calculator .container .calculator .repayment-summary .summary-grid .summary-item .amount .currency,
+  #loan-calculator .container .calculator .repayment-summary .summary-grid .summary-item .amount .value {
+    font-size: 14px;
+  }
+}
 /* CONTACT PAGE STYLES */
 #contact-banner, #location-banner {
   position: relative;
@@ -6896,6 +8089,485 @@ footer#site-footer .contact-section .social-info a:hover {
   margin-bottom: 1em;
 }
 
+/* Tablet Devices (1024px and below) */
+@media (max-width: 1024px) {
+  /* Contact Banner */
+  #contact-banner .landing-vector, #location-banner .landing-vector {
+    width: 150px;
+  }
+  #contact-banner .container, #location-banner .container {
+    width: 90%;
+    gap: 1.5em;
+  }
+  #contact-banner .container .content-wrapper, #location-banner .container .content-wrapper {
+    padding-top: 5em;
+    padding-bottom: 4em;
+  }
+  #contact-banner .container .content-wrapper h2, #location-banner .container .content-wrapper h2 {
+    font-size: 48px;
+    line-height: 56px;
+  }
+  #contact-banner .container .content-wrapper p, #location-banner .container .content-wrapper p {
+    width: 90%;
+    font-size: 16px;
+    line-height: 26px;
+  }
+  #contact-banner .container .image-wrapper, #location-banner .container .image-wrapper {
+    padding-top: 4em;
+  }
+  #contact-banner .container .image-wrapper .main-mage, #location-banner .container .image-wrapper .main-mage {
+    height: 350px;
+  }
+  /* Contact Cards Section */
+  #contact-cards {
+    padding: 3em 0;
+  }
+  #contact-cards .container {
+    width: 90%;
+  }
+  #contact-cards .container .cards-wrapper {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5em;
+  }
+  #contact-cards .container .cards-wrapper .card-extended {
+    grid-column-end: span 2;
+    gap: 2em;
+    padding: 2em;
+  }
+  #contact-cards .container .cards-wrapper .card-extended .title {
+    text-align: center;
+  }
+  #contact-cards .container .cards-wrapper .card-extended .title img {
+    width: 150px;
+  }
+  #contact-cards .container .cards-wrapper .card-extended .title p {
+    width: 100%;
+  }
+  #contact-cards .container .cards-wrapper .card-extended .info {
+    text-align: center;
+  }
+  #contact-cards .container .cards-wrapper .card-normal .title-section img {
+    height: 40px;
+  }
+  /* Contact Form Section */
+  #contact-form {
+    padding-top: 2em;
+    padding-bottom: 3em;
+  }
+  #contact-form .container {
+    width: 90%;
+  }
+  #contact-form .container .intro {
+    margin-bottom: 2em;
+  }
+  #contact-form .container .intro p {
+    width: 80%;
+  }
+  #contact-form .container .ct-form .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  #contact-form .container .ct-form .form-group {
+    margin-bottom: 1.2em;
+  }
+  #contact-form .container .ct-form .form-group .wp-input,
+  #contact-form .container .ct-form .form-group .wp-select,
+  #contact-form .container .ct-form .form-group .wp-textarea {
+    padding: 0.8em;
+    font-size: 14px;
+  }
+  #contact-form .container .ct-form .checkbox-group {
+    flex-direction: column;
+    gap: 1em;
+  }
+  #contact-form .container .ct-form .wp-submit-btn {
+    width: 180px !important;
+  }
+  /* Location Section */
+  #location-section {
+    padding: 3em 0;
+  }
+  #location-section .container {
+    width: 90%;
+  }
+  #location-section .container .location-wrapper {
+    flex-direction: column;
+    margin-bottom: 3em;
+  }
+  #location-section .container .location-wrapper .locations-list {
+    flex: auto;
+  }
+  #location-section .container .location-wrapper .locations-list .search-wrapper {
+    padding: 1.2em;
+  }
+  #location-section .container .location-wrapper .locations-list .search-wrapper label {
+    font-size: 16px !important;
+  }
+  #location-section .container .location-wrapper .locations-list .locations-scroll {
+    max-height: 400px;
+  }
+  #location-section .container .location-wrapper .image-container {
+    flex: auto;
+  }
+  #location-section .container .location-wrapper .image-container .location-map {
+    min-height: 400px;
+  }
+  #location-section .container .location-wrapper .image-container .location-details-summary {
+    position: relative;
+    top: auto;
+    left: auto;
+    max-width: 100%;
+    border-radius: 0;
+    padding: 1.2em;
+    margin-top: -4px;
+  }
+  #location-section .container .cards-wrapper {
+    grid-template-columns: 1fr;
+    gap: 1.5em;
+  }
+  #location-section .container .cards-wrapper .card-extended {
+    grid-column-end: span 1;
+    flex-direction: column;
+    gap: 2em;
+    padding: 2em;
+  }
+  #location-section .container .cards-wrapper .card-extended .title {
+    text-align: center;
+  }
+  #location-section .container .cards-wrapper .card-extended .title img {
+    width: 150px;
+  }
+  #location-section .container .cards-wrapper .card-extended .title p {
+    width: 100%;
+  }
+  #location-section .container .cards-wrapper .card-extended .info {
+    text-align: center;
+  }
+  #location-section .container .cards-wrapper .card-normal .title-section img {
+    height: 40px;
+  }
+}
+/* Mobile Devices (768px and below) */
+@media (max-width: 768px) {
+  /* Contact Banner */
+  #contact-banner .container, #location-banner .container {
+    width: 92%;
+    flex-direction: column;
+    text-align: center;
+  }
+  #contact-banner .container .content-wrapper, #location-banner .container .content-wrapper {
+    padding-top: 4em;
+    padding-bottom: 2em;
+    width: 100%;
+  }
+  #contact-banner .container .content-wrapper h2, #location-banner .container .content-wrapper h2 {
+    font-size: 40px;
+    line-height: 48px;
+  }
+  #contact-banner .container .content-wrapper p, #location-banner .container .content-wrapper p {
+    width: 90%;
+    font-size: 15px;
+    line-height: 25px;
+  }
+  #contact-banner .container .image-wrapper, #location-banner .container .image-wrapper {
+    padding-top: 0;
+    padding-bottom: 3em;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  #contact-banner .container .image-wrapper .main-mage, #location-banner .container .image-wrapper .main-mage {
+    height: 300px;
+  }
+  /* Contact Cards Section */
+  #contact-cards {
+    padding: 2em 0;
+  }
+  #contact-cards .container {
+    width: 92%;
+  }
+  #contact-cards .container .cards-wrapper {
+    gap: 1.2em;
+  }
+  #contact-cards .container .cards-wrapper .card {
+    padding: 1.5em;
+  }
+  #contact-cards .container .cards-wrapper .card-normal {
+    gap: 0.8em;
+  }
+  #contact-cards .container .cards-wrapper .card-normal .title-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100% !important;
+  }
+  #contact-cards .container .cards-wrapper .card-normal .title-section h2 {
+    text-align: center;
+    width: 100% !important;
+  }
+  #contact-cards .container .cards-wrapper .card-normal .title-section img {
+    height: 35px;
+    margin-top: 0.5em;
+  }
+  #contact-cards .container .cards-wrapper .card-normal p {
+    text-align: center;
+    font-size: 14px;
+  }
+  #contact-cards .container .cards-wrapper .card-extended {
+    padding: 1.5em;
+    gap: 1.5em;
+  }
+  #contact-cards .container .cards-wrapper .card-extended .title img {
+    width: 120px;
+  }
+  #contact-cards .container .cards-wrapper .card-extended .title p {
+    font-size: 14px;
+  }
+  #contact-cards .container .cards-wrapper .card-extended .info img {
+    width: 25px;
+    height: 25px;
+  }
+  #contact-cards .container .cards-wrapper .card-extended .info h4 {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  #contact-cards .container .cards-wrapper .card-extended .info p {
+    font-size: 13px;
+  }
+  /* Contact Form Section */
+  #contact-form {
+    padding-bottom: 2em;
+  }
+  #contact-form .container {
+    width: 92%;
+  }
+  #contact-form .container .intro {
+    margin-bottom: 1.5em;
+  }
+  #contact-form .container .intro h2 {
+    font-size: 28px;
+  }
+  #contact-form .container .intro p {
+    width: 100%;
+    font-size: 14px;
+  }
+  #contact-form .container .ct-form .form-group {
+    margin-bottom: 1em;
+  }
+  #contact-form .container .ct-form .form-group label {
+    font-size: 14px;
+  }
+  #contact-form .container .ct-form .form-group .wp-input,
+  #contact-form .container .ct-form .form-group .wp-select,
+  #contact-form .container .ct-form .form-group .wp-textarea {
+    padding: 0.8em;
+    font-size: 14px;
+  }
+  #contact-form .container .ct-form .form-group .wp-input::-moz-placeholder, #contact-form .container .ct-form .form-group .wp-select::-moz-placeholder, #contact-form .container .ct-form .form-group .wp-textarea::-moz-placeholder {
+    font-size: 13px;
+  }
+  #contact-form .container .ct-form .form-group .wp-input::placeholder,
+  #contact-form .container .ct-form .form-group .wp-select::placeholder,
+  #contact-form .container .ct-form .form-group .wp-textarea::placeholder {
+    font-size: 13px;
+  }
+  #contact-form .container .ct-form .form-group .checkbox-group {
+    gap: 0.8em;
+  }
+  #contact-form .container .ct-form .form-group .wp-checkbox {
+    font-size: 13px;
+    padding-left: 25px;
+  }
+  #contact-form .container .ct-form .form-group .wp-checkbox .checkmark {
+    height: 18px;
+    width: 18px;
+  }
+  #contact-form .container .ct-form .form-group .wp-checkbox .checkmark::after {
+    left: 5px;
+    top: 1px;
+    width: 4px;
+    height: 8px;
+  }
+  #contact-form .container .ct-form .form-group .consent-checkbox {
+    font-size: 12px;
+  }
+  #contact-form .container .ct-form .disclaimer {
+    font-size: 12px;
+    margin: 1.5em 0;
+  }
+  #contact-form .container .ct-form .wp-submit-btn {
+    width: 100% !important;
+    max-width: 200px;
+  }
+  /* Contact CTA Section */
+  #contact-cta .cta-btns {
+    flex-direction: column;
+    gap: 1em;
+    width: 100%;
+  }
+  #contact-cta .cta-btns .site-btn-lg, #contact-cta .cta-btns .site-btn-lg-accent,
+  #contact-cta .cta-btns .site-btn-lg-light {
+    width: 100%;
+    text-align: center;
+  }
+  /* Location Section */
+  #location-section {
+    padding: 2em 0;
+  }
+  #location-section .container {
+    width: 92%;
+  }
+  #location-section .container .location-wrapper {
+    margin-bottom: 2em;
+    border-radius: 20px;
+  }
+  #location-section .container .location-wrapper .locations-list .search-wrapper {
+    padding: 1em;
+  }
+  #location-section .container .location-wrapper .locations-list .search-wrapper label {
+    font-size: 14px !important;
+  }
+  #location-section .container .location-wrapper .locations-list .search-wrapper .location-search {
+    padding: 0.7em;
+    font-size: 13px;
+  }
+  #location-section .container .location-wrapper .locations-list .locations-scroll {
+    max-height: 350px;
+  }
+  #location-section .container .location-wrapper .locations-list .locations-scroll .location-item {
+    padding: 0.8em 1em;
+  }
+  #location-section .container .location-wrapper .locations-list .locations-scroll .location-item .location-info .branch-name {
+    font-size: 14px;
+  }
+  #location-section .container .location-wrapper .locations-list .locations-scroll .location-item .location-info .branch-address {
+    font-size: 12px;
+  }
+  #location-section .container .location-wrapper .locations-list .locations-scroll .location-item .fa-angle-right {
+    font-size: 16px;
+  }
+  #location-section .container .location-wrapper .image-container .location-map {
+    min-height: 300px;
+  }
+  #location-section .container .location-wrapper .image-container .location-details-summary {
+    padding: 1em;
+  }
+  #location-section .container .location-wrapper .image-container .location-details-summary .summary-content h3 {
+    font-size: 16px;
+  }
+  #location-section .container .location-wrapper .image-container .location-details-summary .summary-content .summary-address p {
+    font-size: 12px;
+  }
+  #location-section .container .location-wrapper .image-container .location-details-summary .summary-content .directions-link {
+    font-size: 12px;
+  }
+  #location-section .container .location-wrapper .image-container .location-details-summary .summary-content .summary-contact p {
+    font-size: 11px;
+  }
+  #location-section .container .location-wrapper .image-container .location-details-summary .summary-content .summary-hours span {
+    font-size: 11px;
+  }
+  #location-section .container .cards-wrapper {
+    gap: 1.2em;
+  }
+  #location-section .container .cards-wrapper .card {
+    padding: 1.5em;
+  }
+  #location-section .container .cards-wrapper .card-normal {
+    gap: 0.8em;
+  }
+  #location-section .container .cards-wrapper .card-normal .title-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100% !important;
+  }
+  #location-section .container .cards-wrapper .card-normal .title-section h2 {
+    text-align: center;
+    width: 100% !important;
+  }
+  #location-section .container .cards-wrapper .card-normal .title-section img {
+    height: 35px;
+    margin-top: 0.5em;
+  }
+  #location-section .container .cards-wrapper .card-normal p {
+    text-align: center;
+    font-size: 14px;
+  }
+  #location-section .container .cards-wrapper .card-extended {
+    padding: 1.5em;
+    gap: 1.5em;
+  }
+  #location-section .container .cards-wrapper .card-extended .title img {
+    width: 120px;
+  }
+  #location-section .container .cards-wrapper .card-extended .title p {
+    font-size: 14px;
+  }
+  #location-section .container .cards-wrapper .card-extended .info img {
+    width: 25px;
+    height: 25px;
+  }
+  #location-section .container .cards-wrapper .card-extended .info h4 {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  #location-section .container .cards-wrapper .card-extended .info p {
+    font-size: 13px;
+  }
+}
+/* Extra Small Mobile Devices (480px and below) */
+@media (max-width: 480px) {
+  /* Contact Banner */
+  #contact-banner .container .content-wrapper h2, #location-banner .container .content-wrapper h2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  #contact-banner .container .content-wrapper p, #location-banner .container .content-wrapper p {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  #contact-banner .container .image-wrapper .main-mage, #location-banner .container .image-wrapper .main-mage {
+    height: 220px;
+  }
+  /* Contact Cards Section */
+  #contact-cards .container .cards-wrapper {
+    grid-template-columns: 1fr;
+    gap: 1.5em;
+  }
+  #contact-cards .container .cards-wrapper .card-extended {
+    flex-direction: column;
+    grid-column-end: span 1;
+  }
+  #contact-cards .container .cards-wrapper .card-extended .title {
+    flex: 1;
+    width: 100%;
+    align-items: center;
+  }
+  #contact-cards .container .cards-wrapper .card-extended .title img {
+    width: 100%;
+  }
+  #contact-cards .container .cards-wrapper .card-extended .title p {
+    width: 100%;
+  }
+  #contact-cards .container .cards-wrapper .card-extended .info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-items: center;
+  }
+  #contact-cards .container .cards-wrapper .card-extended .info h4 {
+    font-size: 15px;
+    line-height: 27px;
+  }
+  /* Location Section */
+  #location-section .container .location-wrapper .locations-list .locations-scroll {
+    max-height: 300px;
+  }
+  #location-section .container .location-wrapper .image-container .location-map {
+    min-height: 250px;
+  }
+}
 /* Bancassurance Banner */
 #banc-banner {
   position: relative;
@@ -7024,6 +8696,208 @@ footer#site-footer .contact-section .social-info a:hover {
   grid-template-columns: repeat(3, 1fr);
 }
 
+/* Tablet Devices (1024px and below) */
+@media (max-width: 1024px) {
+  /* Bancassurance Banner */
+  #banc-banner .landing-vector {
+    width: 150px;
+  }
+  #banc-banner .container {
+    width: 90%;
+    gap: 1.5em;
+  }
+  #banc-banner .container .content-wrapper {
+    padding-top: 5em;
+    padding-bottom: 6em;
+  }
+  #banc-banner .container .content-wrapper h2 {
+    font-size: 48px;
+    line-height: 56px;
+  }
+  #banc-banner .container .content-wrapper p {
+    width: 90%;
+    font-size: 16px;
+    line-height: 26px;
+  }
+  #banc-banner .container .image-wrapper {
+    padding-top: 4em;
+  }
+  #banc-banner .container .image-wrapper .main-mage {
+    height: 400px;
+  }
+  #banc-banner .container .image-wrapper .savings-image {
+    width: 180px;
+    left: 1em;
+    bottom: 30%;
+  }
+  /* Bancassurance Features Section */
+  #banc-features-requirements .features-col-2,
+  #banc-features-requirements .features-col-3 {
+    margin-top: 3em;
+  }
+  #banc-features-requirements .features-col-2 h4,
+  #banc-features-requirements .features-col-3 h4 {
+    font-size: 24px;
+    text-align: center;
+  }
+  #banc-features-requirements .features-col-2 .feature-grid,
+  #banc-features-requirements .features-col-3 .feature-grid {
+    gap: 1.5em;
+  }
+  #banc-features-requirements .features-col-2 .feature-grid .feature,
+  #banc-features-requirements .features-col-3 .feature-grid .feature {
+    padding: 1.2em;
+  }
+  #banc-features-requirements .features-col-2 .feature-grid .feature .icon,
+  #banc-features-requirements .features-col-3 .feature-grid .feature .icon {
+    width: 25px;
+    height: 25px;
+  }
+  #banc-features-requirements .features-col-2 .feature-grid .feature h5,
+  #banc-features-requirements .features-col-3 .feature-grid .feature h5 {
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: 0.8em;
+  }
+  #banc-features-requirements .features-col-2 .feature-grid .feature p,
+  #banc-features-requirements .features-col-3 .feature-grid .feature p {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  #banc-features-requirements .features-col-2 .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2em;
+  }
+  #banc-features-requirements .features-col-3 .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2em;
+  }
+}
+/* Mobile Devices (768px and below) */
+@media (max-width: 768px) {
+  /* Bancassurance Banner */
+  #banc-banner .landing-vector {
+    width: 100%;
+  }
+  #banc-banner .container {
+    width: 92%;
+    flex-direction: column;
+    text-align: center;
+  }
+  #banc-banner .container .content-wrapper {
+    padding-top: 4em;
+    padding-bottom: 2em;
+    flex: 1;
+    width: 100%;
+    align-items: center;
+  }
+  #banc-banner .container .content-wrapper h2 {
+    font-size: 40px;
+    line-height: 48px;
+  }
+  #banc-banner .container .content-wrapper p {
+    width: 100%;
+    font-size: 15px;
+    line-height: 25px;
+  }
+  #banc-banner .container .image-wrapper {
+    padding-top: 0;
+    padding-bottom: 3em;
+    justify-content: flex-end;
+    flex: 1;
+    width: 100%;
+  }
+  #banc-banner .container .image-wrapper .main-mage {
+    height: 320px;
+  }
+  #banc-banner .container .image-wrapper .savings-image {
+    width: 140px;
+    left: 20% !important;
+    bottom: 50%;
+  }
+  /* Bancassurance Features Section */
+  #banc-features-requirements .features-col-2,
+  #banc-features-requirements .features-col-3 {
+    margin-top: 2em;
+  }
+  #banc-features-requirements .features-col-2 h4,
+  #banc-features-requirements .features-col-3 h4 {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 0.8em;
+  }
+  #banc-features-requirements .features-col-2 .feature-grid,
+  #banc-features-requirements .features-col-3 .feature-grid {
+    gap: 1em;
+  }
+  #banc-features-requirements .features-col-2 .feature-grid .feature,
+  #banc-features-requirements .features-col-3 .feature-grid .feature {
+    padding: 1em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-items: center;
+  }
+  #banc-features-requirements .features-col-2 .feature-grid .feature .icon,
+  #banc-features-requirements .features-col-3 .feature-grid .feature .icon {
+    width: 22px;
+    height: 22px;
+    margin: 0 auto;
+  }
+  #banc-features-requirements .features-col-2 .feature-grid .feature h5,
+  #banc-features-requirements .features-col-3 .feature-grid .feature h5 {
+    font-size: 15px;
+    line-height: 20px;
+    margin-top: 0.6em;
+  }
+  #banc-features-requirements .features-col-2 .feature-grid .feature p,
+  #banc-features-requirements .features-col-3 .feature-grid .feature p {
+    font-size: 13px;
+    line-height: 22px;
+  }
+  #banc-features-requirements .features-col-2 .feature-grid {
+    grid-template-columns: 1fr;
+    gap: 1em;
+  }
+  #banc-features-requirements .features-col-3 .feature-grid {
+    grid-template-columns: 1fr;
+    gap: 1em;
+  }
+}
+/* Extra Small Mobile Devices (480px and below)  */
+@media (max-width: 480px) {
+  /* Bancassurance Banner */
+  #banc-banner .container .content-wrapper h2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  #banc-banner .container .content-wrapper p {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  #banc-banner .container .image-wrapper .main-mage {
+    height: 250px;
+  }
+  #banc-banner .container .image-wrapper .savings-image {
+    width: 100px;
+  }
+  /* Bancassurance Features Section */
+  #banc-features-requirements .features-col-2 .feature-grid .feature,
+  #banc-features-requirements .features-col-3 .feature-grid .feature {
+    padding: 0.8em;
+  }
+  #banc-features-requirements .features-col-2 .feature-grid .feature h5,
+  #banc-features-requirements .features-col-3 .feature-grid .feature h5 {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  #banc-features-requirements .features-col-2 .feature-grid .feature p,
+  #banc-features-requirements .features-col-3 .feature-grid .feature p {
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
 /* Bancassurance Banner */
 #digital-banner {
   position: relative;
@@ -7221,6 +9095,192 @@ footer#site-footer .contact-section .social-info a:hover {
   grid-template-columns: repeat(3, 1fr);
 }
 
+/* Tablet Devices (1024px and below) */
+@media (max-width: 1024px) {
+  /* Digital Banner */
+  #digital-banner .landing-vector {
+    width: 150px;
+  }
+  #digital-banner .container {
+    width: 90%;
+    gap: 1.5em;
+  }
+  #digital-banner .container .content-wrapper {
+    padding-top: 5em;
+    padding-bottom: 6em;
+  }
+  #digital-banner .container .content-wrapper h2 {
+    font-size: 48px;
+    line-height: 56px;
+  }
+  #digital-banner .container .content-wrapper p {
+    width: 90%;
+    font-size: 16px;
+    line-height: 26px;
+  }
+  #digital-banner .container .content-wrapper .site-btn-lg, #digital-banner .container .content-wrapper .site-btn-lg-light, #digital-banner .container .content-wrapper .site-btn-lg-accent {
+    margin-top: 0.8em;
+  }
+  #digital-banner .container .image-wrapper {
+    padding-top: 4em;
+  }
+  #digital-banner .container .image-wrapper .main-mage {
+    height: 400px;
+  }
+  #digital-banner .container .image-wrapper .savings-image {
+    width: 180px;
+    left: 1em;
+    bottom: 30%;
+  }
+  /* Digital Points Section */
+  #digital-points .container {
+    width: 90%;
+    padding: 3em 0;
+  }
+  #digital-points .container .intro {
+    margin-bottom: 1.5em;
+  }
+  #digital-points .container .intro h2 {
+    font-size: 36px;
+  }
+  #digital-points .container .intro p {
+    width: 80%;
+    font-size: 15px;
+  }
+  #digital-points .container .points {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5em;
+  }
+  #digital-points .container .points .point {
+    padding: 0.8em;
+  }
+  #digital-points .container .points .point img {
+    width: 25px;
+    height: 25px;
+  }
+  #digital-points .container .points .point h4 {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+/* Mobile Devices (768px and below) */
+@media (max-width: 768px) {
+  /* Digital Banner */
+  #digital-banner .landing-vector {
+    width: 100%;
+  }
+  #digital-banner .container {
+    width: 92%;
+    flex-direction: column;
+    text-align: center;
+  }
+  #digital-banner .container .content-wrapper {
+    padding-top: 4em;
+    padding-bottom: 2em;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    align-items: center;
+  }
+  #digital-banner .container .content-wrapper h2 {
+    font-size: 40px;
+    line-height: 48px;
+  }
+  #digital-banner .container .content-wrapper p {
+    width: 70%;
+    font-size: 15px;
+    line-height: 25px;
+  }
+  #digital-banner .container .content-wrapper .site-btn-lg, #digital-banner .container .content-wrapper .site-btn-lg-light, #digital-banner .container .content-wrapper .site-btn-lg-accent {
+    margin-top: 1em;
+    display: inline-flex;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #digital-banner .container .image-wrapper {
+    padding-top: 0;
+    padding-bottom: 3em;
+    justify-content: flex-end;
+    flex: 1;
+    width: 100%;
+  }
+  #digital-banner .container .image-wrapper .main-mage {
+    height: 320px;
+  }
+  #digital-banner .container .image-wrapper .savings-image {
+    width: 140px;
+    left: 50% !important;
+    bottom: 50%;
+  }
+  /* Digital Points Section */
+  #digital-points .container {
+    width: 92%;
+    padding: 2em 0;
+  }
+  #digital-points .container .intro {
+    margin-bottom: 1.2em;
+  }
+  #digital-points .container .intro h2 {
+    font-size: 28px;
+  }
+  #digital-points .container .intro p {
+    width: 100%;
+    font-size: 14px;
+  }
+  #digital-points .container .points {
+    grid-template-columns: 1fr;
+    gap: 1em;
+  }
+  #digital-points .container .points .point {
+    padding: 0.8em 1em;
+    justify-content: flex-start;
+  }
+  #digital-points .container .points .point img {
+    width: 22px;
+    height: 22px;
+  }
+  #digital-points .container .points .point h4 {
+    font-size: 15px;
+    line-height: 20px;
+  }
+}
+/* Extra Small Mobile Devices (480px and below) */
+@media (max-width: 480px) {
+  /* Digital Banner */
+  #digital-banner .container .content-wrapper h2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  #digital-banner .container .content-wrapper p {
+    font-size: 14px;
+    line-height: 24px;
+    width: 80%;
+  }
+  #digital-banner .container .image-wrapper .main-mage {
+    height: 250px;
+  }
+  #digital-banner .container .image-wrapper .savings-image {
+    width: 100px;
+    left: 20% !important;
+    bottom: 50%;
+  }
+  /* Digital Points Section */
+  #digital-points .container .points .point {
+    padding: 0.7em 0.8em;
+  }
+  #digital-points .container .points .point img {
+    width: 20px;
+    height: 20px;
+  }
+  #digital-points .container .points .point h4 {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
 /* BORROW PERSONAL PAGES STYLES*/
 #invest-banner {
   background: #f6f5eb;
@@ -8222,4 +10282,139 @@ footer#site-footer .contact-section .social-info a:hover {
 
 #real-cta {
   background: #f6f5eb;
+}
+
+/* Tablet Devices (1024px and below) */
+@media (max-width: 1024px) {
+  #features-requirements .container .real-features, #banc-features-requirements .container .real-features, #digital-features-requirements .container .real-features {
+    margin-top: 2em;
+    border-radius: 25px;
+  }
+  #features-requirements .container .real-features .tab-links, #banc-features-requirements .container .real-features .tab-links, #digital-features-requirements .container .real-features .tab-links {
+    padding: 0 1.5em;
+    gap: 0.8em;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  #features-requirements .container .real-features .tab-links .tab, #banc-features-requirements .container .real-features .tab-links .tab, #digital-features-requirements .container .real-features .tab-links .tab {
+    padding: 1.2em 0.5em;
+    font-size: 14px;
+    text-wrap: nowrap;
+  }
+  #features-requirements .container .real-features .tab-content, #banc-features-requirements .container .real-features .tab-content, #digital-features-requirements .container .real-features .tab-content {
+    min-height: 350px;
+  }
+  #features-requirements .container .real-features .tab-content .tab-pane, #banc-features-requirements .container .real-features .tab-content .tab-pane, #digital-features-requirements .container .real-features .tab-content .tab-pane {
+    flex-direction: column;
+  }
+  #features-requirements .container .real-features .tab-content .tab-pane .image-wrapper, #banc-features-requirements .container .real-features .tab-content .tab-pane .image-wrapper, #digital-features-requirements .container .real-features .tab-content .tab-pane .image-wrapper {
+    flex: auto;
+    min-height: 250px;
+    max-height: 300px;
+  }
+  #features-requirements .container .real-features .tab-content .tab-pane .content-wrapper, #banc-features-requirements .container .real-features .tab-content .tab-pane .content-wrapper, #digital-features-requirements .container .real-features .tab-content .tab-pane .content-wrapper {
+    flex: auto;
+    padding: 1.5em 2em;
+  }
+  #features-requirements .container .real-features .tab-content .tab-pane .content-wrapper h4, #banc-features-requirements .container .real-features .tab-content .tab-pane .content-wrapper h4, #digital-features-requirements .container .real-features .tab-content .tab-pane .content-wrapper h4 {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 0.8em;
+  }
+  #features-requirements .container .real-features .tab-content .tab-pane .content-wrapper .items .item, #banc-features-requirements .container .real-features .tab-content .tab-pane .content-wrapper .items .item, #digital-features-requirements .container .real-features .tab-content .tab-pane .content-wrapper .items .item {
+    padding: 0.8em 1em;
+  }
+  #features-requirements .container .real-features .tab-content .tab-pane .content-wrapper .items .item img, #banc-features-requirements .container .real-features .tab-content .tab-pane .content-wrapper .items .item img, #digital-features-requirements .container .real-features .tab-content .tab-pane .content-wrapper .items .item img {
+    width: 22px;
+    height: 22px;
+  }
+  #features-requirements .container .real-features .tab-content .tab-pane .content-wrapper .items .item span, #banc-features-requirements .container .real-features .tab-content .tab-pane .content-wrapper .items .item span, #digital-features-requirements .container .real-features .tab-content .tab-pane .content-wrapper .items .item span {
+    font-size: 13px;
+  }
+  #features-requirements .container .real-features .tab-content .tab-pane .content-wrapper .items .item:hover, #banc-features-requirements .container .real-features .tab-content .tab-pane .content-wrapper .items .item:hover, #digital-features-requirements .container .real-features .tab-content .tab-pane .content-wrapper .items .item:hover {
+    transform: translateX(3px);
+  }
+}
+/* Mobile Devices (768px and below) */
+@media (max-width: 768px) {
+  #features-requirements .container .real-features, #banc-features-requirements .container .real-features, #digital-features-requirements .container .real-features {
+    margin-top: 1.5em;
+    border-radius: 20px;
+  }
+  #features-requirements .container .real-features .tab-links, #banc-features-requirements .container .real-features .tab-links, #digital-features-requirements .container .real-features .tab-links {
+    padding: 0 1em;
+    gap: 0.5em;
+  }
+  #features-requirements .container .real-features .tab-links .tab, #banc-features-requirements .container .real-features .tab-links .tab, #digital-features-requirements .container .real-features .tab-links .tab {
+    padding: 1em 0.4em;
+    font-size: 13px;
+  }
+  #features-requirements .container .real-features .tab-content, #banc-features-requirements .container .real-features .tab-content, #digital-features-requirements .container .real-features .tab-content {
+    min-height: 300px;
+  }
+  #features-requirements .container .real-features .tab-content .tab-pane .image-wrapper, #banc-features-requirements .container .real-features .tab-content .tab-pane .image-wrapper, #digital-features-requirements .container .real-features .tab-content .tab-pane .image-wrapper {
+    min-height: 200px;
+    max-height: 250px;
+  }
+  #features-requirements .container .real-features .tab-content .tab-pane .content-wrapper, #banc-features-requirements .container .real-features .tab-content .tab-pane .content-wrapper, #digital-features-requirements .container .real-features .tab-content .tab-pane .content-wrapper {
+    padding: 1.2em 1.5em;
+  }
+  #features-requirements .container .real-features .tab-content .tab-pane .content-wrapper h4, #banc-features-requirements .container .real-features .tab-content .tab-pane .content-wrapper h4, #digital-features-requirements .container .real-features .tab-content .tab-pane .content-wrapper h4 {
+    font-size: 20px;
+    margin-bottom: 0.6em;
+  }
+  #features-requirements .container .real-features .tab-content .tab-pane .content-wrapper .items, #banc-features-requirements .container .real-features .tab-content .tab-pane .content-wrapper .items, #digital-features-requirements .container .real-features .tab-content .tab-pane .content-wrapper .items {
+    gap: 0.5em;
+  }
+  #features-requirements .container .real-features .tab-content .tab-pane .content-wrapper .items .item, #banc-features-requirements .container .real-features .tab-content .tab-pane .content-wrapper .items .item, #digital-features-requirements .container .real-features .tab-content .tab-pane .content-wrapper .items .item {
+    padding: 0.7em 0.8em;
+    gap: 0.5em;
+  }
+  #features-requirements .container .real-features .tab-content .tab-pane .content-wrapper .items .item img, #banc-features-requirements .container .real-features .tab-content .tab-pane .content-wrapper .items .item img, #digital-features-requirements .container .real-features .tab-content .tab-pane .content-wrapper .items .item img {
+    width: 20px;
+    height: 20px;
+  }
+  #features-requirements .container .real-features .tab-content .tab-pane .content-wrapper .items .item span, #banc-features-requirements .container .real-features .tab-content .tab-pane .content-wrapper .items .item span, #digital-features-requirements .container .real-features .tab-content .tab-pane .content-wrapper .items .item span {
+    font-size: 12px;
+  }
+  #features-requirements .container .real-features .tab-content .tab-pane .content-wrapper .items .item:hover, #banc-features-requirements .container .real-features .tab-content .tab-pane .content-wrapper .items .item:hover, #digital-features-requirements .container .real-features .tab-content .tab-pane .content-wrapper .items .item:hover {
+    transform: translateX(2px);
+  }
+}
+/* Extra Small Mobile Devices (480px and below) */
+@media (max-width: 480px) {
+  #features-requirements .container .real-features, #banc-features-requirements .container .real-features, #digital-features-requirements .container .real-features {
+    border-radius: 15px;
+  }
+  #features-requirements .container .real-features .tab-links, #banc-features-requirements .container .real-features .tab-links, #digital-features-requirements .container .real-features .tab-links {
+    padding: 0 0.8em;
+    gap: 0.3em;
+  }
+  #features-requirements .container .real-features .tab-links .tab, #banc-features-requirements .container .real-features .tab-links .tab, #digital-features-requirements .container .real-features .tab-links .tab {
+    padding: 0.8em 0.3em;
+    font-size: 12px;
+  }
+  #features-requirements .container .real-features .tab-content, #banc-features-requirements .container .real-features .tab-content, #digital-features-requirements .container .real-features .tab-content {
+    min-height: 280px;
+  }
+  #features-requirements .container .real-features .tab-content .tab-pane .image-wrapper, #banc-features-requirements .container .real-features .tab-content .tab-pane .image-wrapper, #digital-features-requirements .container .real-features .tab-content .tab-pane .image-wrapper {
+    min-height: 180px;
+    max-height: 200px;
+  }
+  #features-requirements .container .real-features .tab-content .tab-pane .content-wrapper, #banc-features-requirements .container .real-features .tab-content .tab-pane .content-wrapper, #digital-features-requirements .container .real-features .tab-content .tab-pane .content-wrapper {
+    padding: 1em;
+  }
+  #features-requirements .container .real-features .tab-content .tab-pane .content-wrapper h4, #banc-features-requirements .container .real-features .tab-content .tab-pane .content-wrapper h4, #digital-features-requirements .container .real-features .tab-content .tab-pane .content-wrapper h4 {
+    font-size: 18px;
+  }
+  #features-requirements .container .real-features .tab-content .tab-pane .content-wrapper .items .item, #banc-features-requirements .container .real-features .tab-content .tab-pane .content-wrapper .items .item, #digital-features-requirements .container .real-features .tab-content .tab-pane .content-wrapper .items .item {
+    padding: 0.6em 0.8em;
+  }
+  #features-requirements .container .real-features .tab-content .tab-pane .content-wrapper .items .item img, #banc-features-requirements .container .real-features .tab-content .tab-pane .content-wrapper .items .item img, #digital-features-requirements .container .real-features .tab-content .tab-pane .content-wrapper .items .item img {
+    width: 18px;
+    height: 18px;
+  }
+  #features-requirements .container .real-features .tab-content .tab-pane .content-wrapper .items .item span, #banc-features-requirements .container .real-features .tab-content .tab-pane .content-wrapper .items .item span, #digital-features-requirements .container .real-features .tab-content .tab-pane .content-wrapper .items .item span {
+    font-size: 11px;
+  }
 }/*# sourceMappingURL=style.css.map */

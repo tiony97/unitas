@@ -697,10 +697,653 @@
   }
 }
 
-// Responsive Design
+/* Tablet Devices (1024px and below) */
 @media (max-width: 1024px) {
+  /* Contact Banner */
+  #contact-banner {
+    .landing-vector {
+      width: 150px;
+    }
+
+    .container {
+      width: 90%;
+      gap: 1.5em;
+
+      .content-wrapper {
+        padding-top: 5em;
+        padding-bottom: 4em;
+
+        h2 {
+          font-size: 48px;
+          line-height: 56px;
+        }
+
+        p {
+          width: 90%;
+          font-size: 16px;
+          line-height: 26px;
+        }
+      }
+
+      .image-wrapper {
+        padding-top: 4em;
+
+        .main-mage {
+          height: 350px;
+        }
+      }
+    }
+  }
+
+  /* Contact Cards Section */
+  #contact-cards {
+    padding: 3em 0;
+
+    .container {
+      width: 90%;
+
+      .cards-wrapper {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5em;
+
+        .card-extended {
+          grid-column-end: span 2;
+          gap: 2em;
+          padding: 2em;
+
+          .title {
+            text-align: center;
+
+            img {
+              width: 150px;
+            }
+
+            p {
+              width: 100%;
+            }
+          }
+
+          .info {
+            text-align: center;
+          }
+        }
+
+        .card-normal {
+          .title-section {
+            img {
+              height: 40px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* Contact Form Section */
+  #contact-form {
+    padding-top: 2em;
+    padding-bottom: 3em;
+
+    .container {
+      width: 90%;
+
+      .intro {
+        margin-bottom: 2em;
+
+        p {
+          width: 80%;
+        }
+      }
+
+      .ct-form {
+        .form-row {
+          flex-direction: column;
+          gap: 0;
+        }
+
+        .form-group {
+          margin-bottom: 1.2em;
+
+          .wp-input,
+          .wp-select,
+          .wp-textarea {
+            padding: 0.8em;
+            font-size: 14px;
+          }
+        }
+
+        .checkbox-group {
+          flex-direction: column;
+          gap: 1em;
+        }
+
+        .wp-submit-btn {
+          width: 180px !important;
+        }
+      }
+    }
+  }
+
+  /* Location Section */
+  #location-section {
+    padding: 3em 0;
+
+    .container {
+      width: 90%;
+
+      .location-wrapper {
+        flex-direction: column;
+        margin-bottom: 3em;
+
+        .locations-list {
+          flex: auto;
+
+          .search-wrapper {
+            padding: 1.2em;
+
+            label {
+              font-size: 16px !important;
+            }
+          }
+
+          .locations-scroll {
+            max-height: 400px;
+          }
+        }
+
+        .image-container {
+          flex: auto;
+
+          .location-map {
+            min-height: 400px;
+          }
+
+          .location-details-summary {
+            position: relative;
+            top: auto;
+            left: auto;
+            max-width: 100%;
+            border-radius: 0;
+            padding: 1.2em;
+            margin-top: -4px;
+          }
+        }
+      }
+
+      .cards-wrapper {
+        grid-template-columns: 1fr;
+        gap: 1.5em;
+
+        .card-extended {
+          grid-column-end: span 1;
+          flex-direction: column;
+          gap: 2em;
+          padding: 2em;
+
+          .title {
+            text-align: center;
+
+            img {
+              width: 150px;
+            }
+
+            p {
+              width: 100%;
+            }
+          }
+
+          .info {
+            text-align: center;
+          }
+        }
+
+        .card-normal {
+          .title-section {
+            img {
+              height: 40px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
-// Responsive Design
+/* Mobile Devices (768px and below) */
 @media (max-width: 768px) {
+  /* Contact Banner */
+  #contact-banner {
+    .container {
+      width: 92%;
+      flex-direction: column;
+      text-align: center;
+
+      .content-wrapper {
+        padding-top: 4em;
+        padding-bottom: 2em;
+        width: 100%;
+        h2 {
+          font-size: 40px;
+          line-height: 48px;
+        }
+
+        p {
+          width: 90%;
+          font-size: 15px;
+          line-height: 25px;
+        }
+      }
+
+      .image-wrapper {
+        padding-top: 0;
+        padding-bottom: 3em;
+        justify-content: flex-end;
+        width: 100%;
+        .main-mage {
+          height: 300px;
+        }
+      }
+    }
+  }
+
+  /* Contact Cards Section */
+  #contact-cards {
+    padding: 2em 0;
+
+    .container {
+      width: 92%;
+
+      .cards-wrapper {
+        gap: 1.2em;
+
+        .card {
+          padding: 1.5em;
+        }
+
+        .card-normal {
+          gap: 0.8em;
+
+          .title-section {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 100% !important;
+
+            h2 {
+              text-align: center;
+              width: 100% !important;
+            }
+
+            img {
+              height: 35px;
+              margin-top: 0.5em;
+            }
+          }
+
+          p {
+            text-align: center;
+            font-size: 14px;
+          }
+        }
+
+        .card-extended {
+          padding: 1.5em;
+          gap: 1.5em;
+
+          .title {
+            img {
+              width: 120px;
+            }
+
+            p {
+              font-size: 14px;
+            }
+          }
+
+          .info {
+            img {
+              width: 25px;
+              height: 25px;
+            }
+
+            h4 {
+              font-size: 16px;
+              line-height: 26px;
+            }
+
+            p {
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* Contact Form Section */
+  #contact-form {
+    padding-bottom: 2em;
+
+    .container {
+      width: 92%;
+
+      .intro {
+        margin-bottom: 1.5em;
+
+        h2 {
+          font-size: 28px;
+        }
+
+        p {
+          width: 100%;
+          font-size: 14px;
+        }
+      }
+
+      .ct-form {
+        .form-group {
+          margin-bottom: 1em;
+
+          label {
+            font-size: 14px;
+          }
+
+          .wp-input,
+          .wp-select,
+          .wp-textarea {
+            padding: 0.8em;
+            font-size: 14px;
+
+            &::placeholder {
+              font-size: 13px;
+            }
+          }
+
+          .checkbox-group {
+            gap: 0.8em;
+          }
+
+          .wp-checkbox {
+            font-size: 13px;
+            padding-left: 25px;
+
+            .checkmark {
+              height: 18px;
+              width: 18px;
+
+              &::after {
+                left: 5px;
+                top: 1px;
+                width: 4px;
+                height: 8px;
+              }
+            }
+          }
+
+          .consent-checkbox {
+            font-size: 12px;
+          }
+        }
+
+        .disclaimer {
+          font-size: 12px;
+          margin: 1.5em 0;
+        }
+
+        .wp-submit-btn {
+          width: 100% !important;
+          max-width: 200px;
+        }
+      }
+    }
+  }
+
+  /* Contact CTA Section */
+  #contact-cta {
+    .cta-btns {
+      flex-direction: column;
+      gap: 1em;
+      width: 100%;
+
+      .site-btn-lg,
+      .site-btn-lg-light {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+
+  /* Location Section */
+  #location-section {
+    padding: 2em 0;
+
+    .container {
+      width: 92%;
+
+      .location-wrapper {
+        margin-bottom: 2em;
+        border-radius: 20px;
+
+        .locations-list {
+          .search-wrapper {
+            padding: 1em;
+
+            label {
+              font-size: 14px !important;
+            }
+
+            .location-search {
+              padding: 0.7em;
+              font-size: 13px;
+            }
+          }
+
+          .locations-scroll {
+            max-height: 350px;
+
+            .location-item {
+              padding: 0.8em 1em;
+
+              .location-info {
+                .branch-name {
+                  font-size: 14px;
+                }
+
+                .branch-address {
+                  font-size: 12px;
+                }
+              }
+
+              .fa-angle-right {
+                font-size: 16px;
+              }
+            }
+          }
+        }
+
+        .image-container {
+          .location-map {
+            min-height: 300px;
+          }
+
+          .location-details-summary {
+            padding: 1em;
+
+            .summary-content {
+              h3 {
+                font-size: 16px;
+              }
+
+              .summary-address {
+                p {
+                  font-size: 12px;
+                }
+              }
+
+              .directions-link {
+                font-size: 12px;
+              }
+
+              .summary-contact {
+                p {
+                  font-size: 11px;
+                }
+              }
+
+              .summary-hours {
+                span {
+                  font-size: 11px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .cards-wrapper {
+        gap: 1.2em;
+
+        .card {
+          padding: 1.5em;
+        }
+
+        .card-normal {
+          gap: 0.8em;
+
+          .title-section {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 100% !important;
+
+            h2 {
+              text-align: center;
+              width: 100% !important;
+            }
+
+            img {
+              height: 35px;
+              margin-top: 0.5em;
+            }
+          }
+
+          p {
+            text-align: center;
+            font-size: 14px;
+          }
+        }
+
+        .card-extended {
+          padding: 1.5em;
+          gap: 1.5em;
+
+          .title {
+            img {
+              width: 120px;
+            }
+
+            p {
+              font-size: 14px;
+            }
+          }
+
+          .info {
+            img {
+              width: 25px;
+              height: 25px;
+            }
+
+            h4 {
+              font-size: 16px;
+              line-height: 26px;
+            }
+
+            p {
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Extra Small Mobile Devices (480px and below) */
+@media (max-width: 480px) {
+  /* Contact Banner */
+  #contact-banner {
+    .container {
+      .content-wrapper {
+        h2 {
+          font-size: 32px;
+          line-height: 40px;
+        }
+
+        p {
+          font-size: 14px;
+          line-height: 24px;
+        }
+      }
+
+      .image-wrapper {
+        .main-mage {
+          height: 220px;
+        }
+      }
+    }
+  }
+
+  /* Contact Cards Section */
+  #contact-cards {
+    .container {
+      .cards-wrapper {
+        grid-template-columns: 1fr;
+        gap: 1.5em;
+        .card-extended {
+          flex-direction: column;
+          grid-column-end: span 1;
+          .title {
+            flex: 1;
+            width: 100%;
+            align-items: center;
+            img {
+              width: 100%;
+            }
+            p {
+              width: 100%;
+            }
+          }
+          .info {
+            flex: 1;
+            @include flex-col;
+            align-items: center;
+
+            h4 {
+              font-size: 15px;
+              line-height: 27px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* Location Section */
+  #location-section {
+    .container {
+      .location-wrapper {
+        .locations-list {
+          .locations-scroll {
+            max-height: 300px;
+          }
+        }
+
+        .image-container {
+          .location-map {
+            min-height: 250px;
+          }
+        }
+      }
+    }
+  }
 }

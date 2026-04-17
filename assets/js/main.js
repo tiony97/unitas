@@ -207,6 +207,36 @@ jQuery(document).ready(function ($) {
   });
 });
 
+// Scroll to Top Functionality
+jQuery(document).ready(function ($) {
+  // Get the button element
+  var $scrollBtn = $("#scrollToTop");
+
+  // Show/hide button based on scroll position
+  $(window).on("scroll", function () {
+    // Show button when scrolled down 300px from top
+    if ($(this).scrollTop() > 300) {
+      $scrollBtn.addClass("show");
+    } else {
+      $scrollBtn.removeClass("show");
+    }
+  });
+
+  // Smooth scroll to top when button is clicked
+  $scrollBtn.on("click", function (e) {
+    e.preventDefault();
+    $("html, body").animate(
+      {
+        scrollTop: 0,
+      },
+      600,
+    ); // 600ms smooth animation
+  });
+
+  // Optional: Also trigger on load to check initial position
+  $(window).trigger("scroll");
+});
+
 // Home Page Swiper Js Banner Slider
 jQuery(document).ready(function ($) {
   // Initialize Swiper banner

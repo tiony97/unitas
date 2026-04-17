@@ -134,3 +134,257 @@
 #banc-cta {
   @extend #savings-cta;
 }
+
+/* Tablet Devices (1024px and below) */
+@media (max-width: 1024px) {
+  /* Bancassurance Banner */
+  #banc-banner {
+    .landing-vector {
+      width: 150px;
+    }
+
+    .container {
+      width: 90%;
+      gap: 1.5em;
+
+      .content-wrapper {
+        padding-top: 5em;
+        padding-bottom: 6em;
+
+        h2 {
+          font-size: 48px;
+          line-height: 56px;
+        }
+
+        p {
+          width: 90%;
+          font-size: 16px;
+          line-height: 26px;
+        }
+      }
+
+      .image-wrapper {
+        padding-top: 4em;
+
+        .main-mage {
+          height: 400px;
+        }
+
+        .savings-image {
+          width: 180px;
+          left: 1em;
+          bottom: 30%;
+        }
+      }
+    }
+  }
+
+  /* Bancassurance Features Section */
+  #banc-features-requirements {
+    .features-col-2,
+    .features-col-3 {
+      margin-top: 3em;
+
+      h4 {
+        font-size: 24px;
+        text-align: center;
+      }
+
+      .feature-grid {
+        gap: 1.5em;
+
+        .feature {
+          padding: 1.2em;
+
+          .icon {
+            width: 25px;
+            height: 25px;
+          }
+
+          h5 {
+            font-size: 16px;
+            line-height: 22px;
+            margin-top: 0.8em;
+          }
+
+          p {
+            font-size: 14px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+
+    .features-col-2 {
+      .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2em;
+      }
+    }
+
+    .features-col-3 {
+      .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2em;
+      }
+    }
+  }
+}
+
+/* Mobile Devices (768px and below) */
+@media (max-width: 768px) {
+  /* Bancassurance Banner */
+  #banc-banner {
+    .landing-vector {
+      width: 100%;
+    }
+
+    .container {
+      width: 92%;
+      flex-direction: column;
+      text-align: center;
+
+      .content-wrapper {
+        padding-top: 4em;
+        padding-bottom: 2em;
+        flex: 1;
+        width: 100%;
+        align-items: center;
+        h2 {
+          font-size: 40px;
+          line-height: 48px;
+        }
+
+        p {
+          width: 100%;
+          font-size: 15px;
+          line-height: 25px;
+        }
+      }
+
+      .image-wrapper {
+        padding-top: 0;
+        padding-bottom: 3em;
+        justify-content: flex-end;
+        flex: 1;
+        width: 100%;
+        .main-mage {
+          height: 320px;
+        }
+
+        .savings-image {
+          width: 140px;
+          left: 20% !important;
+          bottom: 50%;
+        }
+      }
+    }
+  }
+
+  /* Bancassurance Features Section */
+  #banc-features-requirements {
+    .features-col-2,
+    .features-col-3 {
+      margin-top: 2em;
+
+      h4 {
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 0.8em;
+      }
+
+      .feature-grid {
+        gap: 1em;
+
+        .feature {
+          padding: 1em;
+          text-align: center;
+          @include flex-col;
+          align-items: center;
+          .icon {
+            width: 22px;
+            height: 22px;
+            margin: 0 auto;
+          }
+
+          h5 {
+            font-size: 15px;
+            line-height: 20px;
+            margin-top: 0.6em;
+          }
+
+          p {
+            font-size: 13px;
+            line-height: 22px;
+          }
+        }
+      }
+    }
+
+    .features-col-2 {
+      .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 1em;
+      }
+    }
+
+    .features-col-3 {
+      .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 1em;
+      }
+    }
+  }
+}
+
+/* Extra Small Mobile Devices (480px and below)  */
+@media (max-width: 480px) {
+  /* Bancassurance Banner */
+  #banc-banner {
+    .container {
+      .content-wrapper {
+        h2 {
+          font-size: 32px;
+          line-height: 40px;
+        }
+
+        p {
+          font-size: 14px;
+          line-height: 24px;
+        }
+      }
+
+      .image-wrapper {
+        .main-mage {
+          height: 250px;
+        }
+
+        .savings-image {
+          width: 100px;
+        }
+      }
+    }
+  }
+
+  /* Bancassurance Features Section */
+  #banc-features-requirements {
+    .features-col-2,
+    .features-col-3 {
+      .feature-grid {
+        .feature {
+          padding: 0.8em;
+
+          h5 {
+            font-size: 14px;
+            line-height: 18px;
+          }
+
+          p {
+            font-size: 12px;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+  }
+}

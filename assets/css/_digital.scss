@@ -196,3 +196,247 @@
 #digital-cta {
   @extend #savings-cta;
 }
+
+/* Tablet Devices (1024px and below) */
+@media (max-width: 1024px) {
+  /* Digital Banner */
+  #digital-banner {
+    .landing-vector {
+      width: 150px;
+    }
+
+    .container {
+      width: 90%;
+      gap: 1.5em;
+
+      .content-wrapper {
+        padding-top: 5em;
+        padding-bottom: 6em;
+
+        h2 {
+          font-size: 48px;
+          line-height: 56px;
+        }
+
+        p {
+          width: 90%;
+          font-size: 16px;
+          line-height: 26px;
+        }
+
+        .site-btn-lg {
+          margin-top: 0.8em;
+        }
+      }
+
+      .image-wrapper {
+        padding-top: 4em;
+
+        .main-mage {
+          height: 400px;
+        }
+
+        .savings-image {
+          width: 180px;
+          left: 1em;
+          bottom: 30%;
+        }
+      }
+    }
+  }
+
+  /* Digital Points Section */
+  #digital-points {
+    .container {
+      width: 90%;
+      padding: 3em 0;
+
+      .intro {
+        margin-bottom: 1.5em;
+
+        h2 {
+          font-size: 36px;
+        }
+
+        p {
+          width: 80%;
+          font-size: 15px;
+        }
+      }
+
+      .points {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5em;
+
+        .point {
+          padding: 0.8em;
+
+          img {
+            width: 25px;
+            height: 25px;
+          }
+
+          h4 {
+            font-size: 16px;
+            line-height: 22px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Mobile Devices (768px and below) */
+@media (max-width: 768px) {
+  /* Digital Banner */
+  #digital-banner {
+    .landing-vector {
+      width: 100%;
+    }
+
+    .container {
+      width: 92%;
+      flex-direction: column;
+      text-align: center;
+
+      .content-wrapper {
+        padding-top: 4em;
+        padding-bottom: 2em;
+        flex: 1;
+        @include flex-col;
+        width: 100%;
+        align-items: center;
+        h2 {
+          font-size: 40px;
+          line-height: 48px;
+        }
+
+        p {
+          width: 70%;
+          font-size: 15px;
+          line-height: 25px;
+        }
+
+        .site-btn-lg {
+          margin-top: 1em;
+          display: inline-flex;
+          width: fit-content;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
+      .image-wrapper {
+        padding-top: 0;
+        padding-bottom: 3em;
+        justify-content: flex-end;
+        flex: 1;
+        width: 100%;
+        .main-mage {
+          height: 320px;
+        }
+
+        .savings-image {
+          width: 140px;
+          left: 50% !important;
+          bottom: 50%;
+        }
+      }
+    }
+  }
+
+  /* Digital Points Section */
+  #digital-points {
+    .container {
+      width: 92%;
+      padding: 2em 0;
+
+      .intro {
+        margin-bottom: 1.2em;
+
+        h2 {
+          font-size: 28px;
+        }
+
+        p {
+          width: 100%;
+          font-size: 14px;
+        }
+      }
+
+      .points {
+        grid-template-columns: 1fr;
+        gap: 1em;
+
+        .point {
+          padding: 0.8em 1em;
+          justify-content: flex-start;
+
+          img {
+            width: 22px;
+            height: 22px;
+          }
+
+          h4 {
+            font-size: 15px;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Extra Small Mobile Devices (480px and below) */
+@media (max-width: 480px) {
+  /* Digital Banner */
+  #digital-banner {
+    .container {
+      .content-wrapper {
+        h2 {
+          font-size: 32px;
+          line-height: 40px;
+        }
+
+        p {
+          font-size: 14px;
+          line-height: 24px;
+          width: 80%;
+        }
+      }
+
+      .image-wrapper {
+        .main-mage {
+          height: 250px;
+        }
+
+        .savings-image {
+          width: 100px;
+          left: 20% !important;
+          bottom: 50%;
+        }
+      }
+    }
+  }
+
+  /* Digital Points Section */
+  #digital-points {
+    .container {
+      .points {
+        .point {
+          padding: 0.7em 0.8em;
+
+          img {
+            width: 20px;
+            height: 20px;
+          }
+
+          h4 {
+            font-size: 14px;
+            line-height: 18px;
+          }
+        }
+      }
+    }
+  }
+}

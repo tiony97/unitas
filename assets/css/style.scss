@@ -350,10 +350,12 @@ header {
     &__search {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       background: rgba(255, 255, 255, 0.4);
       width: 150px;
       height: 35px;
       border-radius: 30px;
+      padding-right: 15px;
       input {
         height: 100%;
         width: 60%;
@@ -1204,6 +1206,72 @@ footer#site-footer {
           color: $accent-main;
         }
       }
+    }
+  }
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: $accent-main;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:hover {
+    background: darken($accent-main, 10%);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  .scroll-icon {
+    font-size: 28px;
+    font-weight: bold;
+    color: $background;
+    line-height: 1;
+  }
+
+  // Responsive adjustments
+  @media (max-width: 768px) {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+
+    .scroll-icon {
+      font-size: 24px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    bottom: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+
+    .scroll-icon {
+      font-size: 22px;
     }
   }
 }
